@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>امتحان المالية العامة - مراجعة نهائية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+            background: #f0f4f8;
+            color: #1a2332;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            padding: 30px 35px;
+            position: relative;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e6edf5;
+            padding-bottom: 22px;
+            margin-bottom: 28px;
+        }
+
+        .header .academy {
+            font-size: 14px;
+            color: #6b7a8f;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b2a4a;
+            margin: 6px 0 2px;
+        }
+
+        .header .sub {
+            font-size: 16px;
+            color: #3e5a76;
+        }
+
+        .header .prof {
+            font-size: 15px;
+            color: #1f4e7a;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .header .prof span {
+            direction: ltr;
+            display: inline-block;
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #eef4fa;
+            padding: 14px 24px;
+            border-radius: 16px;
+            margin-bottom: 28px;
+            gap: 12px;
+        }
+
+        .top-bar .timer-box {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b2a4a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar .timer-box .time {
+            background: #0b2a4a;
+            color: #fff;
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .top-bar .stats {
+            font-size: 15px;
+            color: #2c405a;
+            font-weight: 500;
+        }
+
+        .top-bar .stats strong {
+            color: #0b2a4a;
+        }
+
+        .top-bar .reset-btn {
+            background: #dce5ef;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a3a5a;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .top-bar .reset-btn:hover {
+            background: #c0d0e0;
+        }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0b2a4a;
+            margin: 32px 0 18px;
+            padding-right: 14px;
+            border-right: 6px solid #1f6eb0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .badge {
+            background: #1f6eb0;
+            color: #fff;
+            font-size: 14px;
+            padding: 2px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        /* ===== QUESTION CARD ===== */
+        .question-card {
+            background: #fafcff;
+            border: 1px solid #e2eaf2;
+            border-radius: 18px;
+            padding: 20px 26px;
+            margin-bottom: 18px;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .question-card:hover {
+            border-color: #c8d8e8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .question-card .q-text {
+            font-size: 17px;
+            line-height: 1.7;
+            font-weight: 500;
+            color: #142b42;
+            margin-bottom: 14px;
+        }
+
+        .question-card .q-text .q-num {
+            display: inline-block;
+            background: #dce5ef;
+            color: #0b2a4a;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 0 12px;
+            border-radius: 30px;
+            margin-left: 10px;
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .question-card .options {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .question-card .options button {
+            padding: 8px 34px;
+            border: 2px solid #cddae8;
+            border-radius: 40px;
+            background: transparent;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a3a5a;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+            min-width: 80px;
+        }
+
+        .question-card .options button:hover:not(:disabled) {
+            background: #e6eef8;
+            border-color: #a0b8d0;
+        }
+
+        .question-card .options button:disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .question-card .options button.correct {
+            background: #1d8b4e;
+            border-color: #1d8b4e;
+            color: #fff;
+        }
+
+        .question-card .options button.wrong {
+            background: #c0392b;
+            border-color: #c0392b;
+            color: #fff;
+        }
+
+        .question-card .options button.show-correct {
+            background: #1d8b4e;
+            border-color: #1d8b4e;
+            color: #fff;
+            opacity: 0.75;
+        }
+
+        .question-card .feedback {
+            margin-top: 14px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            background: #f0f6fd;
+            border-right: 4px solid #1f6eb0;
+            display: none;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .question-card .feedback .fb-label {
+            font-weight: 700;
+            color: #0b2a4a;
+        }
+
+        .question-card .feedback .fb-label.correct-label {
+            color: #1d8b4e;
+        }
+        .question-card .feedback .fb-label.wrong-label {
+            color: #c0392b;
+        }
+
+        .question-card .feedback .explanation {
+            margin-top: 6px;
+            color: #2c405a;
+        }
+
+        .question-card.answered-correct {
+            border-right: 6px solid #1d8b4e;
+            background: #f6fcf9;
+        }
+
+        .question-card.answered-wrong {
+            border-right: 6px solid #c0392b;
+            background: #fdf7f6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid #e6edf5;
+            font-size: 14px;
+            color: #6b7a8f;
+        }
+
+        .footer .score-final {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0b2a4a;
+            margin-bottom: 6px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .container {
+                padding: 16px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                padding: 14px 16px;
+            }
+
+            .top-bar .timer-box {
+                justify-content: center;
+            }
+
+            .top-bar .stats {
+                text-align: center;
+            }
+
+            .top-bar .reset-btn {
+                width: 100%;
+            }
+
+            .question-card {
+                padding: 16px;
+            }
+
+            .question-card .q-text {
+                font-size: 15px;
+            }
+
+            .question-card .options button {
+                padding: 6px 22px;
+                font-size: 15px;
+                min-width: 60px;
+            }
+
+            .section-title {
+                font-size: 19px;
+            }
+
+            .question-card .feedback {
+                font-size: 14px;
+                padding: 12px 16px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .question-card .options {
+                gap: 10px;
+            }
+            .question-card .options button {
+                padding: 6px 16px;
+                font-size: 14px;
+                min-width: 50px;
+            }
+        }
+
+        /* scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eef4fa;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b0c8dd;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8aaac8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="app">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="academy">✦ Elmotamayez Academy ✦</div>
+            <h1>📘 امتحان المالية العامة</h1>
+            <div class="sub">مراجعة نهائية – ترم خامس مدمج – يوليو 2026</div>
+            <div class="prof">د/ إسلام سلامة &nbsp; <span>01000655737</span></div>
+        </div>
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="timer-box">
+                ⏱️ <span class="time" id="timerDisplay">60:00</span>
+            </div>
+            <div class="stats">
+                الإجابات: <strong id="answeredCount">0</strong> / <strong id="totalCount">0</strong>
+                &nbsp;•&nbsp; صح: <strong id="correctCount">0</strong>
+                &nbsp;•&nbsp; خطأ: <strong id="wrongCount">0</strong>
+            </div>
+            <button class="reset-btn" id="resetBtn">🔄 إعادة الامتحان</button>
+        </div>
+
+        <!-- QUESTIONS RENDER HERE -->
+        <div id="questionsContainer"></div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="score-final" id="finalScore">📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة</div>
+            <div style="color:#8a9bb0;">تم بحمد الله – وفقكم الله جميعاً</div>
+        </div>
+
+    </div>
+
+    <script>
+        // ============================================================
+        //  DATA : جميع الأسئلة مقسمة حسب الفصول
+        // ============================================================
+
+        const questionsData = [{
+            // ---------- الفصل الأول : الموارد العامة (صفحة 10) ----------
+            section: 'الموارد العامة – التقسيمات القانونية والمالية والاقتصادية',
+            qs: [
+                { id: 1, text: 'يرتكز التقسيم القانوني للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.', answer: true,
+                    explanation: 'التقسيم القانوني يعتمد على استخدام الدولة لسلطتها الآمرة (إجبارية) أو عدم استخدامها (اختيارية) في تحصيل الموارد.' },
+                { id: 2, text: 'يرتكز التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.', answer: false,
+                    explanation: 'التقسيم المالي يعتمد على طبيعة دخول الموارد للخزينة (نهائية / وقتية) وليس على سلطة الدولة.' },
+                { id: 3, text: 'يستند التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في الحصول على الموارد العامة.', answer: false,
+                    explanation: 'التقسيم المالي مبني على صفة الموارد (عادية / غير عادية) وليس على السلطة الآمرة.' },
+                { id: 4, text: 'طبقاً للتقسيم القانوني للموارد العامة فهناك موارد إجبارية وموارد اختيارية.', answer: true,
+                    explanation: 'التقسيم القانوني يقسم الموارد إلى إجبارية (تستخدم الدولة سلطتها) واختيارية (تتعامل كالقطاع الخاص).' },
+                { id: 5, text: 'يرتكز التقسيم القانوني للإيرادات العامة إما إلى طبيعة الثروة التي تقتطع منها الموارد العامة وإما إلى طبيعة الآثار الاقتصادية للاستقطاعات العامة.',
+                    answer: false, explanation: 'هذا وصف للتقسيم الاقتصادي وليس القانوني.' },
+                { id: 6, text: 'طبقاً للتقسيم الاقتصادي للموارد العامة تبعاً لطبيعة الآثار الاقتصادية للاستقطاعات العامة تقسم الموارد إلى ضرائب على الدخل وضرائب على الاستهلاك وضرائب على رأس المال.',
+                    answer: false, explanation: 'التقسيم الاقتصادي يقسم الموارد حسب طبيعة الثروة أو الآثار الاقتصادية، وليس حصراً بهذه الأنواع الثلاثة.' },
+                { id: 7, text: 'يستند التقسيم الاقتصادي للموارد العامة إلى طبيعة الأثار الاقتصادية للاستقطاعات العامة.', answer: false,
+                    explanation: 'التقسيم الاقتصادي يستند إلى طبيعة الثروة التي تقتطع منها الموارد أو إلى طبيعة الآثار الاقتصادية.' },
+                { id: 8, text: 'تنقسم الموارد العامة إلى موارد عادية وموارد غير عادية طبقاً لطبيعة الثروة التي يقتطع منها الموارد العامة.', answer: false,
+                    explanation: 'هذا التقسيم يندرج تحت التقسيم المالي (نهائية / وقتية) وليس حسب طبيعة الثروة.' },
+                { id: 9, text: 'يرتكز التقسيم المالي للموارد العامة للدولة إما على طبيعة الثروة التي تقتطع منها الموارد العامة أو طبيعة الآثار الاقتصادية للاستقطاعات العامة.',
+                    answer: false, explanation: 'هذا وصف للتقسيم الاقتصادي، أما التقسيم المالي فيقسم الموارد إلى عادية وغير عادية (نهائية / وقتية).' },
+                { id: 10, text: 'من بين الموارد التي تحصل عليها الدولة ما يدخل نهائياً وبصفة قطعية في خزينتها، بمعنى أن الدولة لا تلتزم بشيء بالنسبة لهذه الموارد، ويسمى البعض هذا النوع من الموارد بالموارد العادية، ويحسن تسميتها بالموارد الدائمة.',
+                    answer: true, explanation: 'الموارد العادية (الدائمة) تدخل الخزينة نهائياً ولا تلتزم الدولة بردها، كالضرائب.' },
+                { id: 11, text: 'هناك موارد عامة إجبارية مثل قيام الدولة ببيع بعض السلع والخدمات للأفراد وتحصيل ثمنها.', answer: false,
+                    explanation: 'بيع السلع والخدمات هو مورد اختياري (إيراد اختياري) وليس إجبارياً.' },
+                { id: 12, text: 'يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل نهائياً وبصفة قطعية في خزينتها ولا تلتزم برد قيمتها.',
+                    answer: true, explanation: 'الموارد العادية (الدائمة) لا يترتب عليها التزام برد القيمة.' },
+                { id: 13, text: 'يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل بصفة وقتية في خزينتها وتلتزم برد قيمتها.', answer: false,
+                    explanation: 'هذا تعريف الموارد غير العادية (الوقتية) وليس العادية.' },
+                { id: 14, text: 'يقصد بالموارد العامة النهائية الموارد التي تحصل عليها الدولة ولا تلتزم بردها في المستقبل.', answer: true,
+                    explanation: 'الموارد النهائية (الدائمة) لا تلتزم الدولة بردها، كالضرائب.' },
+                { id: 15, text: 'يقصد بالموارد العامة الوقتية الموارد التي تحصل عليها الدولة وتلتزم الدولة بردها في المستقبل.', answer: true,
+                    explanation: 'الموارد الوقتية يترتب عليها التزام برد القيمة، كالقروض والودائع.' },
+                { id: 16, text: 'تعتبر الإيرادات الدائمة إيرادات حقيقية لأن الدولة قد تتحكم فيها تحكماً تاماً، ولكن طبيعتها المالية والاقتصادية مختلفة تماماً عن الموارد الوقتية.',
+                    answer: false, explanation: 'الإيرادات الدائمة حقيقية، ولكن العبارة خاطئة في وصفها بأنها مختلفة تماماً عن الموارد الوقتية من حيث الطبيعة المالية والاقتصادية.' },
+                { id: 17, text: 'يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بدون أي مقابل.',
+                    answer: true, explanation: 'الضرائب هي نموذج للموارد الإجبارية التي تستخدم فيها الدولة سلطتها الآمرة.' },
+                { id: 18, text: 'يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بمقابل.',
+                    answer: false, explanation: 'الضرائب تفرض بدون مقابل، وليس بمقابل. الضرائب هي اقتطاع جبري بدون عوض.' },
+                { id: 19, text: 'يمكن للدولة عادة في حصولها على الموارد المالية اللازمة للإنفاق العام أن تتبع نفس الأساليب التي يلجأ إليها الأفراد في معاملاتهم كالبيع والإيجار.',
+                    answer: true, explanation: 'الموارد الاختيارية (كالبيع والإيجار) تتبع نفس أساليب القطاع الخاص.' },
+                { id: 20, text: 'يقصد بالموارد غير العادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن آثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.',
+                    answer: false, explanation: 'هذا وصف للموارد العادية (الدائمة) وليس غير العادية.' },
+                { id: 21, text: 'يقصد بالموارد العادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن آثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.',
+                    answer: true, explanation: 'الموارد العادية (الدائمة) يمكن الاحتفاظ بها طويلاً ولا تهدد التوازن الاقتصادي.' },
+                { id: 22, text: 'الموارد العادية لا يمكن الاحتفاظ بها لفترة طويلة من الزمن لأنها تهدد الثروة التي تقتطع منها هذه الموارد.', answer: false,
+                    explanation: 'الموارد العادية يمكن الاحتفاظ بها طويلاً، وهي التي لا تهدد الثروة.' }
+            ]
+        }, {
+            // ---------- الفصل الثاني : الضرائب (صفحة 20) ----------
+            section: 'الضرائب – العينية والشخصية والمباشرة وغير المباشرة',
+            qs: [
+                { id: 23, text: 'يقصد بالضريبة العينية تلك الضريبة التي تتجاهل شخصية الممول وتنصب على عناصر ظاهرة من الثروة وتتميز بعدم إمكانية التهرب منها.',
+                    answer: true, explanation: 'الضريبة العينية تتجاهل الظروف الشخصية للممول وتنصب على عناصر ظاهرة (كالعقار) مما يجعل التهرب منها صعباً.' },
+                { id: 24, text: 'تتميز الضريبة العينية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة، ولا تأخذ بالاعتبارات الشخصية التي تنسج المجال أمام التهرب، كما أن نفقة تحصيلها تعتبر كبيرة نسبيا مقارنة بغيرها من أنواع الضرائب.',
+                    answer: false, explanation: 'الجزء الأول صحيح (عدم إمكان التهرب) لكن الجزء الأخير خطأ، فنفقة تحصيل الضريبة العينية قليلة نسبياً وليست كبيرة.' },
+                { id: 25, text: 'تمتاز الضرائب العينية بتحقيق العدالة الاجتماعية لأن الأشخاص الذين يملكون نفس الدخل أو الثروة يدفعون نفس الضريبة.',
+                    answer: false, explanation: 'الضريبة العينية لا تراعي الظروف الشخصية، لذلك لا تحقق العدالة الاجتماعية.' },
+                { id: 26, text: 'الضريبة العينية تأخذ في الاعتبار المادة الخاضعة للضريبة وكميتها وطبيعتها فقط.', answer: true,
+                    explanation: 'الضريبة العينية تنظر إلى المادة الخاضعة للضريبة (الوعاء) وكميتها وطبيعتها، دون اعتبار لشخصية الممول.' },
+                { id: 27, text: 'يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، وتتميز بعدم إمكان التهرب منها.',
+                    answer: false, explanation: 'الضريبة الشخصية تراعي ظروف الممول، ولكنها تتميز بإمكانية التهرب منها (بخلاف العينية).' },
+                { id: 28, text: 'يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، ولكنها في المقابل تنسج المجال أمام التهرب.',
+                    answer: true, explanation: 'الضريبة الشخصية تراعي الظروف الشخصية، ولكنها تتيح مجالاً للتهرب (عكس العينية).' },
+                { id: 29, text: 'الضرائب الشخصية أكثر تحقيقاً للعدالة من الضرائب العينية لأنها تأخذ ظروف الممول في الاعتبار.', answer: true,
+                    explanation: 'الضريبة الشخصية تراعي ظروف الممول (الدخل، العائلة، الالتزامات) مما يحقق عدالة أكبر.' },
+                { id: 30, text: 'تتميز الضريبة الشخصية بعدم إمكان التهرب منها، وذلك بعكس الضريبة العينية والتي يسهل التهرب منها وذلك لأنها تنصب بالأساس على عناصر الثروة.',
+                    answer: false, explanation: 'العكس هو الصحيح: الضريبة العينية يصعب التهرب منها، والضريبة الشخصية يسهل التهرب منها.' },
+                { id: 31, text: 'تمتاز الضرائب الشخصية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة.', answer: false,
+                    explanation: 'هذا وصف للضريبة العينية وليس الشخصية.' },
+                { id: 32, text: 'يغلب على الضرائب الشخصية أنها تؤدي إلى عدم تحقيق العدالة الاجتماعية.', answer: false,
+                    explanation: 'الضريبة الشخصية تحقق العدالة الاجتماعية لأنها تراعي ظروف الممولين.' },
+                { id: 33, text: 'تعتبر طريقة التحصيل معياراً بين الضرائب العينية والضرائب الشخصية.', answer: true,
+                    explanation: 'طريقة التحصيل من المعايير المستخدمة للتمييز بين الضرائب العينية والشخصية.' },
+                { id: 34, text: 'تكون الضريبة شخصية إذا استمت بأي من الصفات التالية: إذا أخذت في الاعتبار الظروف الشخصية للممول، أنها قد تؤدي إلى عدم تحقيق العدالة الاجتماعية، وإذا كانت تنسج المجال للتهرب منها.',
+                    answer: false, explanation: 'الجزء الأول صحيح (تراعي الظروف الشخصية) لكن الجزء الثاني خطأ (الضريبة الشخصية لا تؤدي لعدم العدالة بل تحقق العدالة).' },
+                { id: 35, text: 'تكون الضريبة مباشرة إذا استمت بأي من الصفات التالية: إذا كانت تحصل بناء على كشف أو جدول، وإذا كانت مفروضة على مادة تتميز بعدم الاستمرارية والثبات.',
+                    answer: false, explanation: 'الضريبة المباشرة تفرض على مادة تتميز بالثبات والاستمرارية (كالضريبة على الدخل).' },
+                { id: 36, text: 'تكون الضريبة مباشرة إذا كانت تحصل بناء على كشف أو جدول تدون فيها أسماء الممولين والتزاماتهم الضريبية.', answer: true,
+                    explanation: 'الضريبة المباشرة تحصل عن طريق كشف أو جدول بأسماء الممولين (كضريبة الدخل).' },
+                { id: 37, text: 'تكون الضريبة غير مباشرة إذا كانت تحصل بناء على كشف أو جدول تدون فيها أسماء الممولين وتكون مباشرة إذا لم يكن من الممكن اتباع هذا الأسلوب في تحصيلها.',
+                    answer: false, explanation: 'العكس: المباشرة تحصل بكشف أو جدول، وغير المباشرة لا يمكن اتباع هذا الأسلوب في تحصيلها.' },
+                { id: 38, text: 'تكون الضريبة غير مباشرة إذا تحمل عينها من قاء بدفعها للدولة، ومباشرة إذا تمكن من نقل عينها إلى شخص آخر.', answer: false,
+                    explanation: 'العكس: الضريبة المباشرة يتحملها من يدفعها فعلياً، وغير المباشرة يمكن نقل عبئها لآخر.' },
+                { id: 39, text: 'تكون الضريبة مباشرة إذا تحمل عينها من قاء بدفعها للدولة، وغير المباشرة إذا تمكن من نقل عينها إلى شخص آخر.', answer: true,
+                    explanation: 'المباشرة يتحملها الممول نفسه، وغير المباشرة ينقل عبئها إلى شخص آخر (كالمستهلك النهائي).' },
+                { id: 40, text: 'طبقاً لمعيار نقل عبء الضريبة تكون الضريبة مباشرة إذا تحمل عبءها من يؤديها وتكون الضريبة غير مباشرة إذا تمكن من نقل عبءها لشخص آخر.',
+                    answer: true, explanation: 'معيار نقل العبء: مباشرة = يتحملها الممول، غير مباشرة = ينقلها لآخر.' },
+                { id: 41, text: 'بعض أنواع الضرائب المباشرة لا يمكن إتباع أسلوب الجدول الإسمية في تحصيلها، ومثال على ذلك الضرائب على أرباح الأسهم والسندات لحاملها.',
+                    answer: true, explanation: 'الضرائب على أرباح الأسهم والسندات لحاملها لا يمكن تحصيلها بجدول اسمي لأن الأسهم لحاملها (غير مسماة).' },
+                { id: 42, text: 'يمكن التمييز بين الضريبة المباشرة وغير المباشرة على أساس أن الضريبة المباشرة يتم فرضها على مادة تتميز بالثبات والاستمرار، أما الضريبة غير المباشرة فيتم فرضها على تصرفات عرضية متقطعة.',
+                    answer: true, explanation: 'المباشرة على عناصر ثابتة (الدخل، العقار)، وغير المباشرة على تصرفات (الاستهلاك، المبيعات).' },
+                { id: 43, text: 'تكون الضريبة غير مباشرة إذا كانت تفرض على مادة تتميز بالثبات والاستمرار.', answer: false,
+                    explanation: 'هذا وصف للضريبة المباشرة، فالمباشرة تفرض على عناصر ثابتة ومستمرة.' },
+                { id: 44, text: 'تكون الضريبة مباشرة إذا كانت مفروضة على مادة تتميز بالثبات والاستمرار، أو بمناسبة تصرفات عرضية متقطعة كالضريبة العقارية.',
+                    answer: false, explanation: 'الضريبة المباشرة تفرض على مادة ثابتة ومستمرة، أما التصرفات العرضية المتقطعة فمن خصائص الضريبة غير المباشرة.' }
+            ]
+        }, {
+            // ---------- الفصل الثالث : القروض العامة (صفحة 28) ----------
+            section: 'القروض العامة – طرق الإصدار والانقضاء',
+            qs: [
+                { id: 45, text: 'يقصد بأسلوب بيع سندات القرض للبنوك أن تقوم البنوك بشراء السندات لصالح مودعيها.', answer: false,
+                    explanation: 'البنوك تشتري السندات ثم تعيد تسويقها للمكتتبين، وليس بالضرورة لصالح مودعيها فقط.' },
+                { id: 46, text: 'في حالة بيع سندات القرض للبنوك التجارية التي تعيد تسويقها لا يحصل البنك التجاري على أي مقابل من إعادة التسويق.',
+                    answer: false, explanation: 'البنك يحصل على عمولة مقابل خدماته في إعادة التسويق.' },
+                { id: 47, text: 'من مميزات بيع سندات القرض للبنوك أنها تقوى من ائتمان الدولة خصوصاً في الخارج وذلك لأن الثقة في البنك تكون أكبر من الثقة في الدولة.',
+                    answer: true, explanation: 'الثقة في البنوك عادة أكبر من الثقة في الدولة، مما يعزز ائتمان الدولة في الخارج.' },
+                { id: 48, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقاً لهذه الطريقة فإن الدولة لا تدخل في علاقة مباشرة مع المكتتبين.',
+                    answer: true, explanation: 'في هذه الطريقة، البنك هو الوسيط، والدولة لا تتعامل مباشرة مع المكتتبين.' },
+                { id: 49, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقاً لهذه الطريقة فإن الدولة تدخل في علاقة مباشرة مع المكتتبين.',
+                    answer: false, explanation: 'في طريقة بيع السندات للبنوك، الدولة لا تدخل في علاقة مباشرة مع المكتتبين، بل البنك هو الوسيط.' },
+                { id: 50, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض منها بيع سندات القرض للبنوك إلا أن هذه الطريقة لا تضمن توظيف كل سندات القرض.',
+                    answer: false, explanation: 'من مميزات هذه الطريقة أنها تضمن توظيف كل سندات القرض عن طريق البنك.' },
+                { id: 51, text: 'في حالة بيع سندات القرض للبنوك فإن البنك يقع عليه كل من المسئوليات التالية: توظيف كل سندات القرض، أن يقدم للدولة مبلغ القرض كاملاً، توزيع سندات القرض.',
+                    answer: true, explanation: 'البنك يتحمل مسؤولية التوظيف الكامل، وتقديم المبلغ للدولة، وتوزيع السندات على المكتتبين.' }
+            ]
+        }];
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+        let allQuestions = [];
+        let timerInterval = null;
+        let timeSeconds = 3600; // 60 minutes
+        let isTimerRunning = false;
+        let totalAnswered = 0;
+        let totalCorrect = 0;
+        let totalWrong = 0;
+        let hasFinished = false;
+
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+        const container = document.getElementById('questionsContainer');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const answeredCount = document.getElementById('answeredCount');
+        const totalCount = document.getElementById('totalCount');
+        const correctCount = document.getElementById('correctCount');
+        const wrongCount = document.getElementById('wrongCount');
+        const finalScore = document.getElementById('finalScore');
+        const resetBtn = document.getElementById('resetBtn');
+
+        // ============================================================
+        //  HELPERS
+        // ============================================================
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function updateStats() {
+            answeredCount.textContent = totalAnswered;
+            correctCount.textContent = totalCorrect;
+            wrongCount.textContent = totalWrong;
+            const total = allQuestions.length;
+            totalCount.textContent = total;
+            if (totalAnswered === total && total > 0) {
+                const pct = Math.round((totalCorrect / total) * 100);
+                let grade = '';
+                if (pct >= 90) grade = '⭐ ممتاز';
+                else if (pct >= 75) grade = '✅ جيد جداً';
+                else if (pct >= 60) grade = '📘 جيد';
+                else if (pct >= 50) grade = '📖 مقبول';
+                else grade = '📚 يحتاج مراجعة';
+                finalScore.innerHTML = `📊 التقييم النهائي: <strong>${totalCorrect}/${total}</strong> (${pct}%) — ${grade}`;
+                hasFinished = true;
+            } else {
+                const remaining = total - totalAnswered;
+                finalScore.innerHTML = `📊 تم الإجابة على ${totalAnswered} من ${total} سؤال — المتبقي ${remaining} سؤال`;
+                hasFinished = false;
+            }
+        }
+
+        // ============================================================
+        //  BUILD QUESTIONS
+        // ============================================================
+        function buildQuestions() {
+            // جمع كل الأسئلة مع إضافة رقم تسلسلي
+            let flat = [];
+            let seq = 0;
+            questionsData.forEach(section => {
+                section.qs.forEach(q => {
+                    seq++;
+                    flat.push({
+                        ...q,
+                        seq: seq,
+                        section: section.section,
+                        userAnswer: null, // true / false / null
+                        answered: false,
+                    });
+                });
+            });
+            // خلط عشوائي
+            allQuestions = shuffle(flat);
+            // إعادة ترقيم التسلسل بعد الخلط
+            allQuestions.forEach((q, idx) => {
+                q.displayIndex = idx + 1;
+            });
+            totalAnswered = 0;
+            totalCorrect = 0;
+            totalWrong = 0;
+            hasFinished = false;
+        }
+
+        // ============================================================
+        //  RENDER
+        // ============================================================
+        function render() {
+            // تجميع حسب القسم (محافظة على ترتيب الأقسام)
+            const sectionsMap = {};
+            allQuestions.forEach(q => {
+                if (!sectionsMap[q.section]) sectionsMap[q.section] = [];
+                sectionsMap[q.section].push(q);
+            });
+
+            let html = '';
+            for (const [sectionName, qs] of Object.entries(sectionsMap)) {
+                html += `<div class="section-title">📂 ${sectionName} <span class="badge">${qs.length} سؤال</span></div>`;
+                qs.forEach((q, idx) => {
+                    const isAnswered = q.answered;
+                    const userAns = q.userAnswer;
+                    const correct = q.answer;
+                    let cardClass = 'question-card';
+                    if (isAnswered) {
+                        cardClass += userAns === correct ? ' answered-correct' : ' answered-wrong';
+                    }
+                    const displayNum = q.displayIndex;
+
+                    // بناء خيارات الصح والخطأ
+                    let optionsHtml = '';
+                    const trueLabel = 'صح';
+                    const falseLabel = 'خطأ';
+                    const btns = [
+                        { val: true, label: trueLabel },
+                        { val: false, label: falseLabel }
+                    ];
+                    btns.forEach(b => {
+                        let btnClass = 'option-btn';
+                        let disabled = '';
+                        let extra = '';
+                        if (isAnswered) {
+                            disabled = 'disabled';
+                            if (b.val === correct) {
+                                extra = ' show-correct';
+                            }
+                            if (userAns === b.val && b.val === correct) {
+                                extra = ' correct';
+                            } else if (userAns === b.val && b.val !== correct) {
+                                extra = ' wrong';
+                            }
+                        }
+                        optionsHtml +=
+                            `<button class="${btnClass}${extra}" data-q="${q.seq}" data-val="${b.val}" ${disabled}>${b.label}</button>`;
+                    });
+
+                    // الفيدباك
+                    let feedbackHtml = '';
+                    if (isAnswered) {
+                        const isCorrect = userAns === correct;
+                        const label = isCorrect ? '✅ إجابة صحيحة' : '❌ إجابة خاطئة';
+                        const labelClass = isCorrect ? 'correct-label' : 'wrong-label';
+                        feedbackHtml = `
+                            <div class="feedback" style="display:block;">
+                                <div class="fb-label ${labelClass}">${label}</div>
+                                <div class="explanation">📖 ${q.explanation || 'لا يوجد شرح إضافي.'}</div>
+                            </div>
+                        `;
+                    } else {
+                        feedbackHtml = `
+                            <div class="feedback" style="display:none;">
+                                <div class="fb-label"></div>
+                                <div class="explanation"></div>
+                            </div>
+                        `;
+                    }
+
+                    html += `
+                        <div class="${cardClass}" data-seq="${q.seq}">
+                            <div class="q-text">
+                                <span class="q-num">${displayNum}</span>
+                                ${q.text}
+                            </div>
+                            <div class="options">
+                                ${optionsHtml}
+                            </div>
+                            ${feedbackHtml}
+                        </div>
+                    `;
+                });
+            }
+
+            container.innerHTML = html;
+            updateStats();
+
+            // --- attach click events ---
+            document.querySelectorAll('.option-btn:not(:disabled)').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const seq = parseInt(this.dataset.q);
+                    const val = this.dataset.val === 'true';
+                    handleAnswer(seq, val);
+                });
+            });
+
+            // start timer if not running
+            if (!isTimerRunning && !hasFinished) {
+                startTimer();
+            }
+        }
+
+        // ============================================================
+        //  HANDLE ANSWER
+        // ============================================================
+        function handleAnswer(seq, val) {
+            const q = allQuestions.find(q => q.seq === seq);
+            if (!q || q.answered) return;
+
+            q.answered = true;
+            q.userAnswer = val;
+            const correct = q.answer;
+            if (val === correct) {
+                totalCorrect++;
+            } else {
+                totalWrong++;
+            }
+            totalAnswered++;
+
+            // re-render
+            render();
+        }
+
+        // ============================================================
+        //  TIMER
+        // ============================================================
+        function startTimer() {
+            if (isTimerRunning) return;
+            isTimerRunning = true;
+            timerInterval = setInterval(() => {
+                if (timeSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    isTimerRunning = false;
+                    timerDisplay.textContent = '00:00';
+                    // انتهى الوقت — تعطيل كل الأسئلة المتبقية
+                    allQuestions.forEach(q => {
+                        if (!q.answered) {
+                            q.answered = true;
+                            q.userAnswer = false; // تعتبر خطأ
+                            totalAnswered++;
+                            totalWrong++;
+                        }
+                    });
+                    render();
+                    finalScore.innerHTML = '⏰ انتهى الوقت! تم تقييم الإجابات تلقائياً.';
+                    return;
+                }
+                timeSeconds--;
+                timerDisplay.textContent = formatTime(timeSeconds);
+            }, 1000);
+        }
+
+        // ============================================================
+        //  RESET
+        // ============================================================
+        function resetExam() {
+            // إيقاف المؤقت
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                isTimerRunning = false;
+            }
+            timeSeconds = 3600;
+            timerDisplay.textContent = '60:00';
+            totalAnswered = 0;
+            totalCorrect = 0;
+            totalWrong = 0;
+            hasFinished = false;
+            buildQuestions();
+            render();
+            finalScore.innerHTML = '📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة';
+        }
+
+        // ============================================================
+        //  INIT
+        // ============================================================
+        resetBtn.addEventListener('click', resetExam);
+
+        // البناء الأولي
+        buildQuestions();
+        render();
+
+        // في حال تم الإجابة على الكل، إيقاف المؤقت
+        // لكن يُتحقق في updateStats
+        console.log('✅ امتحان المالية العامة جاهز — وفقكم الله');
+    </script>
+
+</body>
+</html>
