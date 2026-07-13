@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>امتحان المالية العامة – شامل</title>
+  <title>امتحان المالية العامة – مراجعة نهائية (ترتيب الملزمة)</title>
   <style>
     * {
       margin: 0;
@@ -375,7 +375,7 @@
 
   <script>
     // ============================================================
-    //  DATA – جميع الأسئلة المستخرجة من الملزمة (أكثر من 400 سؤال)
+    //  DATA – جميع الأسئلة المستخرجة من الملزمة (مرتبة حسب الفصول والصفحات)
     // ============================================================
 
     const questionsData = [
@@ -1326,14 +1326,6 @@
     // ============================================================
     //  HELPERS
     // ============================================================
-    function shuffle(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
     function formatTime(sec) {
       const m = Math.floor(sec / 60);
       const s = sec % 60;
@@ -1369,7 +1361,7 @@
     }
 
     // ============================================================
-    //  BUILD QUESTIONS
+    //  BUILD QUESTIONS (بدون خلط – ترتيب ثابت حسب الملزمة)
     // ============================================================
     function buildQuestions() {
       let flat = [];
@@ -1386,8 +1378,8 @@
           });
         });
       });
-      // خلط عشوائي
-      allQuestions = shuffle(flat);
+      // لا نقوم بالخلط – نترك الترتيب كما هو
+      allQuestions = flat;
       allQuestions.forEach((q, idx) => {
         q.displayIndex = idx + 1;
       });
@@ -1576,7 +1568,7 @@
     buildQuestions();
     render();
 
-    console.log(`✅ امتحان المالية العامة جاهز - ${allQuestions.length} سؤال`);
+    console.log(`✅ امتحان المالية العامة جاهز - ${allQuestions.length} سؤال (مرتب حسب الملزمة)`);
   </script>
 
 </body>
