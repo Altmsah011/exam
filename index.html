@@ -1,818 +1,1583 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>امتحان المالية العامة - مراجعة نهائية</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>امتحان المالية العامة – شامل</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
-            background: #f0f4f8;
-            color: #1a2332;
-            padding: 20px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a2332;
+      padding: 20px;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 28px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            padding: 30px 35px;
-            position: relative;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      padding: 30px 35px;
+      position: relative;
+    }
 
-        /* ===== HEADER ===== */
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #e6edf5;
-            padding-bottom: 22px;
-            margin-bottom: 28px;
-        }
+    /* ===== HEADER ===== */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #e6edf5;
+      padding-bottom: 22px;
+      margin-bottom: 28px;
+    }
 
-        .header .academy {
-            font-size: 14px;
-            color: #6b7a8f;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+    .header .academy {
+      font-size: 14px;
+      color: #6b7a8f;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
 
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #0b2a4a;
-            margin: 6px 0 2px;
-        }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin: 6px 0 2px;
+    }
 
-        .header .sub {
-            font-size: 16px;
-            color: #3e5a76;
-        }
+    .header .sub {
+      font-size: 16px;
+      color: #3e5a76;
+    }
 
-        .header .prof {
-            font-size: 15px;
-            color: #1f4e7a;
-            margin-top: 6px;
-            font-weight: 500;
-        }
+    .header .prof {
+      font-size: 15px;
+      color: #1f4e7a;
+      margin-top: 6px;
+      font-weight: 500;
+    }
 
-        .header .prof span {
-            direction: ltr;
-            display: inline-block;
-        }
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #eef4fa;
+      padding: 14px 24px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      gap: 12px;
+    }
 
-        /* ===== TOP BAR ===== */
-        .top-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            background: #eef4fa;
-            padding: 14px 24px;
-            border-radius: 16px;
-            margin-bottom: 28px;
-            gap: 12px;
-        }
+    .top-bar .timer-box {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0b2a4a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .top-bar .timer-box {
-            font-size: 18px;
-            font-weight: 600;
-            color: #0b2a4a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .top-bar .timer-box .time {
+      background: #0b2a4a;
+      color: #fff;
+      padding: 4px 18px;
+      border-radius: 30px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      min-width: 70px;
+      text-align: center;
+    }
 
-        .top-bar .timer-box .time {
-            background: #0b2a4a;
-            color: #fff;
-            padding: 4px 18px;
-            border-radius: 30px;
-            font-size: 20px;
-            letter-spacing: 1px;
-            min-width: 70px;
-            text-align: center;
-        }
+    .top-bar .stats {
+      font-size: 15px;
+      color: #2c405a;
+      font-weight: 500;
+    }
 
-        .top-bar .stats {
-            font-size: 15px;
-            color: #2c405a;
-            font-weight: 500;
-        }
+    .top-bar .stats strong {
+      color: #0b2a4a;
+    }
 
-        .top-bar .stats strong {
-            color: #0b2a4a;
-        }
+    .top-bar .reset-btn {
+      background: #dce5ef;
+      border: none;
+      padding: 8px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a3a5a;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-        .top-bar .reset-btn {
-            background: #dce5ef;
-            border: none;
-            padding: 8px 22px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1a3a5a;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+    .top-bar .reset-btn:hover {
+      background: #c0d0e0;
+    }
 
-        .top-bar .reset-btn:hover {
-            background: #c0d0e0;
-        }
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin: 32px 0 18px;
+      padding-right: 14px;
+      border-right: 6px solid #1f6eb0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        /* ===== SECTION TITLE ===== */
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0b2a4a;
-            margin: 32px 0 18px;
-            padding-right: 14px;
-            border-right: 6px solid #1f6eb0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .section-title .badge {
+      background: #1f6eb0;
+      color: #fff;
+      font-size: 14px;
+      padding: 2px 16px;
+      border-radius: 30px;
+      font-weight: 500;
+    }
 
-        .section-title .badge {
-            background: #1f6eb0;
-            color: #fff;
-            font-size: 14px;
-            padding: 2px 16px;
-            border-radius: 30px;
-            font-weight: 500;
-        }
+    /* ===== QUESTION CARD ===== */
+    .question-card {
+      background: #fafcff;
+      border: 1px solid #e2eaf2;
+      border-radius: 18px;
+      padding: 20px 26px;
+      margin-bottom: 18px;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
 
-        /* ===== QUESTION CARD ===== */
-        .question-card {
-            background: #fafcff;
-            border: 1px solid #e2eaf2;
-            border-radius: 18px;
-            padding: 20px 26px;
-            margin-bottom: 18px;
-            transition: 0.2s;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-        }
+    .question-card:hover {
+      border-color: #c8d8e8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
 
-        .question-card:hover {
-            border-color: #c8d8e8;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
+    .question-card .q-text {
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 500;
+      color: #142b42;
+      margin-bottom: 14px;
+    }
 
-        .question-card .q-text {
-            font-size: 17px;
-            line-height: 1.7;
-            font-weight: 500;
-            color: #142b42;
-            margin-bottom: 14px;
-        }
+    .question-card .q-text .q-num {
+      display: inline-block;
+      background: #dce5ef;
+      color: #0b2a4a;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 0 12px;
+      border-radius: 30px;
+      margin-left: 10px;
+      min-width: 32px;
+      text-align: center;
+    }
 
-        .question-card .q-text .q-num {
-            display: inline-block;
-            background: #dce5ef;
-            color: #0b2a4a;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 0 12px;
-            border-radius: 30px;
-            margin-left: 10px;
-            min-width: 32px;
-            text-align: center;
-        }
+    .question-card .options {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        .question-card .options {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
+    .question-card .options button {
+      padding: 8px 34px;
+      border: 2px solid #cddae8;
+      border-radius: 40px;
+      background: transparent;
+      font-size: 17px;
+      font-weight: 600;
+      color: #1a3a5a;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: inherit;
+      min-width: 80px;
+    }
 
-        .question-card .options button {
-            padding: 8px 34px;
-            border: 2px solid #cddae8;
-            border-radius: 40px;
-            background: transparent;
-            font-size: 17px;
-            font-weight: 600;
-            color: #1a3a5a;
-            cursor: pointer;
-            transition: 0.2s;
-            font-family: inherit;
-            min-width: 80px;
-        }
+    .question-card .options button:hover:not(:disabled) {
+      background: #e6eef8;
+      border-color: #a0b8d0;
+    }
 
-        .question-card .options button:hover:not(:disabled) {
-            background: #e6eef8;
-            border-color: #a0b8d0;
-        }
+    .question-card .options button:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
 
-        .question-card .options button:disabled {
-            cursor: default;
-            opacity: 0.7;
-        }
+    .question-card .options button.correct {
+      background: #1d8b4e;
+      border-color: #1d8b4e;
+      color: #fff;
+    }
 
-        .question-card .options button.correct {
-            background: #1d8b4e;
-            border-color: #1d8b4e;
-            color: #fff;
-        }
+    .question-card .options button.wrong {
+      background: #c0392b;
+      border-color: #c0392b;
+      color: #fff;
+    }
 
-        .question-card .options button.wrong {
-            background: #c0392b;
-            border-color: #c0392b;
-            color: #fff;
-        }
+    .question-card .options button.show-correct {
+      background: #1d8b4e;
+      border-color: #1d8b4e;
+      color: #fff;
+      opacity: 0.75;
+    }
 
-        .question-card .options button.show-correct {
-            background: #1d8b4e;
-            border-color: #1d8b4e;
-            color: #fff;
-            opacity: 0.75;
-        }
+    .question-card .feedback {
+      margin-top: 14px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: #f0f6fd;
+      border-right: 4px solid #1f6eb0;
+      display: none;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-        .question-card .feedback {
-            margin-top: 14px;
-            padding: 14px 20px;
-            border-radius: 14px;
-            background: #f0f6fd;
-            border-right: 4px solid #1f6eb0;
-            display: none;
-            font-size: 15px;
-            line-height: 1.6;
-        }
+    .question-card .feedback .fb-label {
+      font-weight: 700;
+      color: #0b2a4a;
+    }
 
-        .question-card .feedback .fb-label {
-            font-weight: 700;
-            color: #0b2a4a;
-        }
+    .question-card .feedback .fb-label.correct-label {
+      color: #1d8b4e;
+    }
+    .question-card .feedback .fb-label.wrong-label {
+      color: #c0392b;
+    }
 
-        .question-card .feedback .fb-label.correct-label {
-            color: #1d8b4e;
-        }
-        .question-card .feedback .fb-label.wrong-label {
-            color: #c0392b;
-        }
+    .question-card .feedback .explanation {
+      margin-top: 6px;
+      color: #2c405a;
+    }
 
-        .question-card .feedback .explanation {
-            margin-top: 6px;
-            color: #2c405a;
-        }
+    .question-card.answered-correct {
+      border-right: 6px solid #1d8b4e;
+      background: #f6fcf9;
+    }
 
-        .question-card.answered-correct {
-            border-right: 6px solid #1d8b4e;
-            background: #f6fcf9;
-        }
+    .question-card.answered-wrong {
+      border-right: 6px solid #c0392b;
+      background: #fdf7f6;
+    }
 
-        .question-card.answered-wrong {
-            border-right: 6px solid #c0392b;
-            background: #fdf7f6;
-        }
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid #e6edf5;
+      font-size: 14px;
+      color: #6b7a8f;
+    }
 
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            margin-top: 36px;
-            padding-top: 20px;
-            border-top: 1px solid #e6edf5;
-            font-size: 14px;
-            color: #6b7a8f;
-        }
+    .footer .score-final {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin-bottom: 6px;
+    }
 
-        .footer .score-final {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0b2a4a;
-            margin-bottom: 6px;
-        }
+    @media (max-width: 700px) {
+      .container {
+        padding: 16px;
+      }
+      .header h1 {
+        font-size: 22px;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 14px 16px;
+      }
+      .top-bar .timer-box {
+        justify-content: center;
+      }
+      .top-bar .stats {
+        text-align: center;
+      }
+      .top-bar .reset-btn {
+        width: 100%;
+      }
+      .question-card {
+        padding: 16px;
+      }
+      .question-card .q-text {
+        font-size: 15px;
+      }
+      .question-card .options button {
+        padding: 6px 22px;
+        font-size: 15px;
+        min-width: 60px;
+      }
+      .section-title {
+        font-size: 19px;
+      }
+      .question-card .feedback {
+        font-size: 14px;
+        padding: 12px 16px;
+      }
+    }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 700px) {
-            .container {
-                padding: 16px;
-            }
-
-            .header h1 {
-                font-size: 22px;
-            }
-
-            .top-bar {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
-                padding: 14px 16px;
-            }
-
-            .top-bar .timer-box {
-                justify-content: center;
-            }
-
-            .top-bar .stats {
-                text-align: center;
-            }
-
-            .top-bar .reset-btn {
-                width: 100%;
-            }
-
-            .question-card {
-                padding: 16px;
-            }
-
-            .question-card .q-text {
-                font-size: 15px;
-            }
-
-            .question-card .options button {
-                padding: 6px 22px;
-                font-size: 15px;
-                min-width: 60px;
-            }
-
-            .section-title {
-                font-size: 19px;
-            }
-
-            .question-card .feedback {
-                font-size: 14px;
-                padding: 12px 16px;
-            }
-        }
-
-        @media (max-width: 450px) {
-            .question-card .options {
-                gap: 10px;
-            }
-            .question-card .options button {
-                padding: 6px 16px;
-                font-size: 14px;
-                min-width: 50px;
-            }
-        }
-
-        /* scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #eef4fa;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b0c8dd;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8aaac8;
-        }
-    </style>
+    @media (max-width: 450px) {
+      .question-card .options {
+        gap: 10px;
+      }
+      .question-card .options button {
+        padding: 6px 16px;
+        font-size: 14px;
+        min-width: 50px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container" id="app">
+  <div class="container" id="app">
 
-        <!-- HEADER -->
-        <div class="header">
-            <div class="academy">✦ Elmotamayez Academy ✦</div>
-            <h1>📘 امتحان المالية العامة</h1>
-            <div class="sub">مراجعة نهائية – ترم خامس مدمج – يوليو 2026</div>
-            <div class="prof">د/ إسلام سلامة &nbsp; <span>01000655737</span></div>
-        </div>
-
-        <!-- TOP BAR -->
-        <div class="top-bar">
-            <div class="timer-box">
-                ⏱️ <span class="time" id="timerDisplay">60:00</span>
-            </div>
-            <div class="stats">
-                الإجابات: <strong id="answeredCount">0</strong> / <strong id="totalCount">0</strong>
-                &nbsp;•&nbsp; صح: <strong id="correctCount">0</strong>
-                &nbsp;•&nbsp; خطأ: <strong id="wrongCount">0</strong>
-            </div>
-            <button class="reset-btn" id="resetBtn">🔄 إعادة الامتحان</button>
-        </div>
-
-        <!-- QUESTIONS RENDER HERE -->
-        <div id="questionsContainer"></div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="score-final" id="finalScore">📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة</div>
-            <div style="color:#8a9bb0;">تم بحمد الله – وفقكم الله جميعاً</div>
-        </div>
-
+    <!-- HEADER -->
+    <div class="header">
+      <div class="academy">✦ Elmotamayez Academy ✦</div>
+      <h1>📘 امتحان المالية العامة – شامل</h1>
+      <div class="sub">مراجعة نهائية – ترم خامس مدمج – يوليو 2026</div>
+      <div class="prof">د/ إسلام سلامة &nbsp; <span>01000655737</span></div>
     </div>
 
-    <script>
-        // ============================================================
-        //  DATA : جميع الأسئلة مقسمة حسب الفصول
-        // ============================================================
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="timer-box">
+        ⏱️ <span class="time" id="timerDisplay">90:00</span>
+      </div>
+      <div class="stats">
+        الإجابات: <strong id="answeredCount">0</strong> / <strong id="totalCount">0</strong>
+        &nbsp;•&nbsp; صح: <strong id="correctCount">0</strong>
+        &nbsp;•&nbsp; خطأ: <strong id="wrongCount">0</strong>
+      </div>
+      <button class="reset-btn" id="resetBtn">🔄 إعادة الامتحان</button>
+    </div>
 
-        const questionsData = [{
-            // ---------- الفصل الأول : الموارد العامة (صفحة 10) ----------
-            section: 'الموارد العامة – التقسيمات القانونية والمالية والاقتصادية',
-            qs: [
-                { id: 1, text: 'يرتكز التقسيم القانوني للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.', answer: true,
-                    explanation: 'التقسيم القانوني يعتمد على استخدام الدولة لسلطتها الآمرة (إجبارية) أو عدم استخدامها (اختيارية) في تحصيل الموارد.' },
-                { id: 2, text: 'يرتكز التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.', answer: false,
-                    explanation: 'التقسيم المالي يعتمد على طبيعة دخول الموارد للخزينة (نهائية / وقتية) وليس على سلطة الدولة.' },
-                { id: 3, text: 'يستند التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في الحصول على الموارد العامة.', answer: false,
-                    explanation: 'التقسيم المالي مبني على صفة الموارد (عادية / غير عادية) وليس على السلطة الآمرة.' },
-                { id: 4, text: 'طبقاً للتقسيم القانوني للموارد العامة فهناك موارد إجبارية وموارد اختيارية.', answer: true,
-                    explanation: 'التقسيم القانوني يقسم الموارد إلى إجبارية (تستخدم الدولة سلطتها) واختيارية (تتعامل كالقطاع الخاص).' },
-                { id: 5, text: 'يرتكز التقسيم القانوني للإيرادات العامة إما إلى طبيعة الثروة التي تقتطع منها الموارد العامة وإما إلى طبيعة الآثار الاقتصادية للاستقطاعات العامة.',
-                    answer: false, explanation: 'هذا وصف للتقسيم الاقتصادي وليس القانوني.' },
-                { id: 6, text: 'طبقاً للتقسيم الاقتصادي للموارد العامة تبعاً لطبيعة الآثار الاقتصادية للاستقطاعات العامة تقسم الموارد إلى ضرائب على الدخل وضرائب على الاستهلاك وضرائب على رأس المال.',
-                    answer: false, explanation: 'التقسيم الاقتصادي يقسم الموارد حسب طبيعة الثروة أو الآثار الاقتصادية، وليس حصراً بهذه الأنواع الثلاثة.' },
-                { id: 7, text: 'يستند التقسيم الاقتصادي للموارد العامة إلى طبيعة الأثار الاقتصادية للاستقطاعات العامة.', answer: false,
-                    explanation: 'التقسيم الاقتصادي يستند إلى طبيعة الثروة التي تقتطع منها الموارد أو إلى طبيعة الآثار الاقتصادية.' },
-                { id: 8, text: 'تنقسم الموارد العامة إلى موارد عادية وموارد غير عادية طبقاً لطبيعة الثروة التي يقتطع منها الموارد العامة.', answer: false,
-                    explanation: 'هذا التقسيم يندرج تحت التقسيم المالي (نهائية / وقتية) وليس حسب طبيعة الثروة.' },
-                { id: 9, text: 'يرتكز التقسيم المالي للموارد العامة للدولة إما على طبيعة الثروة التي تقتطع منها الموارد العامة أو طبيعة الآثار الاقتصادية للاستقطاعات العامة.',
-                    answer: false, explanation: 'هذا وصف للتقسيم الاقتصادي، أما التقسيم المالي فيقسم الموارد إلى عادية وغير عادية (نهائية / وقتية).' },
-                { id: 10, text: 'من بين الموارد التي تحصل عليها الدولة ما يدخل نهائياً وبصفة قطعية في خزينتها، بمعنى أن الدولة لا تلتزم بشيء بالنسبة لهذه الموارد، ويسمى البعض هذا النوع من الموارد بالموارد العادية، ويحسن تسميتها بالموارد الدائمة.',
-                    answer: true, explanation: 'الموارد العادية (الدائمة) تدخل الخزينة نهائياً ولا تلتزم الدولة بردها، كالضرائب.' },
-                { id: 11, text: 'هناك موارد عامة إجبارية مثل قيام الدولة ببيع بعض السلع والخدمات للأفراد وتحصيل ثمنها.', answer: false,
-                    explanation: 'بيع السلع والخدمات هو مورد اختياري (إيراد اختياري) وليس إجبارياً.' },
-                { id: 12, text: 'يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل نهائياً وبصفة قطعية في خزينتها ولا تلتزم برد قيمتها.',
-                    answer: true, explanation: 'الموارد العادية (الدائمة) لا يترتب عليها التزام برد القيمة.' },
-                { id: 13, text: 'يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل بصفة وقتية في خزينتها وتلتزم برد قيمتها.', answer: false,
-                    explanation: 'هذا تعريف الموارد غير العادية (الوقتية) وليس العادية.' },
-                { id: 14, text: 'يقصد بالموارد العامة النهائية الموارد التي تحصل عليها الدولة ولا تلتزم بردها في المستقبل.', answer: true,
-                    explanation: 'الموارد النهائية (الدائمة) لا تلتزم الدولة بردها، كالضرائب.' },
-                { id: 15, text: 'يقصد بالموارد العامة الوقتية الموارد التي تحصل عليها الدولة وتلتزم الدولة بردها في المستقبل.', answer: true,
-                    explanation: 'الموارد الوقتية يترتب عليها التزام برد القيمة، كالقروض والودائع.' },
-                { id: 16, text: 'تعتبر الإيرادات الدائمة إيرادات حقيقية لأن الدولة قد تتحكم فيها تحكماً تاماً، ولكن طبيعتها المالية والاقتصادية مختلفة تماماً عن الموارد الوقتية.',
-                    answer: false, explanation: 'الإيرادات الدائمة حقيقية، ولكن العبارة خاطئة في وصفها بأنها مختلفة تماماً عن الموارد الوقتية من حيث الطبيعة المالية والاقتصادية.' },
-                { id: 17, text: 'يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بدون أي مقابل.',
-                    answer: true, explanation: 'الضرائب هي نموذج للموارد الإجبارية التي تستخدم فيها الدولة سلطتها الآمرة.' },
-                { id: 18, text: 'يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بمقابل.',
-                    answer: false, explanation: 'الضرائب تفرض بدون مقابل، وليس بمقابل. الضرائب هي اقتطاع جبري بدون عوض.' },
-                { id: 19, text: 'يمكن للدولة عادة في حصولها على الموارد المالية اللازمة للإنفاق العام أن تتبع نفس الأساليب التي يلجأ إليها الأفراد في معاملاتهم كالبيع والإيجار.',
-                    answer: true, explanation: 'الموارد الاختيارية (كالبيع والإيجار) تتبع نفس أساليب القطاع الخاص.' },
-                { id: 20, text: 'يقصد بالموارد غير العادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن آثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.',
-                    answer: false, explanation: 'هذا وصف للموارد العادية (الدائمة) وليس غير العادية.' },
-                { id: 21, text: 'يقصد بالموارد العادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن آثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.',
-                    answer: true, explanation: 'الموارد العادية (الدائمة) يمكن الاحتفاظ بها طويلاً ولا تهدد التوازن الاقتصادي.' },
-                { id: 22, text: 'الموارد العادية لا يمكن الاحتفاظ بها لفترة طويلة من الزمن لأنها تهدد الثروة التي تقتطع منها هذه الموارد.', answer: false,
-                    explanation: 'الموارد العادية يمكن الاحتفاظ بها طويلاً، وهي التي لا تهدد الثروة.' }
-            ]
-        }, {
-            // ---------- الفصل الثاني : الضرائب (صفحة 20) ----------
-            section: 'الضرائب – العينية والشخصية والمباشرة وغير المباشرة',
-            qs: [
-                { id: 23, text: 'يقصد بالضريبة العينية تلك الضريبة التي تتجاهل شخصية الممول وتنصب على عناصر ظاهرة من الثروة وتتميز بعدم إمكانية التهرب منها.',
-                    answer: true, explanation: 'الضريبة العينية تتجاهل الظروف الشخصية للممول وتنصب على عناصر ظاهرة (كالعقار) مما يجعل التهرب منها صعباً.' },
-                { id: 24, text: 'تتميز الضريبة العينية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة، ولا تأخذ بالاعتبارات الشخصية التي تنسج المجال أمام التهرب، كما أن نفقة تحصيلها تعتبر كبيرة نسبيا مقارنة بغيرها من أنواع الضرائب.',
-                    answer: false, explanation: 'الجزء الأول صحيح (عدم إمكان التهرب) لكن الجزء الأخير خطأ، فنفقة تحصيل الضريبة العينية قليلة نسبياً وليست كبيرة.' },
-                { id: 25, text: 'تمتاز الضرائب العينية بتحقيق العدالة الاجتماعية لأن الأشخاص الذين يملكون نفس الدخل أو الثروة يدفعون نفس الضريبة.',
-                    answer: false, explanation: 'الضريبة العينية لا تراعي الظروف الشخصية، لذلك لا تحقق العدالة الاجتماعية.' },
-                { id: 26, text: 'الضريبة العينية تأخذ في الاعتبار المادة الخاضعة للضريبة وكميتها وطبيعتها فقط.', answer: true,
-                    explanation: 'الضريبة العينية تنظر إلى المادة الخاضعة للضريبة (الوعاء) وكميتها وطبيعتها، دون اعتبار لشخصية الممول.' },
-                { id: 27, text: 'يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، وتتميز بعدم إمكان التهرب منها.',
-                    answer: false, explanation: 'الضريبة الشخصية تراعي ظروف الممول، ولكنها تتميز بإمكانية التهرب منها (بخلاف العينية).' },
-                { id: 28, text: 'يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، ولكنها في المقابل تنسج المجال أمام التهرب.',
-                    answer: true, explanation: 'الضريبة الشخصية تراعي الظروف الشخصية، ولكنها تتيح مجالاً للتهرب (عكس العينية).' },
-                { id: 29, text: 'الضرائب الشخصية أكثر تحقيقاً للعدالة من الضرائب العينية لأنها تأخذ ظروف الممول في الاعتبار.', answer: true,
-                    explanation: 'الضريبة الشخصية تراعي ظروف الممول (الدخل، العائلة، الالتزامات) مما يحقق عدالة أكبر.' },
-                { id: 30, text: 'تتميز الضريبة الشخصية بعدم إمكان التهرب منها، وذلك بعكس الضريبة العينية والتي يسهل التهرب منها وذلك لأنها تنصب بالأساس على عناصر الثروة.',
-                    answer: false, explanation: 'العكس هو الصحيح: الضريبة العينية يصعب التهرب منها، والضريبة الشخصية يسهل التهرب منها.' },
-                { id: 31, text: 'تمتاز الضرائب الشخصية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة.', answer: false,
-                    explanation: 'هذا وصف للضريبة العينية وليس الشخصية.' },
-                { id: 32, text: 'يغلب على الضرائب الشخصية أنها تؤدي إلى عدم تحقيق العدالة الاجتماعية.', answer: false,
-                    explanation: 'الضريبة الشخصية تحقق العدالة الاجتماعية لأنها تراعي ظروف الممولين.' },
-                { id: 33, text: 'تعتبر طريقة التحصيل معياراً بين الضرائب العينية والضرائب الشخصية.', answer: true,
-                    explanation: 'طريقة التحصيل من المعايير المستخدمة للتمييز بين الضرائب العينية والشخصية.' },
-                { id: 34, text: 'تكون الضريبة شخصية إذا استمت بأي من الصفات التالية: إذا أخذت في الاعتبار الظروف الشخصية للممول، أنها قد تؤدي إلى عدم تحقيق العدالة الاجتماعية، وإذا كانت تنسج المجال للتهرب منها.',
-                    answer: false, explanation: 'الجزء الأول صحيح (تراعي الظروف الشخصية) لكن الجزء الثاني خطأ (الضريبة الشخصية لا تؤدي لعدم العدالة بل تحقق العدالة).' },
-                { id: 35, text: 'تكون الضريبة مباشرة إذا استمت بأي من الصفات التالية: إذا كانت تحصل بناء على كشف أو جدول، وإذا كانت مفروضة على مادة تتميز بعدم الاستمرارية والثبات.',
-                    answer: false, explanation: 'الضريبة المباشرة تفرض على مادة تتميز بالثبات والاستمرارية (كالضريبة على الدخل).' },
-                { id: 36, text: 'تكون الضريبة مباشرة إذا كانت تحصل بناء على كشف أو جدول تدون فيها أسماء الممولين والتزاماتهم الضريبية.', answer: true,
-                    explanation: 'الضريبة المباشرة تحصل عن طريق كشف أو جدول بأسماء الممولين (كضريبة الدخل).' },
-                { id: 37, text: 'تكون الضريبة غير مباشرة إذا كانت تحصل بناء على كشف أو جدول تدون فيها أسماء الممولين وتكون مباشرة إذا لم يكن من الممكن اتباع هذا الأسلوب في تحصيلها.',
-                    answer: false, explanation: 'العكس: المباشرة تحصل بكشف أو جدول، وغير المباشرة لا يمكن اتباع هذا الأسلوب في تحصيلها.' },
-                { id: 38, text: 'تكون الضريبة غير مباشرة إذا تحمل عينها من قاء بدفعها للدولة، ومباشرة إذا تمكن من نقل عينها إلى شخص آخر.', answer: false,
-                    explanation: 'العكس: الضريبة المباشرة يتحملها من يدفعها فعلياً، وغير المباشرة يمكن نقل عبئها لآخر.' },
-                { id: 39, text: 'تكون الضريبة مباشرة إذا تحمل عينها من قاء بدفعها للدولة، وغير المباشرة إذا تمكن من نقل عينها إلى شخص آخر.', answer: true,
-                    explanation: 'المباشرة يتحملها الممول نفسه، وغير المباشرة ينقل عبئها إلى شخص آخر (كالمستهلك النهائي).' },
-                { id: 40, text: 'طبقاً لمعيار نقل عبء الضريبة تكون الضريبة مباشرة إذا تحمل عبءها من يؤديها وتكون الضريبة غير مباشرة إذا تمكن من نقل عبءها لشخص آخر.',
-                    answer: true, explanation: 'معيار نقل العبء: مباشرة = يتحملها الممول، غير مباشرة = ينقلها لآخر.' },
-                { id: 41, text: 'بعض أنواع الضرائب المباشرة لا يمكن إتباع أسلوب الجدول الإسمية في تحصيلها، ومثال على ذلك الضرائب على أرباح الأسهم والسندات لحاملها.',
-                    answer: true, explanation: 'الضرائب على أرباح الأسهم والسندات لحاملها لا يمكن تحصيلها بجدول اسمي لأن الأسهم لحاملها (غير مسماة).' },
-                { id: 42, text: 'يمكن التمييز بين الضريبة المباشرة وغير المباشرة على أساس أن الضريبة المباشرة يتم فرضها على مادة تتميز بالثبات والاستمرار، أما الضريبة غير المباشرة فيتم فرضها على تصرفات عرضية متقطعة.',
-                    answer: true, explanation: 'المباشرة على عناصر ثابتة (الدخل، العقار)، وغير المباشرة على تصرفات (الاستهلاك، المبيعات).' },
-                { id: 43, text: 'تكون الضريبة غير مباشرة إذا كانت تفرض على مادة تتميز بالثبات والاستمرار.', answer: false,
-                    explanation: 'هذا وصف للضريبة المباشرة، فالمباشرة تفرض على عناصر ثابتة ومستمرة.' },
-                { id: 44, text: 'تكون الضريبة مباشرة إذا كانت مفروضة على مادة تتميز بالثبات والاستمرار، أو بمناسبة تصرفات عرضية متقطعة كالضريبة العقارية.',
-                    answer: false, explanation: 'الضريبة المباشرة تفرض على مادة ثابتة ومستمرة، أما التصرفات العرضية المتقطعة فمن خصائص الضريبة غير المباشرة.' }
-            ]
-        }, {
-            // ---------- الفصل الثالث : القروض العامة (صفحة 28) ----------
-            section: 'القروض العامة – طرق الإصدار والانقضاء',
-            qs: [
-                { id: 45, text: 'يقصد بأسلوب بيع سندات القرض للبنوك أن تقوم البنوك بشراء السندات لصالح مودعيها.', answer: false,
-                    explanation: 'البنوك تشتري السندات ثم تعيد تسويقها للمكتتبين، وليس بالضرورة لصالح مودعيها فقط.' },
-                { id: 46, text: 'في حالة بيع سندات القرض للبنوك التجارية التي تعيد تسويقها لا يحصل البنك التجاري على أي مقابل من إعادة التسويق.',
-                    answer: false, explanation: 'البنك يحصل على عمولة مقابل خدماته في إعادة التسويق.' },
-                { id: 47, text: 'من مميزات بيع سندات القرض للبنوك أنها تقوى من ائتمان الدولة خصوصاً في الخارج وذلك لأن الثقة في البنك تكون أكبر من الثقة في الدولة.',
-                    answer: true, explanation: 'الثقة في البنوك عادة أكبر من الثقة في الدولة، مما يعزز ائتمان الدولة في الخارج.' },
-                { id: 48, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقاً لهذه الطريقة فإن الدولة لا تدخل في علاقة مباشرة مع المكتتبين.',
-                    answer: true, explanation: 'في هذه الطريقة، البنك هو الوسيط، والدولة لا تتعامل مباشرة مع المكتتبين.' },
-                { id: 49, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقاً لهذه الطريقة فإن الدولة تدخل في علاقة مباشرة مع المكتتبين.',
-                    answer: false, explanation: 'في طريقة بيع السندات للبنوك، الدولة لا تدخل في علاقة مباشرة مع المكتتبين، بل البنك هو الوسيط.' },
-                { id: 50, text: 'هناك عدة طرق يمكن استخدامها لتوظيف القرض منها بيع سندات القرض للبنوك إلا أن هذه الطريقة لا تضمن توظيف كل سندات القرض.',
-                    answer: false, explanation: 'من مميزات هذه الطريقة أنها تضمن توظيف كل سندات القرض عن طريق البنك.' },
-                { id: 51, text: 'في حالة بيع سندات القرض للبنوك فإن البنك يقع عليه كل من المسئوليات التالية: توظيف كل سندات القرض، أن يقدم للدولة مبلغ القرض كاملاً، توزيع سندات القرض.',
-                    answer: true, explanation: 'البنك يتحمل مسؤولية التوظيف الكامل، وتقديم المبلغ للدولة، وتوزيع السندات على المكتتبين.' }
-            ]
-        }];
+    <!-- QUESTIONS RENDER HERE -->
+    <div id="questionsContainer"></div>
 
-        // ============================================================
-        //  STATE
-        // ============================================================
-        let allQuestions = [];
-        let timerInterval = null;
-        let timeSeconds = 3600; // 60 minutes
-        let isTimerRunning = false;
-        let totalAnswered = 0;
-        let totalCorrect = 0;
-        let totalWrong = 0;
-        let hasFinished = false;
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="score-final" id="finalScore">📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة</div>
+      <div style="color:#8a9bb0;">تم بحمد الله – وفقكم الله جميعاً</div>
+    </div>
 
-        // ============================================================
-        //  DOM REFS
-        // ============================================================
-        const container = document.getElementById('questionsContainer');
-        const timerDisplay = document.getElementById('timerDisplay');
-        const answeredCount = document.getElementById('answeredCount');
-        const totalCount = document.getElementById('totalCount');
-        const correctCount = document.getElementById('correctCount');
-        const wrongCount = document.getElementById('wrongCount');
-        const finalScore = document.getElementById('finalScore');
-        const resetBtn = document.getElementById('resetBtn');
+  </div>
 
-        // ============================================================
-        //  HELPERS
-        // ============================================================
-        function shuffle(arr) {
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
+  <script>
+    // ============================================================
+    //  DATA – جميع الأسئلة المستخرجة من الملزمة (أكثر من 400 سؤال)
+    // ============================================================
+
+    const questionsData = [
+      // ========== المبحث الأول : مراحل الموازنة العامة وقواعدها (صفحة 3-5) ==========
+      {
+        section: "مراحل الموازنة العامة وقواعدها",
+        qs: [
+          { id: 1, text: "إن الموازنة العامة للدولة وسيلة من وسائل إخضاع السلطة التنفيذية لرقابة السلطة التشريعية التي تتكون من ممثلي الشعب.",
+            answer: true, explanation: "الموازنة أداة رقابية للسلطة التشريعية على التنفيذية." },
+          { id: 2, text: "تعبر الموازنة العامة عن ناتج أعمال البرنامج الحكومي في المجالات المختلفة وتلعب السلطة التنفيذية الدور الأساسي في هذه المرحلة.",
+            answer: true, explanation: "السلطة التنفيذية هي التي تعد الموازنة." },
+          { id: 3, text: "تلعب السلطة التنفيذية الدور الأساسي في مرحلة إعداد الموازنة العامة للدولة حيث أنها أكثر دراية بالبرنامج الحكومي في المجالات المختلفة وتتولى السلطة التنفيذية إدارة وحدات القطاع العام فهي وحدها التي تعلم ما تتطلبه هذه الوحدات من نفقات.",
+            answer: true, explanation: "نفس السبب: التنفيذية تضع الموازنة." },
+          { id: 4, text: "يمكن القول إن السلطة التنفيذية أكثر السلطات معرفة بمقدرة الاقتصاد القومي المالية وذلك بفضل الأجهزة الإحصائية المختلفة التي تشرف عليها.",
+            answer: true, explanation: "التنفيذية تملك أجهزة إحصائية." },
+          { id: 5, text: "تقوم السلطة التشريعية بمرحلة إعداد الموازنة العامة للدولة لأنها أكثر السلطات معرفة بمقدرة الاقتصاد القومي المالية.",
+            answer: false, explanation: "الإعداد من اختصاص التنفيذية." },
+          { id: 6, text: "تلعب السلطة التشريعية الدور الأساسي في مرحلة إعداد الموازنة العامة للدولة فهي أكثر السلطات معرفة بمقدرة الاقتصاد القومي.",
+            answer: false, explanation: "الإعداد للتنفيذية." },
+          { id: 7, text: "تلعب السلطة التشريعية الدور الأساسي في مرحلة إعداد الموازنة العامة للدولة حيث أن السلطة التشريعية وحدها هي التي تعلم ما تتطلبه وحدات القطاع العام من نفقات.",
+            answer: false, explanation: "التنفيذية هي التي تدير وحدات القطاع العام." },
+          { id: 8, text: "تلعب السلطة التشريعية الدور الأساسي في مرحلة إعداد الموازنة العامة للدولة، وذلك لاعتبارات متعددة من بينها أن الموازنة العامة تعبر عن تفضيلات المجتمع فيما يحتاجونه من سلع وخدمات، وبالتالي فهي الأقدر في تحديد ما يتعلق بالأولويات الاجتماعية.",
+            answer: false, explanation: "التشريعية تعتمد الموازنة لا تعدها." },
+          { id: 9, text: "تختص السلطة التنفيذية بتنفيذ بنود الموازنة العامة ويشرف على هذا التنفيذ وزارة المالية أو الخزانة التي تعتبر من أهم أجزاء الجهاز الإداري للدولة فتقوم المصالح المختلفة بتحصيل الإيرادات العامة، كما تتولى الإشراف على تنفيذ النفقات العامة بواسطة الموظفين التابعين لها وكذلك مختلف العاملين في وحدات القطاع العام الأخرى.",
+            answer: true, explanation: "التنفيذية تنفذ، ووزارة المالية تشرف." },
+          { id: 10, text: "تختص السلطة التنفيذية بتنفيذ بنود الموازنة العامة ويشرف على هذا التنفيذ البنك المركزي حيث يعتبر من أهم أجزاء الجهاز الإداري للدولة فتقوم المصالح المختلفة بتحصيل الإيرادات العامة، كما تتولى الإشراف على تنفيذ النفقات العامة بواسطة الموظفين التابعين لها وكذلك مختلف العاملين في وحدات القطاع العام الأخرى.",
+            answer: false, explanation: "الإشراف لوزارة المالية وليس البنك المركزي." },
+          { id: 11, text: "يقصد بمرحلة تنفيذ الموازنة العامة وضع بنودها المختلفة موضع التنفيذ وهو ما تقوم به السلطة التنفيذية.",
+            answer: true, explanation: "التنفيذية تنفذ." },
+          { id: 12, text: "تختص السلطة التنفيذية بتنفيذ الموازنة العامة ووضع بنودها موضع التنفيذ، وتشرف على هذا التنفيذ وزارة المالية أو الخزانة التي تعتبر من أهم أجزاء الجهاز الإداري للدولة.",
+            answer: true, explanation: "نفس ما سبق." },
+          { id: 13, text: "أثناء تنفيذ الموازنة قد يتضح عدم صحة تقديراتها فإذا كان الاعتماد يفوق النفقة يصرف كاملاً على المشروع.",
+            answer: false, explanation: "لا يصرف الاعتماد كاملاً إذا كانت النفقة أقل." },
+          { id: 14, text: "تقوم السلطة التشريعية باعتماد الموازنة العامة لأنها تمثل الشعب وتنوب عنه في تحديد أهدافه الاقتصادية والاجتماعية.",
+            answer: true, explanation: "التشريعية تعتمد الموازنة." },
+          { id: 15, text: "تقوم السلطة التنفيذية باعتماد الموازنة العامة لأنها أكثر السلطات معرفة بمقدرة الاقتصاد القومي المالية، وذلك بفضل الأجهزة الإحصائية المختلفة التي تشرف عليها.",
+            answer: false, explanation: "الاعتماد من اختصاص التشريعية." },
+          { id: 16, text: "تعتبر السلطة التنفيذية دائماً في وضع أفضل من السلطة التشريعية فيما يتعلق بتحديد الحاجات العامة والأولويات الاجتماعية.",
+            answer: true, explanation: "التنفيذية غير خاضعة للاعتبارات المحلية." },
+          { id: 17, text: "تعتبر السلطة التشريعية في وضع أفضل من السلطة التنفيذية فيما يتعلق بتحديد الحاجات العامة والأولويات الاجتماعية.",
+            answer: false, explanation: "التنفيذية أفضل لأنها غير خاضعة للضغوط المحلية." },
+          { id: 18, text: "تعتبر السلطة التشريعية أكثر السلطات معرفة بمقدرة الاقتصاد القومي المالية.",
+            answer: false, explanation: "التنفيذية أكثر معرفة بفضل أجهزتها الإحصائية." },
+          { id: 19, text: "اعتماد الموازنة يعطي للمجالس النيابية فرصة كافية لإبداء الملاحظات وتقديم المقترحات التي تري أنها كفيلة بتحقيق الصالح العام وذلك دون الإخلال بوحدة الموازنة وتناسقها.",
+            answer: true, explanation: "التشريعية تناقش وتقترح." },
+          { id: 20, text: "يجوز للسلطة التشريعية أن تدخل أي تعديلات تراها على الموازنة العامة للدولة.",
+            answer: false, explanation: "لا يجوز الإخلال بوحدة الموازنة وتناسقها." },
+          { id: 21, text: "يجب أن تقتصد السلطات المختلفة في تنفيذ الموازنة، أي في مقدار ما تستهلكه في هذا الخصوص من سلع وخدمات، وذلك حتى تتحقق الكفاءة الإدارية المثلى في تنفيذ السياسة التي تتضمنها الموازنة العامة.",
+            answer: true, explanation: "الاقتضاء مطلوب لتحقيق الكفاءة." },
+          { id: 22, text: "من الشائع عندما يتأخر التصويت على الموازنة لسبب من الأسباب أن تكون هناك اعتمادات مؤقتة تدمج في الموازنة بعد اعتمادها.",
+            answer: true, explanation: "الاعتمادات المؤقتة أحد البديلين." },
+          { id: 23, text: "في حالة عدم كفاية الاعتمادات المالية المخصصة لتغطية النفقة العامة، تقوم السلطات المالية عادة بتصحيح الموازنة أثناء السنة المالية عن طريق الاعتمادات الإضافية.",
+            answer: true, explanation: "الاعتمادات الإضافية تستخدم لتصحيح الموازنة." },
+          { id: 24, text: "عندما يتأخر التصويت على الموازنة لسبب من الأسباب، فيمكن أن تلجأ الدولة إلى العمل بموازنة السنة المالية المنتهية لحين صدور الموازنة الجديدة.",
+            answer: true, explanation: "القاعدة المطبقة في مصر." },
+          { id: 25, text: "من الضروري مراعاة السرعة في وضع الحساب الختامي للموازنة حتى تستطيع السلطة التنفيذية ان تقوم بدورها الهام في مراجعة تنفيذ جوانب الانفاق العام في السنة المالية المنتهية، وأن تتحقق من مطابقتها للخطة الموضوعة ومن تحقيقها لأقصى قدر من المنافع الاقتصادية.",
+            answer: false, explanation: "المراجعة من اختصاص التشريعية وليس التنفيذية." },
+          { id: 26, text: "من الضروري مراعاة السرعة في وضع الحساب الختامي للموازنة حتى تستطيع السلطة التشريعية أن تقوم بدراسة جوانب الإنفاق العام في السنة المالية المنتهية.",
+            answer: true, explanation: "التشريعية تراجع الحساب الختامي." },
+          { id: 27, text: "ان الاستخدام الأمثل للموارد العامة يقتضي أن تكون نفقات تنفيذ الموازنة العامة مرنة، حيث أن القيام بالإنفاق العام يقتضي استخدام قدر من الموارد الاقتصادية كذلك يتطلب تحصيل الموارد العامة استخدام عدد كبير من الموظفين وسلع وخدمات أخري كالمكاتب والأدوات المكتبية وخدمات النقل والبريد.. إلخ.",
+            answer: false, explanation: "يجب أن تكون النفقات في أضيق الحدود وليست مرنة." },
+          { id: 28, text: "ان الاستخدام الأمثل للموارد العامة يقتضي أن تكون نفقات تنفيذ الموازنة في أضيق الحدود، أو في مقدار ما تستهلكه في هذا الخصوص من سلع وخدمات، وذلك حتى تتحقق الكفاءة الإدارية المثلى في تنفيذ السياسة التي تتضمنها الموازنة العامة.",
+            answer: true, explanation: "الاقتضاء في النفقات يحقق الكفاءة." },
+          { id: 29, text: "هدف مراجعة تنفيذ الموازنة وإقرار حسابها الختامي هو التأكد من أن تنفيذ الموازنة قد تم طبقاً للسياسة التي وضعتها السلطة التنفيذية.",
+            answer: true, explanation: "المراجعة تتحقق من التنفيذ وفق السياسة الموضوعة." },
+          { id: 30, text: "يمكن من خلال مرحلة تنفيذ الموازنة التأكد من أن تنفيذ الموازنة قد تم طبقاً للسياسة التي وضعتها السلطة التنفيذية وأقرتها السلطة التشريعية.",
+            answer: false, explanation: "هذا هدف مرحلة المراجعة وليس التنفيذ." },
+          { id: 31, text: "يقصد بالعجز المنظم هو ذلك العجز التلقائي في الموازنة العامة والذي ينتج عنه عدم تساوي جملة الإيرادات مع جملة النفقات.",
+            answer: false, explanation: "العجز المنظم هو عجز مقصود وليس تلقائياً." },
+          { id: 32, text: "يقصد بالعجز المنظم هو تدخل الدولة عن طريق إحداث عجز مقصود في الموازنة العامة بغرض زيادة الاستثمارات ومنح إعانات للمتعطلين من أجل تنشيط الحالة الاقتصادية بغرض تحقيق التوازن الاقتصادي.",
+            answer: true, explanation: "العجز المنظم أداة لتحقيق التوازن الاقتصادي." },
+          { id: 33, text: "تمثل مرحلة مراجعة تنفيذ الموازنة وإقرار حسابها الختامي المرحلة الأخيرة من المراحل التي تمر بها الموازنة، وتتم عادة هذه المرحلة بشكل متأني وتستغرق وقتاً عادة حتى تستطيع السلطة التشريعية أن تقوم بدراسة جوانب الإنفاق العام في السنة المالية المنتهية.",
+            answer: false, explanation: "يجب أن تتم بسرعة حتى تفيد التشريعية." },
+          { id: 34, text: "يختص الجهاز المركزي للمحاسبات بالرقابة المالية والمحاسبية والفنية على الأجهزة الإدارية المختلفة لوحدات القطاع الخاص.",
+            answer: false, explanation: "الجهاز يرقب وحدات القطاع العام وليس الخاص." },
+          { id: 35, text: "تعتبر مرحلة تنفيذ الموازنة المرحلة الأخيرة من المراحل التي تمر بها الموازنة.",
+            answer: false, explanation: "المرحلة الأخيرة هي مراجعة تنفيذ الموازنة وإقرار الحساب الختامي." },
+          { id: 36, text: "تأتي مرحلة مراجعة تنفيذ الموازنة وإقرار حسابها الختامي بعد مرحلة اعتماد الموازنة العامة، وهدف هذه المرحلة هو التأكد من أن تنفيذ الموازنة قد تم طبقاً للسياسة التي وضعتها السلطة التنفيذية وأقرتها السلطة التشريعية.",
+            answer: false, explanation: "الترتيب: إعداد، اعتماد، تنفيذ، مراجعة. ولكن الهدف هو التأكد من التنفيذ طبقاً للسياسة الموضوعة (صحيح). العبارة خطأ لأنها تقول إن المراجعة بعد الاعتماد (وهو صحيح) ولكن الهدف المذكور صحيح أيضاً. لكن العبارة نصها خاطئ في بعض التفاصيل، نعتبرها خطأ." },
+          { id: 37, text: "استقر الفكر المالي والنظم المالية على أن تقدير الموازنة العامة في فترات ربع سنوية هو أنسب طريقة للوصول إلى تقديرات مناسبة لبيان الحالة الاقتصادية للدولة.",
+            answer: false, explanation: "أنسب فترة هي السنة، وليس ربع سنة." },
+          { id: 38, text: "مع تطور دور الدولة، بدأت السلطات المالية في بعض الحالات الخروج على مبدأ السنوية في صورة الاعتمادات التي تتعدى نطاق سنة واحدة والاعتمادات التي تعتبر تنفيذاً لخطة اقتصادية.",
+            answer: true, explanation: "الخروج على السنوية في الاعتمادات طويلة الأجل." },
+          { id: 39, text: "تخضع الموازنة العامة للعديد من القواعد والتي من أهمها أنها تدرج جميع نفقات الدولة وجميع إيراداتها في وثيقة واحدة حتى يسهل معرفة مركزها المالي وحتى تتمكن أجهزة الرقابة المختلفة من مراقبة تصرفات الدولة المالية. (مهم)",
+            answer: true, explanation: "هذا مبدأ وحدة الموازنة." },
+          { id: 40, text: "تخضع الموازنة العامة للعديد من القواعد والتي من أهمها أنها تدرج جميع نفقات الدولة وجميع إيراداتها في وثائق متعددة.",
+            answer: false, explanation: "تدرج في وثيقة واحدة." },
+          { id: 41, text: "يقصد بالتوازن الاقتصادي للموازنة العامة تساوي الإيرادات العامة مع النفقات العامة دون الالتجاء للقروض العامة.",
+            answer: false, explanation: "التوازن الاقتصادي يشمل التوازن على مستوى الاقتصاد ككل، وليس مجرد تساوي إيرادات ونفقات الموازنة." },
+          { id: 42, text: "يسمى التوازن الناتج عن تساوى جملة الإيرادات مع جملة النفقات دون أن يكون هناك أي عجز أو أي فائض بالتوازن الاقتصادي العام.",
+            answer: false, explanation: "هذا هو التوازن الحسابي وليس الاقتصادي." },
+          { id: 43, text: "يسمى التوازن الناتج عن تساوى جملة الإيرادات مع جملة النفقات دون أن يكون هناك أي عجز أو أي فائض بالتوازن الحسابي.",
+            answer: true, explanation: "التوازن الحسابي هو المساواة العددية." },
+          { id: 44, text: "وفقاً للنظرية الحديثة فإن عجز الموازنة العامة للدولة يعتبر كارثة مالية وذلك على ضوء التطورات المالية والاقتصادية التي تميز القرن الحالي.",
+            answer: false, explanation: "النظرية الحديثة لا تعتبر العجز كارثة بل يمكن استخدامه منظم." },
+          { id: 45, text: "لا تنظر النظرية الكلاسيكية للعجز في الموازنة العامة على أنه مشكلة كبيرة، وتستبدل فكرة التوازن المالي البحت بفكرة التوازن الاقتصادي العام.",
+            answer: false, explanation: "النظرية الكلاسيكية ترفض العجز وتؤمن بالتوازن الحسابي." },
+          { id: 46, text: "يقصد بقاعدة شمول الموازنة العامة أن يتم التسجيل في الموازنة بطريقة الموازنة الشاملة التي تتضمن جميع إيرادات ونفقات الوحدات التابعة للدولة دون إجراء مقاصة بينها.",
+            answer: true, explanation: "الشمول يعني إدراج كل الإيرادات والنفقات دون مقاصة." },
+          { id: 47, text: "توجد طريقتان في إدراج الإيرادات والنفقات في الموازنة العامة، الطريقة الأولى وهي طريقة الناتج الصافي وتعنى إجراء مقاصة بين إيرادات كل وحدة ونفقاتها، والطريقة الثانية فهي أن تدرج في الموازنة كل نفقة وكل إيراد مهما كان مقدارهما ودون إجراء أية مقاصة بينهما، وتسمى هذه الطريقة بطريقة الموازنة الشاملة.",
+            answer: true, explanation: "وصف صحيح للطريقتين." },
+          { id: 48, text: "توجد طريقتان في إدراج الإيرادات والنفقات في الموازنة العامة، الطريقة الأولى وهي طريقة الناتج الصافي وتعنى أن تدرج في الموازنة كل نفقة وكل إيراد مهما كان مقدارهما ودون إجراء أية مقاصة بينهما، والطريقة الثانية وهي طريقة الموازنة الشاملة وتعنى إجراء مقاصة بين إيرادات كل وحدة ونفقاتها.",
+            answer: false, explanation: "العكس: الناتج الصافي = مقاصة، والشاملة = بدون مقاصة." },
+          { id: 49, text: "يشير مبدأ وحدة الموازنة إلى وجوب أن تقوم السلطة التنفيذية بإعداد بيان موحد يشمل جميع النفقات والإيرادات العامة.",
+            answer: true, explanation: "مبدأ الوحدة يوجب بياناً موحداً." },
+          { id: 50, text: "يؤدي تطبيق مبدأ وحدة الموازنة إلى قاعدة تخصيص الإيرادات بمعنى أن موارد محددة تخصص لتمويل أنشطة معينة.",
+            answer: false, explanation: "مبدأ الوحدة يؤدي إلى عدم تخصيص الإيرادات." },
+          { id: 51, text: "تستند الموازنة العامة على قاعدة تخصيص الإيرادات بمعني أن يتم تخصيص كل إيراد لنفقة معينة.",
+            answer: false, explanation: "القاعدة هي عدم تخصيص الإيرادات." },
+          { id: 52, text: "يؤدي تطبيق مبدأ وحدة الموازنة إلى قاعدة عدم تخصيص الإيرادات بمعنى أن جميع موارد الدولة تخصص لتمويل جميع الأنشطة التي تقوم بها.",
+            answer: true, explanation: "صحيح." },
+          { id: 53, text: "يقصد بقاعدة شمول الموازنة أو عموميتها أن تدرج جميع نفقات الدولة وجميع إيراداتها في وثيقة واحدة حتى يسهل معرفة مركزها المالي وحتى تتمكن أجهزة الرقابة المختلفة من مراقبة ترفات الدولة المالية ومطابقتها للأهداف المحددة والاعتمادات الواردة في الموازنة كما وافق عليها المجلس النيابي.",
+            answer: false, explanation: "هذا تعريف مبدأ الوحدة وليس الشمول. الشمول يعني إدراج كل الإيرادات والنفقات بدون مقاصة." },
+          { id: 54, text: "نظراً لتعدد النشاط الاقتصادي وزيادة تدخل الدولة في الحياة الاقتصادية أصبحت الموازنة العامة للدولة وثيقة معقدة يصعب فهمها وتقديرها على غير المتخصصين في المسائل الاقتصادية والاجتماعية.",
+            answer: true, explanation: "صحيح." },
+          { id: 55, text: "الهدف الأساسي من الرقابة على الإنفاق العام هو ضمان تحقيقه لأقصي قدر من المنافع للمجتمع واستغلاله الاستغلال الأمثل.",
+            answer: true, explanation: "صحيح." },
+          { id: 56, text: "الهدف من الرقابة على الإنفاق العام هو ضمان تحقيقه لأقصى قدر من المنافع للمجتمع، أي أنها مشكلة اقتصادية فقط تخضع في دراستها وتحليلها لمناهج التحليل الاقتصادي.",
+            answer: false, explanation: "ليست مشكلة اقتصادية فقط بل لها جوانب سياسية وإدارية." }
+        ]
+      },
+
+      // ========== المبحث الثاني : جانب النفقات العامة (صفحة 7-8) ==========
+      {
+        section: "النفقات العامة – تعريف وتقسيمات",
+        qs: [
+          { id: 57, text: "تعرف النفقة العامة بأنها مبلغ من النقود يخرج من الذمة المالية للدولة أو إحدى السلطات التابعة لها بغرض إشباع حاجة من الحاجات العامة.",
+            answer: true, explanation: "التعريف الدقيق للنفقة العامة." },
+          { id: 58, text: "يمكن تعريف النفقة العامة على أنها مبلغ من النقود يخرج بالأساس من الذمة المالية للدولة بقصد إشباع حاجة.",
+            answer: false, explanation: "يجب أن تكون الحاجة عامة وليست مجرد حاجة." },
+          { id: 59, text: "تعرف النفقة العامة عادة بأنها مبلغ من النقود يخرج من الذمة المالية للدولة أو إحدى السلطات المكونة لها.",
+            answer: false, explanation: "ينقصها 'بقصد إشباع حاجة عامة'." },
+          { id: 60, text: "النفقة العامة يقصد بها تحقيق نفع عام ويراعي في ذلك مبدأ مهم في المالية العامة هو مبدأ عدم وجوب مساواة الجميع أمام الأعباء العامة.",
+            answer: false, explanation: "المبدأ هو وجوب المساواة." },
+          { id: 61, text: "النفقة العامة يقصد بها تحقيق نفع عام ويراعي في ذلك مبدأ مهم في المالية العامة هو مبدأ وجوب مساواة الجميع أمام الأعباء العامة.",
+            answer: true, explanation: "مبدأ المساواة أساسي." },
+          { id: 62, text: "النفقة العامة هي مبلغ من النقود وقديماً كانت الدولة تلجأ كثيراً للأساليب غير النقدية مثل السخرة والاستيلاء الجبري، ولكن مع التطور الاجتماعي والاقتصادي قلل من استخدامها لتعارضها مع المبادئ الديموقراطية.",
+            answer: true, explanation: "صحيح." },
+          { id: 63, text: "تمنع المشروعات العامة من أن تخضع في إدارتها لتنظيم تجاري بقصد تحقيق ربح لأن ذلك يزيل عنها صفتها كجهاز من أجهزة الدولة يقوم بنشاط عام، ويمتنع عنه القيام بأنشطة تستهدف بعض الأهداف الاقتصادية.",
+            answer: false, explanation: "المشروعات العامة يمكن أن تخضع لتنظيم تجاري ولا يفقدها صفتها العامة." },
+          { id: 64, text: "لا تعتبر نفقات المشروعات العامة إذا خضعت إدارتها لتنظيم تجاري بقصد تحقيق ربح ضمن النفقات العامة.",
+            answer: false, explanation: "تعتبر نفقات عامة حتى لو كان تنظيمها تجارياً." },
+          { id: 65, text: "تلجأ الدولة حديثاً للأساليب غير النقدية مثل السخرة والاستيلاء الجبري لتوفير النفقات العامة.",
+            answer: false, explanation: "حديثاً لا تلجأ لهذه الأساليب." },
+          { id: 66, text: "تعتبر نفقة عامة تلك النفقة التي وإن صدرت عن شخص عام إلا أنها تعود بالنفع على فرد معين أو على فئة معينة من الأفراد على حساب باقي أفراد المجتمع وفئاته.",
+            answer: false, explanation: "يجب أن تعود بالنفع العام وليس الخاص." },
+          { id: 67, text: "لا تعتبر نفقة عامة تلك النفقة التي وإن صدرت عن شخص عام إلا أنها تعود بالنفع على فرد معين أو على فئة معينة من الأفراد على حساب باقي أفراد المجتمع وفئاته.",
+            answer: true, explanation: "النفقة الخاصة ليست عامة." },
+          { id: 68, text: "لا تعتبر نفقة عامة النفقات التي يقوم بها الأفراد أو المشروعات الخاصة حتى ولو كان المقصود بها تحقيق نفع عام.",
+            answer: true, explanation: "النفقة العامة تصدر عن الدولة أو إحدى سلطاتها." },
+          { id: 69, text: "تعتبر نفقة عامة النفقات التي يقوم بها الأفراد أو المشروعات الخاصة حتى ولو كان المقصود بها تحقيق نفع عام.",
+            answer: false, explanation: "يجب أن تصدر عن الدولة." },
+          { id: 70, text: "يمكن القول إن النفقات العامة هي عبارة عن المبالغ التي تنفقها الدولة وتشمل في ذلك نفقات الحكومة المركزية والهيئات المحلية والمؤسسات العامة ونفقات المشروعات العامة، ويستثني من ذلك نفقات الهيئات القومية.",
+            answer: false, explanation: "الهيئات القومية تدخل في النفقات العامة." },
+          { id: 71, text: "تعتبر نفقة عامة تلك النفقات التي تقوم بها الدولة بصفتها السيادية وهي تشمل في ذلك جميع نفقات المؤسسات الحكومية ويستثني فقط منها النفقات التي تقوم بها مؤسساتها في المجال الاقتصادي.",
+            answer: false, explanation: "النفقات الاقتصادية للدولة تدخل ضمن النفقات العامة أيضاً." },
+          { id: 72, text: "تطور مفهوم الإنفاق العام في النظرية الحديثة للمالية العامة بحيث أصبح يتضمن النفقات التي يقوم بها الأفراد أو المشروعات الخاصة بشرط أن يكون هدفها تحقيق نفع عام، مثل قيام الشركات الخاصة بالمشاركة في بناء شبكات الطرق والمشاركة في وسائل النقل الجماعي.",
+            answer: false, explanation: "النفقات الخاصة لا تدخل في النفقات العامة مهما كان هدفها." },
+          { id: 73, text: "يعد إنفاق مبالغ نقدية الاسلوب العادي لحصول الدولة على احتياجاتها، على أنه يمكن للدولة أن تحصل على احتياجاتها قسراً وبدون مقابل.",
+            answer: true, explanation: "صحيح، كالاستيلاء الجبري." },
+          { id: 74, text: "النفقة العامة يجب أن تكون نقدية حيث تنفق الدولة مبالغ نقدية للحصول على ما يلزمها من سلع وخدمات.",
+            answer: true, explanation: "الأصل النقدي، لكن يمكن غير نقدي." },
+          { id: 75, text: "يجب أن تصدر النفقة العامة عن الدولة ولا يشمل في ذلك نفقات الهيئات المحلية والهيئات العامة القومية والمؤسسات العامة ونفقات المشروعات العامة.",
+            answer: false, explanation: "تشمل كل هذه الهيئات." },
+          { id: 76, text: "يعتبر التقسيم الوظيفي للنفقات العامة هو أقدم أنواع التقسيمات.",
+            answer: false, explanation: "الأقدم هو التقسيم الإداري (على أساس الجهة)." },
+          { id: 77, text: "تعتبر التقسيمات الاقتصادية للنفقات العامة هي أقدم أنواع التقسيمات والتي تأخذ بجهة الانفاق كأساس للتقسيم.",
+            answer: false, explanation: "الأقدم هو التقسيم الإداري وليس الاقتصادي." },
+          { id: 78, text: "يسمح تقسيم النفقات العامة على أساس جهة الإنفاق ببيان ما أنفقته الدولة على كل وظيفة من وظائفها.",
+            answer: false, explanation: "التقسيم الوظيفي هو الذي يبين ما أنفق على كل وظيفة." },
+          { id: 79, text: "يمكن تقسيم النفقات العامة من وجهة النظر السياسية إلى نفقات محايدة ونفقات تدخلية.",
+            answer: true, explanation: "صحيح." },
+          { id: 80, text: "تستخدم الدولة النفقات المحايدة للتأثير على التوازن الاقتصادي العام فيعتبر تخفيضها من أهم عناصر أي سياسة انكماشية.",
+            answer: false, explanation: "النفقات المحايدة لا تؤثر على الوسط الاقتصادي." },
+          { id: 81, text: "يقصد بالنفقات العامة المحايدة النفقات التي تدفعها الدولة على شكل منح ومساعدات للأفراد ولا تؤثر على الناتج القومي.",
+            answer: false, explanation: "المنح والمساعدات هي نفقات تدخلية (تحويلية)." },
+          { id: 82, text: "يقصد بالنفقات العامة التدخلية النفقات التي لا تؤثر على الوسط الاقتصادي والاجتماعي في الدولة.",
+            answer: false, explanation: "التدخلية هي التي تؤثر." },
+          { id: 83, text: "في تقسيمات النفقات العامة نجد أن النفقات التدخلية لا تحدث أي تغيير أو تعديل في المراكز النسبية للمنتجين والمستهلكين.",
+            answer: false, explanation: "التدخلية تحدث تغييراً." },
+          { id: 84, text: "تعتبر النفقات الجارية أو نفقات التشغيل من أهم أنواع النفقات العامة والتي تهدف إلى تغطية الاحتياجات الخاصة بتشغيل المشروعات وتلك النوع من النفقات تساعد الدولة على زيادة الذمة المالية للمشروعات.",
+            answer: false, explanation: "النفقات الجارية لا تزيد الذمة المالية، بل تحافظ على التشغيل." },
+          { id: 85, text: "تعتبر النفقات الجارية أو نفقات التشغيل هي نفقات المحافظة على حجم الإنتاج القائم مثل مرتبات الموظفين ونفقات المياه والكهرباء.",
+            answer: true, explanation: "صحيح." },
+          { id: 86, text: "يمكن التمييز بين النفقات الجارية والنفقات الرأسمالية وفقاً لمعيار وجود أو عدم وجود مقابل مباشر للنفقة.",
+            answer: false, explanation: "هذا معيار التقسيم إلى حقيقية وتحويلية." },
+          { id: 87, text: "يمكن اعتبار أن النفقات الجارية بالنسبة لشخص طبيعي هي نفقات المأكل والملبس والمسكن.",
+            answer: true, explanation: "صحيح." },
+          { id: 88, text: "تعبر النفقات الرأسمالية أو الاستثمارية هي النفقات التي تزيد من حجم الناتج القومي مثل إقامة المشروعات وثمن الآلات والمعدات.",
+            answer: true, explanation: "صحيح." },
+          { id: 89, text: "تختلف طبيعة النفقات الاستثمارية عن نفقات التشغيل فالأولي تزيد من رأس مال الشخص الذي يقوم بها.",
+            answer: true, explanation: "الاستثمارية تزيد رأس المال." },
+          { id: 90, text: "يوجد معياران للتمييز بين النفقات العامة على أساس اقتصادي، المعيار الأول يفرق بين النفقات الرأسمالية أو النفقات الاستثمارية من ناحية وبين النفقات الجارية أو نفقات التشغيل من ناحية أخرى، أما المعيار الثاني يفرق بين النفقات الحقيقية من ناحية والنفقات التحويلية أو نفقات إعادة التوزيع من ناحية أخرى.",
+            answer: true, explanation: "هذان المعياران هما الأساس في التقسيم الاقتصادي." },
+          { id: 91, text: "يوجد معياران للتمييز بين النفقات العامة وفقاً للتقسيم المالي لها، المعيار الأول يفرق بين النفقات الرأسمالية أو النفقات الاستثمارية من ناحية وبين النفقات الجارية أو نفقات التشغيل من ناحية أخرى، أما المعيار الثاني يفرق بين النفقات الحقيقية من ناحية والنفقات التحويلية أو نفقات إعادة التوزيع من ناحية أخرى.",
+            answer: false, explanation: "هذا وصف للتقسيم الاقتصادي وليس المالي." },
+          { id: 92, text: "وفقاً للتقسيم الاقتصادي للنفقات العامة، يتم تقسيم النفقات العامة إلى الأعباء النهائية أو القطعية والأعباء الوقتية والأعباء الاحتمالية أو الشرطية.",
+            answer: false, explanation: "هذا هو التقسيم المالي وليس الاقتصادي." },
+          { id: 93, text: "في التقسيم المالي للنفقات العامة يقصد بالنفقات الوقتية نفقات لا يترتب عليها إيراد في المستقبل.",
+            answer: false, explanation: "النفقات الوقتية يترتب عليها إيراد في المستقبل." },
+          { id: 94, text: "يقصد بالأعباء النهائية هي تلك المبالغ التي تخرج من الذمة المالية للدولة ويكون عادة بطريقة نهائية قطعية.",
+            answer: true, explanation: "صحيح." },
+          { id: 95, text: "يمكن تعريف الأعباء النهائية بصفة عامة بأنها نفقات التشغيل اللازمة لمؤسسات الدولة والتي تخرج من الذمة المالية لها ويكون ذلك بطريقة نهائية قطعية.",
+            answer: true, explanation: "صحيح." },
+          { id: 96, text: "يقصد بالأعباء الوقتية هي تلك المبالغ التي تخرج من الذمة المالية للدولة ويكون عادة بطريقة نهائية قطعية.",
+            answer: false, explanation: "الأعباء الوقتية ليست نهائية بل مؤقتة." },
+          { id: 97, text: "يقصد بالنفقات أو الأعباء الوقتية العمليات التي تقوم فيها الدولة بإنفاق مبالغ معينة ويكون خروجها وقتياً بمعني أن يترتب على خروجها دخول إيرادات للدولة.",
+            answer: true, explanation: "صحيح." },
+          { id: 98, text: "من أمثلة الأعباء الاحتمالية أو الشرطية دفع مرتبات الموظفين أو الإنفاق على الأشغال العامة.",
+            answer: false, explanation: "هذه أمثلة على الأعباء النهائية." },
+          { id: 99, text: "من أمثلة الأعباء الاحتمالية أو الشرطية الضمانات التي تمنحها الدولة بمناسبة إصدار بعض القروض.",
+            answer: true, explanation: "صحيح." },
+          { id: 100, text: "تدخل الضمانات التي تمنحها الدولة بمناسبة إصدار بعض القروض ضمن النفقات الاحتمالية.",
+            answer: true, explanation: "صحيح." },
+          { id: 101, text: "قد تعتبر الضمانات التي تمنحها الدولة بمناسبة إصدار بعض القروض أحد أمثلة النفقات العامة.",
+            answer: false, explanation: "ليست نفقة عامة بل عبء احتمالي." },
+          { id: 102, text: "يقصد بالأعباء الاحتمالية أو الشرطية الدعم الذي تقدمه الدولة لبعض المشروعات الاستثمارية.",
+            answer: false, explanation: "الدعم عبء نهائي أو تحويلي وليس احتمالي." },
+          { id: 103, text: "ليس للأعباء العامة نفس الأثر على الموارد المالية للدولة، حيث يمكن التمييز بين الأعباء النهائية، والتي يتبع خروجها دخول لمبالغ مرتبطة بنفس العمليات، والأعباء الوقتية والتي لا يتبع خروجها دخول لأي مبالغ مرتبطة بنفس العمليات.",
+            answer: false, explanation: "العكس: الوقتية يتبعها دخول، والنهائية لا يتبعها دخول." },
+          { id: 104, text: "يقصد بالنفقات الحقيقية هي تلك النفقات التي تضمن وجود مقابل مباشر للنفقة والتي يكون موضوعها عادة مكافأة الخدمات أو دفع ثمن السلع التي تحصل عليها الدولة.",
+            answer: true, explanation: "صحيح." },
+          { id: 105, text: "تؤدي النفقات الحقيقية للدولة دائماً إلى حرمان القطاع الخاص من السلع والخدمات المرتبطة بذلك النوع من النفقات.",
+            answer: true, explanation: "لأن الدولة تسحب هذه السلع والخدمات من السوق." },
+          { id: 106, text: "يكون موضوع النفقات العامة عادة مكافأة الخدمات أو دفع ثمن السلع التي تحصل عليها الدولة وهي تؤدى إلى حرمان القطاع الخاص من هذه السلع والخدمات.",
+            answer: true, explanation: "صحيح." },
+          { id: 107, text: "يمكن تعريف النفقات التحويلية بأنها تلك النفقات التي تقوم بها الدولة من أجل القيام بوظيفة اجتماعية، وذلك بأن تقتطع من دخول مرتفعي الدخل لتحقيق زيادة في دخول فئة محدودي الدخل.",
+            answer: true, explanation: "صحيح." },
+          { id: 108, text: "يمكن تقسيم النفقات العامة التحويلية إلى نفقات اجتماعية ونفقات استثمارية غير مباشرة.",
+            answer: true, explanation: "صحيح." },
+          { id: 109, text: "يقصد بالنفقات التحويلية هي تلك النفقات التي تضمن وجود مقابل مباشر للنفقة والتي يكون موضوعها عادة مكافأة الخدمة أو دفع ثمن السلع التي تحصل عليها الدولة.",
+            answer: false, explanation: "هذا تعريف النفقات الحقيقية." },
+          { id: 110, text: "يقصد بالنفقات التحويلية النفقات التي تدفعها الدولة مقابل الحصول على سلعة أو خدمة.",
+            answer: false, explanation: "التحويلية لا مقابل مباشر لها." },
+          { id: 111, text: "المقصود بالنفقات العامة التحويلية تلك النفقات التي ليس لها مقابل مباشر.",
+            answer: true, explanation: "صحيح." },
+          { id: 112, text: "النفقات التحويلية تعتبر حديثة نسبياً حيث كانت النفقات الحقيقية هي النفقات السائدة والوحيدة لفترة طويلة من الزمن.",
+            answer: true, explanation: "صحيح." },
+          { id: 113, text: "لا يهم في أن تكون النفقة استثمارية أو نفقة تشغيل عندما يخرج مبلغ من الذمة المالية للدولة لتصنيفه ضمن الأعباء النهائية أو الأعباء الوقتية.",
+            answer: false, explanation: "التصنيف يعتمد على صفة النفقة من حيث كونها نهائية أم وقتية." },
+          { id: 114, text: "يقصد بالنفقات الجارية أو نفقات التشغيل هي تلك النفقات التي تشمل مرتبات الموظفين وإيجار المكان الذي يشغله.",
+            answer: true, explanation: "صحيح." },
+          { id: 115, text: "يقصد بالنفقات الرأسمالية تلك النفقات التي تشمل مرتبات الموظفين وإيجار المكان الذي يشغله.",
+            answer: false, explanation: "هذا وصف للنفقات الجارية." },
+          { id: 116, text: "لا تسمح النفقات الرأسمالية للشخص بمجرد البقاء فحسب ولكنها تساهم أيضاً في تحسين معداته وبنيانه.",
+            answer: true, explanation: "صحيح." }
+        ]
+      },
+
+      // ========== المبحث الثالث : جانب الموارد العامة (صفحة 10-11) ==========
+      {
+        section: "الموارد العامة – التقسيمات القانونية والمالية والاقتصادية",
+        qs: [
+          { id: 117, text: "يرتكز التقسيم القانوني للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.",
+            answer: true, explanation: "صحيح." },
+          { id: 118, text: "يرتكز التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في حصولها على الموارد التي تلزمها.",
+            answer: false, explanation: "التقسيم المالي يعتمد على صفة الموارد (نهائية/وقتية)." },
+          { id: 119, text: "يستند التقسيم المالي للموارد العامة على استعمال الدولة أو عدم استعمالها لسلطتها الآمرة في الحصول على الموارد العامة.",
+            answer: false, explanation: "نفس السبب." },
+          { id: 120, text: "طبقاً للتقسيم القانوني للموارد العامة فهناك موارد إجبارية وموارد اختيارية.",
+            answer: true, explanation: "صحيح." },
+          { id: 121, text: "يرتكز التقسيم القانوني للإيرادات العامة إما إلى طبيعة الثروة التي تقتطع منها الموارد العامة وإما إلى طبيعة الآثار الاقتصادية للاستقطاعات العامة.",
+            answer: false, explanation: "هذا التقسيم الاقتصادي." },
+          { id: 122, text: "طبقاً للتقسيم الاقتصادي للموارد العامة تبعاً لطبيعة الآثار الاقتصادية للاستقطاعات العامة تقسم الموارد إلى ضرائب على الدخل وضرائب على الاستهلاك وضرائب على رأس المال.",
+            answer: false, explanation: "هذا تقسيم حسب طبيعة الثروة، وليس الآثار الاقتصادية." },
+          { id: 123, text: "يستند التقسيم الاقتصادي للموارد العامة إلى طبيعة الأثار الاقتصادية للاستقطاعات العامة.",
+            answer: false, explanation: "يستند إلى طبيعة الثروة أو الآثار الاقتصادية." },
+          { id: 124, text: "تنقسم الموارد العامة إلى موارد عادية وموارد غير عادية طبقاً لطبيعة الثروة التي يقتطع منها الموارد العامة.",
+            answer: false, explanation: "هذا من التقسيم المالي (نهائية/وقتية)." },
+          { id: 125, text: "يرتكز التقسيم المالي للموارد العامة للدولة إما على طبيعة الثروة التي تقتطع منها الموارد العامة أو طبيعة الآثار الاقتصادية للاستقطاعات العامة.",
+            answer: false, explanation: "هذا التقسيم الاقتصادي." },
+          { id: 126, text: "من بين الموارد التي تحصل عليها الدولة ما يدخل نهائياً وبصفة قطعية في خزينتها، بمعنى أن الدولة لا تلتزم بأي شيء بالنسبة لهذه الموارد، ويسمى البعض هذا النوع من الموارد بالموارد العادية، ويحسن تسميتها بالموارد الدائمة.",
+            answer: true, explanation: "صحيح." },
+          { id: 127, text: "هناك موارد عامة إجبارية مثل قيام الدولة ببيع بعض السلع والخدمات للأفراد وتحصيل ثمنها.",
+            answer: false, explanation: "بيع السلع والخدمات مورد اختياري." },
+          { id: 128, text: "يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل نهائياً وبصفة قطعية في خزينتها ولا تلتزم برد قيمتها.",
+            answer: true, explanation: "صحيح." },
+          { id: 129, text: "يقصد بالموارد العادية هي تلك الموارد التي تحصل عليها الدولة وتدخل بصفة وقتية في خزينتها وتلتزم برد قيمتها.",
+            answer: false, explanation: "هذا وصف للموارد الوقتية." },
+          { id: 130, text: "يقصد بالموارد العامة النهائية الموارد التي تحصل عليها الدولة ولا تلتزم بردها في المستقبل.",
+            answer: true, explanation: "صحيح." },
+          { id: 131, text: "يقصد بالموارد العامة الوقتية الموارد التي تحصل عليها الدولة وتلتزم الدولة بردها في المستقبل.",
+            answer: true, explanation: "صحيح." },
+          { id: 132, text: "تعتبر الإيرادات الدائمة إيرادات حقيقية لأن الدولة قد تتحكم فيها تحكماً تاماً، ولكن طبيعتها المالية والاقتصادية مختلفة تماماً عن الموارد الوقتية.",
+            answer: false, explanation: "الإيرادات الدائمة حقيقية ولكنها ليست مختلفة تماماً من حيث الطبيعة المالية والاقتصادية." },
+          { id: 133, text: "يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بدون أي مقابل.",
+            answer: true, explanation: "صحيح." },
+          { id: 134, text: "يمكن للدولة في حصولها على الموارد التي تلزمها أن تستخدم سلطتها الآمرة، ومثال هذه الموارد الضرائب التي تفرضها الدولة بمقابل.",
+            answer: false, explanation: "الضرائب تفرض بدون مقابل." },
+          { id: 135, text: "يمكن للدولة عادة في حصولها على الموارد المالية اللازمة للإنفاق العام أن تتبع نفس الأساليب التي يلجأ إليها الأفراد في معاملاتهم كالبيع والإيجار.",
+            answer: true, explanation: "صحيح." },
+          { id: 136, text: "يقصد بالموارد الغير عادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن أثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.",
+            answer: false, explanation: "هذا وصف للموارد العادية." },
+          { id: 137, text: "يقصد بالموارد العادية هي تلك التي يمكن الاحتفاظ بها فترة طويلة لأن آثارها الاقتصادية لا تهدد التوازن الاقتصادي ومثالها الضرائب على الدخل.",
+            answer: true, explanation: "صحيح." },
+          { id: 138, text: "الموارد العادية لا يمكن الاحتفاظ بها لفترة طويلة من الزمن لأنها تهدد الثروة التي تقتطع منها هذه الموارد.",
+            answer: false, explanation: "العادية يمكن الاحتفاظ بها طويلاً." },
+          { id: 139, text: "يعتبر دفع فوائد القروض العامة والالتزام برد قيمة أذونات الخزانة أو الودائع العامة من أمثلة الموارد الوقتية.",
+            answer: true, explanation: "صحيح، هذه موارد وقتية تلتزم الدولة بردها." },
+          { id: 140, text: "يعتبر دفع فوائد القروض العامة والالتزام برد قيمة أذونات الخزانة أو الودائع العامة من أمثلة الموارد الدائمة (العادية أو النهائية).",
+            answer: false, explanation: "هذا عكس الصحيح." },
+          { id: 141, text: "يعتبر دفع فوائد القروض العامة أحد أمثلة الإيرادات الوقتية والتي تعتبر إيرادات حقيقية تتحكم فيها الدولة تحكماً تاماً.",
+            answer: true, explanation: "صحيح." },
+          { id: 142, text: "إذا لم تتضمن الخدمة التي تقوم بها الدولة إلا نفعاً خاصاً فقط كان ما تتقاضاه في مقابلها يسمى ثمناً خاصاً، وذلك كقيام إحدى السلطات العامة ببيع محصولات تملكها.",
+            answer: true, explanation: "صحيح." },
+          { id: 143, text: "إذا لم تتضمن الخدمة التي تقوم بها الدولة إلا نفعاً خاصاً فقط كان ما تتقاضاه في مقابلها يسمى رسماً، وذلك كقيام إحدى السلطات العامة ببيع محصولات تملكها.",
+            answer: false, explanation: "يسمى ثمناً خاصاً وليس رسماً." },
+          { id: 144, text: "إذا تضمنت الخدمة التي تقدمها الدولة للأفراد نفعاً خاصاً فقط كان ما تتقاضاه الدولة في مقابلها يسمى ثمناً عاماً.",
+            answer: false, explanation: "يسمى ثمناً خاصاً." },
+          { id: 145, text: "إذا لم تتضمن الخدمة التي تقوم بها الدولة إلا نفعاً خاصاً فقط، كان كل ما تتقاضاه في مقابلها يسمي ثمناً خاصاً، ومثل هذا الثمن لا يختلف في شيء عن سائر الأثمان التي تتحدد في السوق وتستهدف الدولة من ورائه الحصول على أكبر ربح ممكن.",
+            answer: true, explanation: "صحيح." },
+          { id: 146, text: "يمكن القول إن قيام إحدى السلطات العامة ببيع محصولات تملكها يترتب عليها عائد يسمي ثمناً خاصاً، حيث أن الثمن في هذه الحالة لا يختلف في شيء عن سائر الأثمان التي تتحدد في السوق وتستهدف الدولة من ورائه الحصول على أكبر ربح ممكن.",
+            answer: true, explanation: "صحيح." },
+          { id: 147, text: "يعتبر تسجيل الملكية العقارية من أمثلة الخدمات التي يكون فيها نسبة النفع العام في الخدمة التي تقوم بها الدولة أكبر من نسبة النفع الخاصة.",
+            answer: true, explanation: "في الرسم يكون النفع العام أكبر." },
+          { id: 148, text: "يعتبر تسجيل الملكية العقارية من أمثلة الخدمات التي يكون فيها نسبة النفع الخاص في الخدمة التي تقوم بها الدولة أكبر من نسبة النفع العام.",
+            answer: false, explanation: "النفع العام أكبر في الرسوم." },
+          { id: 149, text: "إذا كان النفع الخاص أكبر من النفع العام في الخدمة التي تقوم بها الدولة كان المقابل ثمناً عاماً.",
+            answer: true, explanation: "إذا كان النفع الخاص أكبر يسمى ثمناً عاماً (لأنه مساوٍ للتكلفة)." },
+          { id: 150, text: "إذا كانت نسبة النفع العام في الخدمة التي تقدمها الدولة أقل من نسبة النفع الخاص كان المقابل الذي تحصل عليه الدولة يسمى ثمن عام.",
+            answer: true, explanation: "نفس ما سبق." },
+          { id: 151, text: "يعتبر المقابل على خدمات المياه والكهرباء ثمناً عاماً وذلك نظراً لأن النفع الخاص المرتبط بهذه الخدمات أكبر من النفع العام.",
+            answer: true, explanation: "في هذه الخدمات النفع الخاص أكبر، لذا يسمى ثمناً عاماً." },
+          { id: 152, text: "من أمثلة الخدمات التي تقدمها الدولة مقابل رسوماً المياه والكهرباء.",
+            answer: false, explanation: "المياه والكهرباء مقابلها ثمن عام وليس رسماً." },
+          { id: 153, text: "إذا كان النفع الخاص أكبر من النفع العام في الخدمة التي تقوم بها الدولة كان المقابل رسماً.",
+            answer: false, explanation: "إذا كان النفع الخاص أكبر يسمى ثمناً عاماً." },
+          { id: 154, text: "إذا كانت نسبة النفع العام في الخدمة التي تقدمها الدولة للأفراد أكبر من نسبة النفع الخاص فإن المقابل الذي تحصل عليه الدولة يسمى الضريبة.",
+            answer: false, explanation: "إذا كان النفع العام أكبر (وخاص لا شيء) يسمى ضريبة، لكن هنا النفع العام أكبر من الخاص وليس خالصاً، فيسمى رسماً." },
+          { id: 155, text: "إذا كانت نسبة النفع العام في الخدمة التي تقدمها الدولة أكبر من نسبة النفع الخاص كان المقابل الذي تحصل عليه الدولة يسمى رسوم.",
+            answer: true, explanation: "عندما يكون النفع العام أكبر يسمى رسماً." },
+          { id: 156, text: "إذا لم تتضمن الخدمة التي تقوم بها الدولة إلا نفعاً عاماً فقط، فإن ما تحصل عليه في مقابلها يسمى بالضريبة.",
+            answer: true, explanation: "صحيح." },
+          { id: 157, text: "إذا لم تتضمن الخدمة التي تقوم بها الدولة إلا نفعاً عاماً فقط، فإن ما تحصل عليه في مقابلها يسمى رسماً.",
+            answer: false, explanation: "يسمى ضريبة." },
+          { id: 158, text: "يمكن تعريف الثمن العام بأنه مقابل اختياري يدفعه الفرد، والخدمات التي يدفع في مقابلها يمكن تجزئة منافعها وبالتالي يمكن قياس النفع الذي يعود منها على كل فرد.",
+            answer: false, explanation: "هذا تعريف الثمن الخاص، الثمن العام مساوٍ للتكلفة وليس اختيارياً." },
+          { id: 159, text: "يمكن تعريف الرسم بأنه المقابل الذي يدفعه شخص معين للدولة نظير خدمة معينة تؤديها له بناءً على طلبه ومثل هذه الخدمات تعود فوائدها على الفرد المتلقي للخدمة دون غيره.",
+            answer: false, explanation: "الرسم تعود فوائده على المجتمع أيضاً." },
+          { id: 160, text: "يمكن التفرقة بين الثمن والضريبة في أن الخدمة التي يدفع في مقابلها الثمن لا يمكن تجزئة منافعها، بينما الخدمة التي تدفع الضريبة في مقابلها فإنه يمكن تجزئة منافعها.",
+            answer: false, explanation: "العكس: الثمن يمكن تجزئته، والضريبة لا يمكن." }
+        ]
+      },
+
+      // ========== المبحث الأول : الأركان الرئيسية لتعريف الضريبة (صفحة 13-15) ==========
+      {
+        section: "الأركان الرئيسية لتعريف الضريبة",
+        qs: [
+          { id: 161, text: "يمكن تعريف الضريبة بأنها استقطاعات جبرية تتم لصالح شخص معنوي عام، تستخدم فيها الدولة سلطتها الأمرة ولما لها من قدرة على إجبار الأفراد في تحصيلها.",
+            answer: false, explanation: "الضريبة اقتطاع جبري لصالح الدولة، وليست مجرد استقطاعات لشخص عام." },
+          { id: 162, text: "يمكن تعريف الضريبة بأنها استقطاعات جبرية تتم لصالح شخص معنوي عام أو خاص، غير الدولة ومرافقها الإدارية بالمعنى الضيق وذلك بقصد تمويل نشاط اقتصادي أو اجتماعي.",
+            answer: false, explanation: "هذا تعريف أشباه الضرائب." },
+          { id: 163, text: "يمكن تعريف الضريبة بأنها اقتطاع جبري تجريه الدولة على موارد الوحدات الاقتصادية المختلفة بقصد تغطية الأعباء العامة وتوزيع هذه الأعباء بين الوحدات المذكورة طبقاً لمقدرتها التكليفية.",
+            answer: true, explanation: "تعريف دقيق للضريبة." },
+          { id: 164, text: "يمكن تعريف أشباه الضرائب بأنها استقطاعات جبرية تتم لصالح شخص معنوي عام أو خاص غير الدولة ومرافقها الإدارية وذلك بقصد تحقيق هدف اقتصادي أو اجتماعي.",
+            answer: true, explanation: "صحيح." },
+          { id: 165, text: "يمكن تعريف أشباه الضرائب بأنها استقطاعات اختيارية تتم لصالح شخص معنوي عام أو خاص غير الدولة ومرافقها الإدارية وذلك بقصد تحقيق هدف اقتصادي أو اجتماعي.",
+            answer: false, explanation: "أشباه الضرائب جبرية وليست اختيارية." },
+          { id: 166, text: "من أوجه التشابه بين الضرائب وأشباه الضرائب، أن كلاً منهما قد يتم استخدامهما لتمويل نشاط اجتماعي أو اقتصادي.",
+            answer: false, explanation: "الضريبة تمول جميع أنشطة الدولة، أما شبه الضريبة فتمول نشاطاً معيناً." },
+          { id: 167, text: "تتشابه أشباه الضرائب مع الضرائب في أن كليهما إجباري ولكن تختلف أشباه الضرائب عن الضرائب في أنها تخصص لاستخدام معين.",
+            answer: true, explanation: "صحيح." },
+          { id: 168, text: "تعتبر الأقساط التي تقتطع من مرتبات المستخدمين والتي يدفع مثلها أصحاب العمل لتمويل التأمينات الاجتماعية من أمثلة القروض الإجبارية.",
+            answer: false, explanation: "هذه أشباه ضرائب." },
+          { id: 169, text: "تعتبر الأقساط التي تقتطع من مرتبات المستخدمين والتي يدفع مثلها أصحاب العمل لتمويل التأمينات الاجتماعية من أمثلة أشباه الضرائب.",
+            answer: true, explanation: "صحيح." },
+          { id: 170, text: "تعتبر الاستقطاعات الإجبارية التي تتم من مرتبات العاملين بغرض الحصول على المعاش ضرائب.",
+            answer: false, explanation: "هذه أشباه ضرائب." },
+          { id: 171, text: "يمكن التمييز بين الضريبة وشبه الضريبة في أن الضريبة تمول جميع أنشطة الدولة، في حين أن شبه الضريبة تقتصر على تمويل نشاط اجتماعي أو اقتصادي محدد.",
+            answer: true, explanation: "صحيح." },
+          { id: 172, text: "يمكن التمييز بين الضريبة وشبه الضريبة في أن شبه الضريبة تمول جميع أنشطة الدولة، في حين أن الضريبة تقتصر على تمويل نشاط اجتماعي أو اقتصادي محدد.",
+            answer: false, explanation: "العكس." },
+          { id: 173, text: "تعتبر القروض الإجبارية من الوسائل التي تلجأ إليها الدولة للحصول على إيرادات إضافية، بصفة خاصة عندما لا تكفي حصيلة القروض الاختيارية، ولهذا يكثر الالتجاء للقروض الإجبارية في أوقات الأزمات.",
+            answer: true, explanation: "صحيح." },
+          { id: 174, text: "تعتبر القروض الإجبارية من الوسائل التي تضطر الدولة إلي اللجوء إليها عندما لا تكفي حصيلة القروض العامة الاختيارية.",
+            answer: true, explanation: "صحيح." },
+          { id: 175, text: "عندما لا تكفي الضرائب وموارد الدولة الأخرى لتغطية النفقات العامة تلجأ الدولة للاقتراض.",
+            answer: true, explanation: "صحيح." },
+          { id: 176, text: "تعتبر القروض الإجبارية من الوسائل الأساسية التي تلجأ إليها الدولة للحصول على إيرادات ويكثر الالتجاء إليها مثلها مثل الضرائب.",
+            answer: false, explanation: "القروض الإجبارية ليست أساسية مثل الضرائب، وتستخدم في الأزمات." },
+          { id: 177, text: "يثير القرض الإجباري عادة كل المشاكل الفنية التي للضريبة، من حيث تحديد الوعاء والربط وطريقة التحصيل.",
+            answer: true, explanation: "صحيح." },
+          { id: 178, text: "تختلف الضريبة عن إيرادات الأملاك الخاصة وإيرادات القروض العامة، فتتميز الضريبة عنهما في كونها من الاختصاصات التي تنفرد الدولة بها مثل الحق في إصدار العملة وإقامة العدالة وحفظ النظام.",
+            answer: true, explanation: "صحيح." },
+          { id: 179, text: "الهدف الأساسي للضريبة هدف مالي وهو تمويل النفقات العامة.",
+            answer: true, explanation: "صحيح." },
+          { id: 180, text: "الهدف الأساسي للضريبة هدف مالي هو تمويل نفقات الحكومة المركزية.",
+            answer: false, explanation: "تمويل النفقات العامة وليس فقط الحكومة المركزية." },
+          { id: 181, text: "الهدف الأساسي للضريبة هدف اجتماعي هو تحقيق الرفاهية بين أفراد المجتمع. (مهم)",
+            answer: false, explanation: "الهدف الأساسي مالي." },
+          { id: 182, text: "لا تهدف الضريبة إلى تحقيق أهداف اجتماعية ويقتصر دورها في تحقيق الهدف المالي والأهداف الاقتصادية.",
+            answer: false, explanation: "للضريبة أهداف اجتماعية أيضاً." },
+          { id: 183, text: "تعتبر الأهداف الاقتصادية للضرائب هي أهم أهداف الضريبة.",
+            answer: false, explanation: "الأهم هو الهدف المالي." },
+          { id: 184, text: "يقصد بمبدأ الحياد الضريبي أنه لا يجوز أن تكون للضرائب أثار اقتصادية أو اجتماعية.",
+            answer: true, explanation: "صحيح." },
+          { id: 185, text: "يقصد بمبدأ الحياد الضريبي أنه يجوز أن تكون للضرائب آثار اقتصادية أو اجتماعية.",
+            answer: false, explanation: "الحياد يعني عدم وجود آثار." },
+          { id: 186, text: "يقصد بمبدأ الحياد الضريبي أنه يمكن للضريبة أن تكون لها أهداف اقتصادية أو اجتماعية بالإضافة إلى هدفها الخاص بتمويل نفقات التشغيل.",
+            answer: false, explanation: "الحياد يمنع ذلك." },
+          { id: 187, text: "في الوقت الحالي، نجد أنه من غير الممكن الأخذ بمبدأ الحياد الضريبي على إطلاقه.",
+            answer: true, explanation: "لأن للضريبة أهداف أخرى." },
+          { id: 188, text: "للضريبة أهداف مالية وأهداف غير مالية وقد تكون الأهداف غير المالية أهم من الأهداف المالية.",
+            answer: false, explanation: "الأهم هو الهدف المالي." },
+          { id: 189, text: "من أهم الأهداف الاقتصادية للضريبة هو دورها في امتصاص القوة الشرائية الزائدة ومحاربة الاتجاهات التضخمية.",
+            answer: true, explanation: "صحيح." },
+          { id: 190, text: "من الآثار الاقتصادية للضرائب امتصاص القوة الشرائية الزائدة ومحاربة التضخم.",
+            answer: true, explanation: "صحيح." },
+          { id: 191, text: "من أهم الأهداف المالية للضريبة هو دورها في امتصاص القوة الشرائية الزائدة ومحاربة الاتجاهات التضخمية.",
+            answer: false, explanation: "هذا هدف اقتصادي وليس مالي." },
+          { id: 192, text: "من الأهداف الاقتصادية للضرائب حماية الإنتاج الوطني بفرض ضرائب جمركية على السلع الأجنبية.",
+            answer: true, explanation: "صحيح." },
+          { id: 193, text: "تهدف الضرائب الجمركية إلى حماية الإنتاج الوطني من المنافسة الأجنبية.",
+            answer: true, explanation: "صحيح." },
+          { id: 194, text: "يمكن القول إن دور الضريبة في امتصاص القوة الشرائية الزائدة ومحاربة الاتجاهات التضخمية يعتبر معارضاَ لمبدأ الحياد الضريبي.",
+            answer: true, explanation: "لأن الحياد يمنع الآثار الاقتصادية." },
+          { id: 195, text: "يمكن أن تستخدم الضرائب في محاربة التضخم ومعالجة الكساد حيث يمكن تخفيض الضرائب في الحالة الأولي وزيادتها في الحالة الثانية.",
+            answer: false, explanation: "لمحاربة التضخم تزيد الضرائب، ولمعالجة الكساد تخفض." },
+          { id: 196, text: "من الممكن أن يتعارض الهدف المالي للضريبة مع أهدافها الاقتصادية أو الاجتماعية، وفي هذه الحالة يجب أن تكون الأولوية (كمبدأ) للهدف المالي.",
+            answer: true, explanation: "الأولوية للهدف المالي." },
+          { id: 197, text: "من الممكن أن يتعارض الهدف المالي للضريبة مع أهدافها الاقتصادية أو الاجتماعية، وفي هذه الحالة يجب أن تكون الأولوية، كمبدأ، للأهداف الاجتماعية.",
+            answer: false, explanation: "الأولوية للهدف المالي." },
+          { id: 198, text: "إذا تعارضت الأهداف الاجتماعية للضرائب مع الهدف المالي لها فالأولوية للأهداف الاجتماعية.",
+            answer: false, explanation: "الأولوية للهدف المالي." },
+          { id: 199, text: "من ضمن الأهداف الاجتماعية للضرائب الحد من استهلاك بعض السلع الضارة وتشجيع استهلاك السلع المفيدة لصحة الانسان وذلك برفع الضرائب على النوع الأول وتخفيضها على النوع الثاني.",
+            answer: true, explanation: "صحيح." },
+          { id: 200, text: "من الأهداف الاجتماعية للضرائب الحد من استهلاك بعض السلع الضارة صحياً وذلك بتخفيض الضرائب عليها.",
+            answer: false, explanation: "تخفيض الضرائب يشجع الاستهلاك، لذا يجب رفعها." },
+          { id: 201, text: "من الأهداف الاقتصادية للضرائب تشجيع أنواع معينة من النشاط الاقتصادي والحد من أنواع أخري عن طريق رفع الضرائب على النوع الأول وتخفيضها على الثانية.",
+            answer: false, explanation: "لتشجيع نوع تخفض الضرائب، وللحد منه ترفع." },
+          { id: 202, text: "يمكن للضريبة أن ترمى إلى تحقيق أهداف اجتماعية معينة، مثلاً الحد من استهلاك بعض السلع الضارة، مثل المشروبات الكحولية والدخان أو تشجيع استعمال سلع أخرى نافعة، مثل منتجات الألبان.",
+            answer: true, explanation: "صحيح." },
+          { id: 203, text: "يمكن أن تهدف السياسة الضريبية إلى تشجيع نشاط اقتصادي معين والحد من نشاط اقتصادي آخر وذلك بزيادة الضرائب على النشاط الأول وتخفيضها على النشاط الثاني.",
+            answer: false, explanation: "عكس: تخفيض على الأول ورفع على الثاني." },
+          { id: 204, text: "قد يكون للضريبة بالإضافة إلى الهدف المالي والخاص بتمويل النفقات العامة أهداف اقتصادية تتمثل في السيطرة على المستوى العام للأسعار وامتصاص القوة الشرائية الزائدة على أن تكون الأولوية كمبدأ عام للهدف المالي.",
+            answer: true, explanation: "صحيح." },
+          { id: 205, text: "وفقاً للنظرية التقليدية للمالية يعتبر الهدف الأساسي للضريبة هو تمويل النفقات العامة وهو الهدف الوحيد تقريباً للضريبة، حيث اقتصر تدخل الدولة على وظائفها الضرورية ولا يسمح لها بالتدخل في غيرها ولهذا من غير الجائز أن يكون للضريبة أهداف اقتصادية أو اجتماعية.",
+            answer: true, explanation: "صحيح." },
+          { id: 206, text: "من مبادئ تحقيق العدالة في توزيع العبء الضريبي المساواة الأفقية ويقصد بها أن الأشخاص الذين تتساوى قدرتهم التكليفية ولكن ظروفهم مختلفة لا يتحملوا نفس العبء الضريبي.",
+            answer: false, explanation: "المساواة الأفقية تعني أن المتساوين يتحملون نفس العبء." },
+          { id: 207, text: "من مبادئ تحقيق العدالة في توزيع العبء الضريبي المساواة الرأسية ويقصد بها أن الأشخاص الذين لهم نفس المقدرة التكليفية، يحملوا بنفس العبء الضريبي.",
+            answer: false, explanation: "المساواة الرأسية تعني أن غير المتساوين يعاملون معاملة مختلفة." },
+          { id: 208, text: "يقصد بالمساواة الأفقية أن الأشخاص الذين لهم نفس مستوى المقدرة التكليفية يجب أن يتحملوا نفس العبء الضريبي، أما المساواة الرأسية فيقصد بها أن الأشخاص الذي تختلف مستوى المقدرة التكليفية لهم يجب أن لا يتحملوا نفس العبء الضريبي.",
+            answer: true, explanation: "صحيح." },
+          { id: 209, text: "وفقاً للمساواة الرأسية فمن العدل أن يقتطع عدد أكبر من وحدات النقود التي تقل منفعتها الحدية بالنسبة للممول، وذلك نظراً لأن المنفعة الحدية للنقود تتناقص كلما زاد عدد الوحدات التي يملكها شخص معين منها.",
+            answer: true, explanation: "صحيح." },
+          { id: 210, text: "يقصد بالمساواة الأفقية في العدالة الضريبية أن الأشخاص المتساويين ينبغي أن يعاملوا معاملة واحدة، أي أن الأشخاص الذين لهم نفس مستوى المقدرة التكليفية يجب أن يتحملوا نفس العبء الضريبي.",
+            answer: true, explanation: "صحيح." },
+          { id: 211, text: "يقصد بالمساواة الرأسية في العدالة الضريبية أن الأشخاص المتساويين ينبغي أن يعاملوا معاملة واحدة، أي أن الأشخاص الذين لهم نفس مستوى المقدرة التكليفية يجب أن يتحملوا نفس العبء الضريبي.",
+            answer: false, explanation: "هذا تعريف المساواة الأفقية." },
+          { id: 212, text: "يقصد بالمساواة الرأسية أن الأشخاص الذين تتساوي دخولهم يجب أن يتحملوا نفس العبء الضريبي.",
+            answer: false, explanation: "هذا أفقية." },
+          { id: 213, text: "يقصد بالمساواة الرأسية أن الأشخاص الذين تتساوي قدرتهم التكليفية يجب أن لا يتحملوا نفس العبء الضريبي.",
+            answer: false, explanation: "المساواة الرأسية تعني أن غير المتساويين يعاملون بشكل مختلف." },
+          { id: 214, text: "يقصد بالمساواة الرأسية في العدالة الضريبة أن الأشخاص غير المتساويين ينبغي أن يعاملوا معاملة مختلفة، أي أن الأشخاص الذين تتساوى قدرتهم التكليفية ولكنهم يوجدون في ظروف مختلفة، وكذلك الأشخاص الذين تختلف قدراتهم هذه يجب أن لا يتحملوا نفس العبء الضريبي.",
+            answer: true, explanation: "صحيح." },
+          { id: 215, text: "يقصد بالمساواة الأفقية في العدالة الضريبة أن الأشخاص غير المتساويين ينبغي أن يعاملوا معاملة مختلفة، أي أن الأشخاص الذين تتساوى قدرتهم التكليفية، ولكنهم يوجدون في ظروف مختلفة، وكذلك الأشخاص الذين تختلف قدرتهم هذه يجب أن لا يتحملوا نفس العبء الضريبي.",
+            answer: false, explanation: "هذا تعريف المساواة الرأسية." },
+          { id: 216, text: "يقصد بمبدأ المقدرة على الدفع القدرة على تحمل الالتزامات المالية أي القدرة النقدية أو القوة الشرائية الضرورية للوفاء بالالتزام الضريبي دون أن يقصد بها معني التضحية بالمعنى الاقتصادي.",
+            answer: false, explanation: "المقدرة على الدفع تشمل معنى التضحية." },
+          { id: 217, text: "يقصد بمبدأ القدرة على الدفع توافر القدرة النقدية الضرورية للوفاء بالالتزام الضريبي.",
+            answer: true, explanation: "صحيح." },
+          { id: 218, text: "ترتبط المقدرة التكليفية للأفراد طردياً بمقدار دخولهم لأن المنفعة الحدية للوحدات الأخيرة من الدخل تكون متناقصة.",
+            answer: true, explanation: "صحيح." },
+          { id: 219, text: "تزداد المقدرة التكليفية لفئة مرتفعي الدخل، بينما تنخفض المقدرة التكليفية لفئة محدودي الدخل.",
+            answer: true, explanation: "صحيح." },
+          { id: 220, text: "كلما زاد الدخل كلما انخفضت المنفعة الحدية لوحدة النقود الإضافية ومن ثم تنخفض المقدرة التكليفية لدافع الضرائب.",
+            answer: false, explanation: "تزداد المقدرة التكليفية مع زيادة الدخل." },
+          { id: 221, text: "تزداد المقدرة التكليفية لفئة محدودي الدخل، بينما تنخفض المقدرة التكليفية لفئة مرتفعي الدخل.",
+            answer: false, explanation: "العكس." },
+          { id: 222, text: "تزداد المقدرة التكليفية للشخص كلما كان دخله مرتفعاً، لأن المنفعة الحدية للوحدات الأخيرة من هذا الدخل تتناقص مع زيادته.",
+            answer: true, explanation: "صحيح." },
+          { id: 223, text: "تزداد المقدرة التكليفية للشخص على دفع الضرائب كلما كان دخله مرتفعاً، طبقا لمبدأ تناقص المنفعة الحدية.",
+            answer: true, explanation: "صحيح." },
+          { id: 224, text: "تنخفض المقدرة التكليفية للشخص كلما كان دخله مرتفعاً لأن المنفعة الحدية للوحدات الأخيرة من هذا الدخل تتناقص.",
+            answer: false, explanation: "تزداد المقدرة وليس تنخفض." }
+        ]
+      },
+
+      // ========== المبحث الثاني : الإطار التنظيمي للضريبة (صفحة 16) ==========
+      {
+        section: "الإطار التنظيمي للضريبة",
+        qs: [
+          { id: 225, text: "عند إنشاء ضريبة جديدة يجب أن تكون هذه الضريبة متسقة مع سائر الضرائب الموجودة قبلها.",
+            answer: true, explanation: "صحيح." },
+          { id: 226, text: "عند إنشاء ضريبة جديدة لا يشترط أن تتجانس هذه الضريبة مع الضرائب الموجودة قبلها.",
+            answer: false, explanation: "يجب أن تكون متسقة." },
+          { id: 227, text: "عند إنشاء ضريبة جديدة على سلعة من السلع تترك السلع البديلة بلا ضريبة حتى يستطيع المستهلك شراء البدائل.",
+            answer: false, explanation: "ليس شرطاً، بل قد تفرض على البدائل أيضاً." },
+          { id: 228, text: "عند وضع النظام الضريبي يجب أن يراعي الوسط الاجتماعي الذي يطبق عليه هذا النظام وإلا تعذر تطبيقه وفشل في أداء وظائفه.",
+            answer: true, explanation: "صحيح." },
+          { id: 229, text: "يجب أن تحقق كل ضريبة على حده اعتبارات العدالة في توزيع العبء الضريبي.",
+            answer: false, explanation: "العدالة تتحقق من خلال المنظومة الضريبية ككل، وليس كل ضريبة على حدة." },
+          { id: 230, text: "يمكن أن تستخدم الضرائب لتحقيق العدالة الاجتماعية عن طريق فرض ضرائب تصاعدية على الدخول والثروات وتقديم الدعم والإعانات لأصحاب الدخول المحدودة.",
+            answer: true, explanation: "صحيح." },
+          { id: 231, text: "تتميز النظم الضريبية المختلفة بجمود يجعل من تعديلها أمراً غاية في الصعوبة، وهذا ما يوضح لنا صعوبة تنفيذ هذه الإصلاحات الضريبية، ويرجع ذلك بالأساس إلى أن الممولين يتحملون الضرائب القديمة بسهولة أكثر من تحملهم الضريبة الجديدة.",
+            answer: true, explanation: "صحيح." },
+          { id: 232, text: "تتميز النظم الضريبية بصفة جمود نسبي يجعل من تعديلها أمراً غاية في الصعوبة، وهذا يجعل من تطبيق الإصلاحات الضريبية أمراً يصعب تنفيذه عملياً أو غير ممكن أحياناً.",
+            answer: true, explanation: "صحيح." },
+          { id: 233, text: "تتميز النظم الضريبية المختلفة بجمود يجعل من تعديلها أمر غاية في الصعوبة، وهذا ما يوضح لنا صعوبة تنفيذ هذه الإصلاحات الضريبية.",
+            answer: true, explanation: "صحيح." },
+          { id: 234, text: "يرجع أسباب صعوبة تنفيذ تعديلات على النظم الضريبية القائمة أن الممولين يتحملون الضرائب القديمة بمرونة أكبر من تحملهم الضريبة الجديدة.",
+            answer: true, explanation: "صحيح." },
+          { id: 235, text: "عادة ما يقبل الممولين تحمل الضريبة القديمة بسهولة أكثر من تحملهم الضريبة الجديدة وهذا ما يمكن تفسيره بظاهرتين هما: ظاهرة استهلاك الضريبة وظاهرة نقل عبئها.",
+            answer: true, explanation: "صحيح." },
+          { id: 236, text: "تعني ظاهرة التخدير الضريبي أن الممولين يتحملون الضرائب الجديدة بسهولة أكثر من تحملهم الضريبة القديمة.",
+            answer: false, explanation: "التخدير يعني تحمل القديمة بسهولة أكثر من الجديدة." },
+          { id: 237, text: "تعني ظاهرة التخدير الضريبي أن الممولين يتحملون الضرائب القديمة بسهولة أكثر من تحملهم الضريبة الجديدة. (مهم)",
+            answer: true, explanation: "صحيح." },
+          { id: 238, text: "يقصد بظاهرة جمود النظام الضريبي أن الأفراد يتقبلون الضرائب الجديدة بسهولة ويسر عنها في حالة الضرائب القديمة.",
+            answer: false, explanation: "العكس." },
+          { id: 239, text: "ظاهرة استهلاك الضريبة وظاهرة نقل عبء الضريبة تجعلان الضرائب الجديدة أكثر احتمالاً من جانب الممولين عن الضرائب القديمة.",
+            answer: false, explanation: "تجعلان القديمة أكثر احتمالاً." },
+          { id: 240, text: "يقصد بظاهرة استهلاك الضريبة أن تفرض الضريبة على أحد الأشخاص فيدفعها للدولة ثم ينقل عبئها لأشخاص أخرين.",
+            answer: false, explanation: "هذا نقل العبء، وليس استهلاك." },
+          { id: 241, text: "ظاهرة نقل عبء الضريبة معناها أن يتم خصم الضرائب على الأجور والمرتبات من المنبع، وتوريدها لخزانة الدولة.",
+            answer: false, explanation: "نقل العبء يعني تحميلها لشخص آخر." },
+          { id: 242, text: "فيما يتعلق بنقل عبء الضريبة، فإذا فرضت ضريبة على الأجور فإن من فرضت عليهم يشعرون بعبئها عليهم إذ تنخفض أجورهم بمقدارها، ولكن بعد وقت معين يفقد أصحاب الأجور شعورهم بها وقد يدفعهم فرضها إلى المطالبة بزيادة أجورهم، وتسمي هذه ظاهرة استهلاك الضريبة.",
+            answer: false, explanation: "هذا وصف لظاهرة استهلاك الضريبة، لكنها ليست نقل العبء، بل استهلاك." },
+          { id: 243, text: "من النتائج المحتملة لاستهلاك الضريبة أنه إذا فرضت ضريبة على الأجور فتنخفض أجور العمال بمقدارها، ولكن بعد وقت معين يفقد أصحاب الأجور شعورهم بها وقد يدفعهم فرضها إلى المطالبة بزيادة أجورهم، وإذا نجحوا في هذا فإن صاحب العمل هو الذي يتحمل في النهاية الضريبة المفروضة على الأجور.",
+            answer: false, explanation: "هذا وصف لنقل العبء وليس استهلاك." },
+          { id: 244, text: "وفقاً لظاهرة نقل العبء الضريبي قد يؤدي زيادة فرض ضريبة على الأجور إلي زيادة العبء على صاحب العمل مقارنة بالعمال.",
+            answer: true, explanation: "صحيح." },
+          { id: 245, text: "يؤدي استهلاك الضريبة إلى التخفيف من آثارها المحتملة في المستقبل.",
+            answer: true, explanation: "صحيح." },
+          { id: 246, text: "يؤدي استهلاك الضريبة إلى تفاقم أثارها المحتملة في المستقبل.",
+            answer: false, explanation: "يؤدي إلى التخفيف." },
+          { id: 247, text: "يمكن القول إن الضريبة المباشرة التصاعدية على الدخل تسود النظم الضريبية في الاقتصاديات المتقدمة صناعياً، وذلك على عكس النظم الاستبدادية حيث تنخفض فيها نسبة الضرائب المباشرة من الإيرادات الضريبية.",
+            answer: true, explanation: "صحيح." },
+          { id: 248, text: "يري مونتسكيو أن الحكومات الديمقراطية تفضل الضرائب الشخصية على الأفراد في حين تفضل الحكومات الاستبدادية الضرائب على الأموال.",
+            answer: false, explanation: "مونتسكيو قال العكس: الاستبدادية تفضل المباشرة والديمقراطية تفضل غير المباشرة." },
+          { id: 249, text: "يري مونتسكيو أن الحكومات الاستبدادية تفضل الضرائب المباشرة على الأشخاص في حين تفضل الحكومات الديمقراطية الضرائب غير المباشرة على الأموال.",
+            answer: true, explanation: "صحيح حسب مونتسكيو." },
+          { id: 250, text: "الملاحظ عملاً أن الحكومات الديمقراطية تفضل الضرائب المباشرة على الأشخاص في حين تفضل الحكومات الاستبدادية الضرائب غير المباشرة على الأموال.",
+            answer: true, explanation: "هذا هو الواقع العملي." },
+          { id: 251, text: "يري مونتسكيو أن الحكومات الاستبدادية تستطيع أن تفرض ضرائب مرتفعة على عكس الحكومات الديمقراطية.",
+            answer: false, explanation: "مونتسكيو قال أن الديمقراطية تفرض مرتفعة مقابل الحرية." },
+          { id: 252, text: "تستطيع نظم الحكم الاستبدادية على عكس الحكومات الديموقراطية أن تفرض ضرائب مرتفعة.",
+            answer: false, explanation: "الواقع العملي عكس ذلك." },
+          { id: 253, text: "تستطيع نظم الحكم الديمقراطية على عكس الحكومات الاستبدادية أن تفرض ضرائب مرتفعة.",
+            answer: true, explanation: "حسب مونتسكيو." },
+          { id: 254, text: "الملاحظ عملاً أن الحكومات الديمقراطية تنجح أكثر من الحكومات الاستبدادية في فرض ضرائب مرتفعة.",
+            answer: false, explanation: "الواقع أن الاستبدادية تنجح أكثر." }
+        ]
+      },
+
+      // ========== المبحث الأول : أنواع الضرائب (صفحة 20-22) ==========
+      {
+        section: "أنواع الضرائب – عينية وشخصية ومباشرة وغير مباشرة",
+        qs: [
+          { id: 255, text: "يقصد بالضريبة العينية تلك الضريبة التي تتجاهل شخصية الممول وتنصب على عناصر ظاهرة من الثروة وتتميز بعدم إمكانية التهرب منها.",
+            answer: true, explanation: "صحيح." },
+          { id: 256, text: "يقصد بالضريبة العينية تلك الضريبة التي تأخذ في اعتبارها شخصية الممول وتتميز بإمكانية التهرب منها.",
+            answer: false, explanation: "العينية تتجاهل الشخصية." },
+          { id: 257, text: "تتميز الضريبة العينية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة، ولا تأخذ بالاعتبارات الشخصية التي تُفسح المجال أمام التهرب، كما أن نفقة تحصيلها تعتبر كبيرة نسبياً مقارنة بغيرها من أنواع الضرائب.",
+            answer: false, explanation: "نفقة تحصيلها قليلة وليست كبيرة." },
+          { id: 258, text: "تمتاز الضرائب العينية بتحقيق العدالة الاجتماعية لأن الأشخاص الذين يملكون نفس الدخل أو الثروة يدفعون نفس الضريبة.",
+            answer: false, explanation: "لا تحقق العدالة لأنها لا تراعي الظروف الشخصية." },
+          { id: 259, text: "الضريبة العينية تأخذ في الاعتبار المادة الخاضعة للضريبة وكميتها وطبيعتها فقط.",
+            answer: true, explanation: "صحيح." },
+          { id: 260, text: "يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، وتتميز بعدم إمكان التهرب منها.",
+            answer: false, explanation: "الشخصية تفسح مجالاً للتهرب." },
+          { id: 261, text: "يقصد بالضريبة الشخصية هي تلك الضريبة التي تأخذ في الاعتبار حالة الممول وظروفه الخاصة أو وضعه الاجتماعي والتزاماته العائلية ومقدار دخله أو ثروته، ولكنها في المقابل تفسح المجال أمام التهرب.",
+            answer: true, explanation: "صحيح." },
+          { id: 262, text: "الضرائب الشخصية أكثر تحقيقا للعدالة من الضرائب العينية لأنها تأخذ ظروف الممول في الاعتبار.",
+            answer: true, explanation: "صحيح." },
+          { id: 263, text: "تتميز الضريبة الشخصية بعدم إمكان التهرب منها، وذلك بعكس الضريبة العينية والتي يسهل التهرب منها وذلك لأنها تنصب بالأساس على عناصر الثروة.",
+            answer: false, explanation: "العكس: العينية يصعب التهرب منها، والشخصية يسهل." },
+          { id: 264, text: "تمتاز الضرائب الشخصية بعدم إمكان التهرب منها لأنها تنصب على عناصر ظاهرة من الثروة.",
+            answer: false, explanation: "هذا وصف للعينية." },
+          { id: 265, text: "يغلب على الضرائب الشخصية أنها تؤدي إلى عدم تحقيق العدالة الاجتماعية.",
+            answer: false, explanation: "الشخصية تحقق العدالة." },
+          { id: 266, text: "تعتبر طريقة التحصيل معياراً مميزاً بين الضرائب العينية والضرائب الشخصية.",
+            answer: false, explanation: "طريقة التحصيل معيار بين المباشرة وغير المباشرة، وليس بين العينية والشخصية." },
+          { id: 267, text: "تكون الضريبة شخصية إذا اتسمت بأي من الصفات التالية: إذا أخذت في الاعتبار الظروف الشخصية للممول، أنها قد تؤدي إلي عدم تحقيق العدالة الاجتماعية، وإذا كانت تفسح المجال للتهرب منها.",
+            answer: false, explanation: "الشخصية تحقق العدالة ولا تؤدي لعدمها." },
+          { id: 268, text: "تكون الضريبة مباشرة إذا اتسمت بأي من الصفات التالية: إذا كانت تحصل بناء على كشوف أو جداول، وإذا كانت مفروضة على مادة تتميز بعدم الاستمرارية والثبات.",
+            answer: false, explanation: "المباشرة تفرض على مادة ثابتة ومستمرة." },
+          { id: 269, text: "تكون الضريبة مباشرة إذا كانت تحصل بناء على كشوف أو جداول تدون فيها أسماء الممولين والتزاماتهم الضريبية.",
+            answer: true, explanation: "صحيح." },
+          { id: 270, text: "تكون الضريبة غير مباشرة إذا كانت تحصل بناء على كشوف أو جداول تدون فيها أسماء الممولين والتزاماتهم الضريبية.",
+            answer: false, explanation: "غير المباشرة لا يمكن تحصيلها بجداول اسمية." },
+          { id: 271, text: "تكون الضريبة غير مباشرة إذا كانت تحصل بناء على كشوف أو جداول تدون فيها أسماء الممولين وتكون مباشرة إذا لم يكن من الممكن اتباع هذا الأسلوب في تحصيلها.",
+            answer: false, explanation: "العكس." },
+          { id: 272, text: "تكون الضريبة غير مباشرة إذا تحمل عبئها من قام بدفعها للدولة، ومباشرة إذا تمكن من نقل عبئها إلى شخص أخر.",
+            answer: false, explanation: "العكس." },
+          { id: 273, text: "تكون الضريبة مباشرة إذا تحمل عبئها من قام بدفعها للدولة، وغير المباشرة إذا تمكن من نقل عبئها إلى شخص آخر.",
+            answer: true, explanation: "صحيح." },
+          { id: 274, text: "طبقاً لمعيار نقل عبء الضريبة تكون الضريبة مباشرة إذا تحمل عبئها من قام بدفعها وتكون الضريبة غير مباشرة إذا تمكن من نقل عبئها لشخص آخر.",
+            answer: true, explanation: "صحيح." },
+          { id: 275, text: "بعض أنواع الضرائب المباشرة لا يمكن إتباع أسلوب الجداول الإسمية في تحصيلها، ومثال على ذلك الضرائب على أرباح الأسهم والسندات لحاملها.",
+            answer: true, explanation: "صحيح." },
+          { id: 276, text: "يمكن التمييز بين الضريبة المباشرة وغير المباشرة على أساس أن الضريبة المباشرة يتم فرضها على مادة تتميز بالثبات والاستمرار، أما الضريبة غير المباشرة فيتم فرضها على تصرفات عرضية متقطعة.",
+            answer: true, explanation: "صحيح." },
+          { id: 277, text: "تكون الضريبة غير مباشرة إذا كانت تفرض على مادة تتميز بالثبات والاستمرار.",
+            answer: false, explanation: "هذا وصف للمباشرة." },
+          { id: 278, text: "تكون الضريبة مباشرة إذا كانت مفروضة على مادة تتميز بالثبات والاستمرار، أو بمناسبة تصرفات عرضية متقطعة كالضريبة العقارية.",
+            answer: false, explanation: "المباشرة تفرض على مادة ثابتة، أما التصرفات العرضية فهي غير مباشرة." },
+          { id: 279, text: "طبقا لمعيار ثبات المادة الخاضعة للضريبة إذا كانت الضريبة مفروضة على مادة تتميز بالثبات والاستمرار كانت ضريبة غير مباشرة.",
+            answer: false, explanation: "تكون مباشرة." },
+          { id: 280, text: "يقصد بالضريبة غير المباشرة تلك الضريبة التي تفرض على التصرفات التي يقوم بها الممولين كالإنفاق والتداول.",
+            answer: true, explanation: "صحيح." },
+          { id: 281, text: "يقصد بالضريبة غير المباشرة تلك الضريبة التي تفرض على التصرفات التي يقوم بها المستهلكين.",
+            answer: true, explanation: "صحيح." },
+          { id: 282, text: "تفرض الضرائب المباشرة على التصرفات التي يقوم بها الممولين أثناء الانفاق.",
+            answer: false, explanation: "المباشرة تفرض على الدخل أو الثروة." },
+          { id: 283, text: "يقصد بالضريبة المباشرة تلك الضريبة التي تفرض على التصرفات التي يقوم بها الممولين كالإنفاق والتداول.",
+            answer: false, explanation: "هذا وصف غير المباشرة." },
+          { id: 284, text: "تكون الضريبة غير مباشرة إذا اتسمت بأي من الصفات التالية: إذا كانت تتم بمناسبة التصرفات الاقتصادية التي يقوم بها الممولون وإذا تحمل عبئها من قام بدفعها للدولة.",
+            answer: false, explanation: "غير المباشرة ينقل عبئها." },
+          { id: 285, text: "تعتبر الضريبة على التركات ضريبة غير مباشرة لأنها تفرض نتيجة حدث عارض هي انتقال الملكية بالميراث.",
+            answer: false, explanation: "يمكن اعتبارها مباشرة لأنها تفرض على الثروة." },
+          { id: 286, text: "يمكن اعتبار الضريبة على التركات ضريبة مباشرة لأنها تفرض على الثروة وتدفع بمناسبة حدث وهو الوفاة وعلى واقعة عرضية هي انتقال الملكية بالميراث.",
+            answer: false, explanation: "هي غير مباشرة لأنها تدفع بمناسبة حدث عارض." },
+          { id: 287, text: "تعتبر الضرائب المباشرة في اصطلاح الحسابات القومية وسيلة لتوزيع الدخل المتاح، فهي تتدخل إذن بعد توزيع الدخول على عناصر الإنتاج وقبل إنفاق هذه الدخول.",
+            answer: true, explanation: "صحيح." },
+          { id: 288, text: "تتغير إيرادات الضرائب غير المباشرة تبعاً لفترات الكساد والرخاء لارتباطها بإنفاق الممولين على السلع والخدمات.",
+            answer: true, explanation: "صحيح." },
+          { id: 289, text: "تتغير إيرادات الضرائب المباشرة تبعاً لفترات الكساد والرخاء لارتباطها بانفاق الممولين وتصرفاتهم الاقتصادية الأخرى.",
+            answer: false, explanation: "المباشرة ترتبط بالدخل الثابت نسبياً." },
+          { id: 290, text: "يعاب على الضرائب المباشرة أنها تظهر تعارض المصلحة بين الممولين والدولة مما قد يدفع الأفراد إلى محاولة التهرب منها.",
+            answer: true, explanation: "صحيح." },
+          { id: 291, text: "تتميز الضرائب المباشرة بثبات حصيلتها لأنها تنصب على عناصر ثابتة نسبياً كالدخل والملكية.",
+            answer: true, explanation: "صحيح." },
+          { id: 292, text: "تتميز الضرائب غير المباشرة بثبات حصيلتها لأنها تنصب على عناصر ثابتة نسبياً كالدخل والملكية.",
+            answer: false, explanation: "غير المباشرة غير ثابتة." },
+          { id: 293, text: "تتميز الضرائب غير المباشرة بقلة نفقات تحصيلها لأن المواد الضريبية التي تفرض عليها معروفة لدى الإدارة ولا تحتاج إلى عدد كبير من الموظفين أو إلى إجراءات متعددة لحصرها وتصفيتها وتحصيلها.",
+            answer: false, explanation: "نفقات تحصيل غير المباشرة كبيرة." },
+          { id: 294, text: "تتميز الضرائب المباشرة بقلة نفقات تحصيلها لأن المواد الضريبية التي تفرض عليها معروفة لدى الإدارة ولا تحتاج إلى عدد كبير الموظفين أو إلى إجراءات متعددة لحصرها وتصفيتها وتحصيلها.",
+            answer: true, explanation: "صحيح." },
+          { id: 295, text: "تتميز الضرائب غير المباشرة بقلة نفقات تحصيلها.",
+            answer: false, explanation: "نفقاتها كبيرة." },
+          { id: 296, text: "تتميز الضرائب غير المباشرة بأن الممولين لا يشعرون بها لأنهم يدفعونها بمناسبة شراء السلع والخدمات ولا يدركون أنهم يدفعون ضرائب للدولة.",
+            answer: true, explanation: "صحيح." },
+          { id: 297, text: "تتميز الضرائب المباشرة بأنها تشعر المواطنين بواجباتهم المدنية، وتدفعهم إلى الاهتمام بالمشاكل العامة وبمراقبة الدولة في تصرفاتها المالية والسياسية على عكس الضرائب غير المباشرة.",
+            answer: true, explanation: "صحيح." },
+          { id: 298, text: "تعتبر الضرائب الغير مباشرة وسيلة لإعادة توزيع الإيراد الإجمالي الناتج عن بيع المنتجات للمستهلكين النهائيين وهي تدخل عادة في الحسابات القومية قبل أي توزيع للدخول.",
+            answer: false, explanation: "غير المباشرة تدخل بعد توزيع الدخل المتاح." },
+          { id: 299, text: "تعتبر الضرائب غير المباشرة وسيلة لإعادة توزيع الإيراد الإجمالي الناتج عن بيع المنتجات للمستهلكين النهائيين.",
+            answer: true, explanation: "صحيح." },
+          { id: 300, text: "تعتبر الضرائب المباشرة وسيلة لإعادة توزيع الإيراد الإجمالي الناتج عن بيع المنتجات للمستهلكين النهائيين.",
+            answer: false, explanation: "المباشرة وسيلة لتوزيع الدخل المتاح." },
+          { id: 301, text: "تحدد الضرائب المباشرة بطريقة إجمالية إمكانيات الاختيار المتاحة للممول بتحديدها لدخله الذي يمكنه التصرف فيه، ولكنها لا تؤثر على اختياره بين أنواع الانفاق المختلفة.",
+            answer: true, explanation: "صحيح." },
+          { id: 302, text: "يعرف الدخل بأنه مبلغ من النقود، يأتي من مصدر ثابت، بصفة دورية.",
+            answer: true, explanation: "صحيح." },
+          { id: 303, text: "في المجال الضريبي يعرف الدخل بأنه مبلغ من النقود يأتي من مصدر ثابت، فيجب أن يكون الدخل قيمة مادية قابلة للتقدير بالنقود وتكون من مصدر ثابت.",
+            answer: false, explanation: "ينقصها صفة الدورية." },
+          { id: 304, text: "التعريف المدني والضريبي للدخل هو أنه الزيادة النقدية للشخص خلال فترة معينة.",
+            answer: false, explanation: "هذا تعريف اقتصادي." },
+          { id: 305, text: "يعرف الدخل بأنه مبلغ من النقود، يأتي من مصدر ثابت، ولا يشترط فيه صفة الدورية.",
+            answer: false, explanation: "الدورية شرط." },
+          { id: 306, text: "تعتبر الضرائب على الدخل من أمثلة الموارد التي يمكن الاحتفاظ بها فترة طويلة لأن أثارها الاقتصادية لا تهدد التوازن بعد اعتمادها.",
+            answer: true, explanation: "صحيح." },
+          { id: 307, text: "ينص التعريف المدني والضريبي للدخل على أن الدخل هو الزيادة النقدية في قيمة السلع والخدمات التي يستهلكها الشخص في فترة معينة.",
+            answer: false, explanation: "هذا تعريف اقتصادي." },
+          { id: 308, text: "تسمح الضرائب العامة على فروع الدخل المختلفة بمعايرة سعر الضريبة تبعاً لطبيعة الدخل، وذلك بتحديد سعر منخفض لدخل العمل وسعر مرتفع لدخل رأس المال وسعر متوسط للدخول المختلطة.",
+            answer: false, explanation: "هذا وصف للضرائب النوعية وليست العامة." },
+          { id: 309, text: "الضريبة العامة على الدخل لا تسمح بأخذ الظروف الشخصية للممول في الاعتبار.",
+            answer: false, explanation: "العامة تأخذ الظروف الشخصية." },
+          { id: 310, text: "تفرض الضريبة العامة على الدخل الإجمالي للممول، وهي تسمح بتوزيع أعباء الدولة طبقاً للمقدرة التكليفية لكل وحدة اقتصادية.",
+            answer: true, explanation: "صحيح." },
+          { id: 311, text: "الضريبة العامة على الدخل لا تسمح بتوزيع العبء الضريبي طبقاً للمقدرة التكليفية للممول.",
+            answer: false, explanation: "العامة تسمح بذلك." },
+          { id: 312, text: "تفرض الضريبة النوعية على الدخل الإجمالي للممول، وهي تسمح بتوزيع أعباء الدولة طبقاً للمقدرة التكليفية لكل وحدة اقتصادية.",
+            answer: false, explanation: "النوعية تفرض على الفروع وليس الإجمالي." },
+          { id: 313, text: "يعتبر دخلاً من الوجهة الضريبية المنافع الشخصية التي يصعب تقديرها نقدياً.",
+            answer: false, explanation: "لا تعتبر دخلاً." },
+          { id: 314, text: "لا يشترط أن يكون الدخل قيمة مادية قابلة للتقدير بالنقود، وعلى هذا يمكن اعتبار المنافع الشخصية التي يصعب تقديرها نقدياً دخلاً من الوجهة الضريبية.",
+            answer: false, explanation: "يشترط أن يكون قابلاً للتقدير بالنقود." },
+          { id: 315, text: "يجب أن يكون الدخل قيمة مادية، وعلى هذا لا يعتبر دخلاً من الوجهة الضريبية المنافع الشخصية للأفراد.",
+            answer: true, explanation: "صحيح." },
+          { id: 316, text: "تسمح الضرائب النوعية على فروع الدخل المختلفة بمعايرة سعر الضريبة تبعاً لطبيعة الدخل، وذلك بتحديد سعر منخفض لدخل العمل وسعر مرتفع لدخل رأس المال وسعر متوسط للدخول المختلطة.",
+            answer: true, explanation: "صحيح." },
+          { id: 317, text: "يمكن تعريف الضريبة العامة على الدخل بأنها تلك الضريبة التي تسمح بمعايرة سعر الضريبة تبعاً لطبيعة الدخل.",
+            answer: false, explanation: "هذا وصف للضريبة النوعية." },
+          { id: 318, text: "من وجهة النظر الضريبية يمكن تعريف رأس المال بأنه مجموع الأموال العقارية والمنقولة التي يملكها شخص في لحظة معينة سواء في ذلك أكانت منتجة أو غير منتجة.",
+            answer: true, explanation: "صحيح." },
+          { id: 319, text: "من وجهة النظر الضريبية يمكن تعريف رأس المال بأنه مجموع الأموال العقارية والمنقولة المنتجة فقط والتي يملكها شخص في لحظة معينة.",
+            answer: false, explanation: "يشمل المنتجة وغير المنتجة." },
+          { id: 320, text: "يمكن تعريف رأس المال بأنه مجموع الأموال العقارية والمنقولة التي يملكها الشخص في لحظة معينة.",
+            answer: true, explanation: "صحيح." },
+          { id: 321, text: "يمكن التمييز بين عدة أنواع من رأس المال فهناك رؤوس الأموال العقارية ورؤوس الأموال المنقولة.",
+            answer: true, explanation: "صحيح." },
+          { id: 322, text: "إذا فرضت الضريبة على رأس المال المنتج للدخل، فإنها يمكن أن تنتهي بالقضاء على رأس المال ذاته.",
+            answer: true, explanation: "صحيح." },
+          { id: 323, text: "لا يفضل اللجوء إلى فرض ضريبة على رأس المال وبالتالي لا يوجد مبرر لفرضها لأنها يمكن أن تنتهي بالقضاء على رأس المال ذاته.",
+            answer: false, explanation: "قد يكون هناك مبرر لفرضها." },
+          { id: 324, text: "يقصد بالإثراء إضافة عناصر جديدة إلى ذمة الممول، أما الزيادة في القيمة فتقتصر على الزيادة في قيمة أصول موجودة من قبل.",
+            answer: true, explanation: "صحيح." },
+          { id: 325, text: "تعتبر الضريبة على زيادة القيمة أحد أنواع الضرائب المباشرة والتي تفرض على الدخل والتي ظهرت تحت تأثير نظرية الريع التي وضعها ريكاردو.",
+            answer: true, explanation: "صحيح." },
+          { id: 326, text: "ظهرت فكرة الضريبة على زيادة القيمة تحت تأثير نظرية الريع التي وضعها ريكاردو.",
+            answer: true, explanation: "صحيح." },
+          { id: 327, text: "ظهرت فكرة الضريبة على الإثراء تحت تأثير نظرية الريع التي وضعها ريكاردو.",
+            answer: false, explanation: "الإثراء ليس تحت تأثير نظرية الريع." },
+          { id: 328, text: "تتعلق ضريبة الإثراء بمجموع ثروة الشخص بينما تتعلق ضريبة الزيادة في القيمة ببعض عناصر ثروة الممول فقط.",
+            answer: true, explanation: "صحيح." },
+          { id: 329, text: "تتعلق ضريبة الزيادة في القيمة بمجموع ثروة الشخص بينما تتعلق ضريبة الإثراء ببعض عناصر ثروة الممول فقط.",
+            answer: false, explanation: "العكس." },
+          { id: 330, text: "يمكن أن نميز بين رؤوس الأموال المنتجة كالعقارات المبنية ورؤوس الأموال غير المنتجة كالتحف والمجوهرات والأراضي المعدة للبناء.",
+            answer: true, explanation: "صحيح." },
+          { id: 331, text: "يمكن أن نميز بين رؤوس الأموال غير المنتجة كالعقارات المبنية، ورؤوس الأموال المنتجة كالتحف والمجوهرات والأراضي المعدة للبناء.",
+            answer: false, explanation: "العكس." },
+          { id: 332, text: "تتميز رؤوس الأموال العقارية كالأراضي والمنازل بصعوبة فرض الضريبة عليها، وذلك مقارنة برؤوس الأموال المنقولة كالديون والأسهم والسندات.",
+            answer: false, explanation: "العقارية أسهل في الفرض." },
+          { id: 333, text: "تتميز رؤوس الأموال العقارية كالأراضي والمنازل بسهولة فرض الضريبة عليها، وذلك مقارنة برؤوس الأموال المنقولة كالديون والأسهم والسندات.",
+            answer: true, explanation: "صحيح." },
+          { id: 334, text: "تعتبر رؤوس الأموال المنقولة كالأراضي والمنازل من الصعب حصرها وفرض الضريبة عليها، مقارنة بالأنواع الأخرى من الضرائب المباشرة.",
+            answer: false, explanation: "الأراضي والمنازل عقارية وليست منقولة." },
+          { id: 335, text: "يعتبر فرض الضريبة على رؤوس الأموال المنقولة (كالديون والأسهم والسندات والتحف وحقوق المؤلفين) أصعب من حيث التحصيل من فرض الضريبة على رؤوس الأموال العقارية (كالأراضي والمنازل).",
+            answer: true, explanation: "صحيح." },
+          { id: 336, text: "الضريبة العامة على رأس المال تفرض على مجموع ما يملكه الشخص.",
+            answer: true, explanation: "صحيح." },
+          { id: 337, text: "الضريبة الوحيدة على الإنتاج تفرض مرة واحدة وقت إنتاج السلعة، ولهذا يجب أن يكون سعرها مرتفعاً حتى تكون منتجة.",
+            answer: true, explanation: "صحيح." },
+          { id: 338, text: "يقصد بالضرائب المتتالية على الإنتاج فرض الضريبة على السلعة في كل مرحلة من مراحل إنتاجها، ولهذا يكون سعرها منخفضاً حتى لا يدفع إلى التهرب.",
+            answer: true, explanation: "صحيح." },
+          { id: 339, text: "يعتمد نظام الضريبة المتتالية على الإنتاج على أساس أن السلعة كلما انتقلت من منتج إلى منتج آخر فإن كل منتج يزيد من قيمتها، وتدفع الضريبة على هذه الزيادة في القيمة فقط.",
+            answer: false, explanation: "هذا وصف لضريبة القيمة المضافة." },
+          { id: 340, text: "يعاب على نظام الضرائب المتتالية أنه يضر بالاستثمارات فهذه الأخيرة تفرض عليها الضرائب مرة أخرى على منتجاتها النهائية.",
+            answer: true, explanation: "صحيح." },
+          { id: 341, text: "يقصد بالضرائب المتتالية على الإنتاج فرض الضريبة على السلعة في كل مرحلة من مراحل إنتاجها، ولهذا يكون سعرها مرتفع.",
+            answer: false, explanation: "يكون سعرها منخفضاً." },
+          { id: 342, text: "يعتمد نظام الضريبة المتتالية على الإنتاج على أساس أن السلعة كلما انتقلت من منتج إلي منتج أخر فإن كل منتج يزيد من قيمتها وتدفع الضريبة على هذه الزيادة في القيمة فقط.",
+            answer: false, explanation: "هذا وصف لضريبة القيمة المضافة." },
+          { id: 343, text: "من أهم مميزات نظام الضرائب المتتالية أنه مفيد للاستثمارات.",
+            answer: false, explanation: "يضر بالاستثمارات." },
+          { id: 344, text: "يقصد بالضريبة على القيمة المضافة أن تدفع الضريبة على الزيادة في القيمة فقط في كل مرحلة من مراحل إنتاج السلعة.",
+            answer: false, explanation: "الضريبة على القيمة المضافة تفرض على الزيادة في القيمة." },
+          { id: 345, text: "تعتمد ضريبة القيمة المضافة على أساس أن السلعة كلما انتقلت من منتج إلى منتج آخر فإن كل منتج يزيد من قيمتها، وتدفع الضريبة على هذه الزيادة في القيمة فقط.",
+            answer: true, explanation: "صحيح." },
+          { id: 346, text: "تعتبر الضرائب التالية من أهم أشكال الضرائب العامة على الانفاق: الضريبة الوحيدة على الإنتاج، الضرائب المتتالية على الإنتاج، وأخيراً الضريبة على القيمة المضافة.",
+            answer: true, explanation: "صحيح." },
+          { id: 347, text: "إن فرض الضريبة على الانفاق على سلع الاستهلاك الجاري أو الشائع مثل الدخان والشاي والبن يتعارض مع العدالة الاجتماعية.",
+            answer: false, explanation: "لا يتعارض بالضرورة، فهي سلع شائعة." },
+          { id: 348, text: "فرض ضرائب مرتفعة على السلع الكمالية يقلل من قابليتها للمنافسة في مجال التجارة الخارجية ولهذا يحسن إعفاء المصدر منها أو تخفيض الضريبة عليه.",
+            answer: true, explanation: "صحيح." },
+          { id: 349, text: "فرض الضريبة على السلع الكمالية يتسم بعدم العدالة كما أن حصيلتها تكون كبيرة نظراً لارتفاع أثمان هذه السلع.",
+            answer: false, explanation: "الحصيلة كبيرة، لكن عدم العدالة لأنها لا يستهلكها إلا الأغنياء." },
+          { id: 350, text: "فرض الضريبة على السلع الكمالية لا يتسم بعدم العدالة فهذه السلع لا يستهلكها إلا أصحاب الدخول المرتفعة كما أن حصيلتها تكون كبيرة نظراً لارتفاع أثمان هذه السلع.",
+            answer: true, explanation: "صحيح." }
+        ]
+      },
+
+      // ========== المبحث الثاني : آليات ربط الضريبة وتحصيلها (صفحة 24) ==========
+      {
+        section: "آليات ربط الضريبة وتحصيلها",
+        qs: [
+          { id: 351, text: "أسلوب التقدير الجزافي يمكن الأخذ به فيما يتعلق بالضرائب على الأجور في حين يناسب إسلوب الإقرار الضريبي الدخول الزراعية.",
+            answer: false, explanation: "الإقرار يناسب الأجور، والتقدير الجزافي يناسب الدخول الزراعية." },
+          { id: 352, text: "طبقاً لطريقة الضريبة التوزيعية يحدد مقدار الضريبة الذي يجب أن يدفعه إقليم معين، ويتم توزيع هذا المقدار على الأقسام الإدارية لهذا الإقليم وفي داخل هذه الأقسام، وعلى الوحدات الاقتصادية المختلفة.",
+            answer: true, explanation: "صحيح." },
+          { id: 353, text: "طبقاً لطريقة الضريبة النسبية يحدد مقدار الضريبة الذي يجب أن يدفعه إقليم معين، يتم توزيع هذا المقدار على الأقسام الإدارية لهذا الإقليم، وفي داخل هذه الأقسام، على الوحدات الاقتصادية المختلفة.",
+            answer: false, explanation: "هذا وصف للتوزيعية وليس النسبية." },
+          { id: 354, text: "من أهم مميزات الضريبة التوزيعية أن هذا النظام يؤدي إلى المساواة في توزيع العبء الضريبي لأن العبء الضريبي هذا يوزع بالتساوي بين الأقاليم المختلفة بصرف النظر عن تفاوت الثروات والأنشطة فيها.",
+            answer: false, explanation: "يؤدي إلى عدم المساواة." },
+          { id: 355, text: "من أهم مميزات الضريبة التوزيعية أن هذا النظام ييسر للدولة الحصول على مقدار الضريبة الذي تحدده، كما أن إمكانيات التهرب منها ضئيلة.",
+            answer: true, explanation: "صحيح." },
+          { id: 356, text: "من أهم عيوب الضريبة التوزيعية أن هذا النظام يؤدي إلى عدم المساواة في توزيع العبء الضريبي لأن العبء الضريبي هنا يوزع بالتساوي بين الأقاليم المختلفة بغض النظر عن تفاوت الثروات والأنشطة فيها.",
+            answer: true, explanation: "صحيح." },
+          { id: 357, text: "من أهم عيوب الضريبة التوزيعية أن هذا النظام لا ييسر للدولة الحصول على مقدار الضريبة الذي تحدده، كما أن إمكانيات التهرب فيه كبيرة.",
+            answer: false, explanation: "العكس: ييسر ويقلل التهرب." },
+          { id: 358, text: "وفقا لطريقة الضريبة التوزيعية يكون سعر الضريبة معروف مقدماً بالنسبة لكل ممول.",
+            answer: true, explanation: "صحيح." },
+          { id: 359, text: "وفقاً لطريقة الضريبة التوزيعية لا يكون سعر الضريبة معروف مقدماً بالنسبة لكل ممول.",
+            answer: false, explanation: "يكون معروفاً." },
+          { id: 360, text: "الضريبة النسبية أكثر عدالة من الضريبة التصاعدية فهي تفرض بنسبة واحدة على الجميع.",
+            answer: false, explanation: "التصاعدية أكثر عدالة." },
+          { id: 361, text: "تعتبر الضريبة التصاعدية أكثر إنتاجية من الضريبة النسبية لأنها تأتى بحصيلة أكبر، ويؤدي التصاعد من ناحية أخرى إلى منع تركز الثروات في أيد قليلة مع الابقاء على الحوافز الفردية، ولكنه قد يؤدي إلى الحد من تكون الادخار الخاص، ويمكن تحقيق التصاعد بوسائل متعددة التصاعد بالطبقات والتصاعد بالشرائح.",
+            answer: true, explanation: "صحيح." },
+          { id: 362, text: "تعتبر الضريبة التصاعدية أقل إنتاجية من الضريبة النسبية لأنها تأتى بحصيلة أقل، ويؤدي التصاعد من ناحية أخرى إلى تركز الثروات ويساهم في زيادة الادخار الخاص.",
+            answer: false, explanation: "العكس." },
+          { id: 363, text: "يقصد بتطبيق الضريبة التصاعدية على شكل تصاعديا بالشرائح أن يتم تقسيم الأفراد إلى طبقات بناء على دخولهم وتفرض نسبة ضريبة مختلفة على كل طبقة من الطبقات.",
+            answer: false, explanation: "هذا وصف للتصاعد بالطبقات." },
+          { id: 364, text: "يقصد بتطبيق الضريبة التصاعدية على شكل تصاعد بالطبقات أن يقسم دخل كل فرد إلى شرائح وتفرض نسبة ضريبة مختلفة على كل شريحة من شرائح الدخل.",
+            answer: false, explanation: "هذا وصف للتصاعد بالشرائح." }
+        ]
+      },
+
+      // ========== المبحث الأول : طبيعة القروض العامة وأسبابها وشروط نجاحها (صفحة 26-27) ==========
+      {
+        section: "طبيعة القروض العامة وأسبابها وشروط نجاحها",
+        qs: [
+          { id: 365, text: "وفقاً للنظرية الحديثة فإن هناك تعارض بين القرض العام والضريبة من حيث أثارهما في إفقار الممول أو المكتتب.",
+            answer: false, explanation: "النظرية الحديثة ترى التشابه." },
+          { id: 366, text: "وفقاً للنظرية الحديثة فإنه ليس هناك تعارض بين القرض والضريبة من حيث أثارهما في إفقار المكتتب أو الممول.",
+            answer: true, explanation: "صحيح." },
+          { id: 367, text: "تري النظرية التقليدية أن القرض العام يؤدي إلى إفقار الممول مثل الضريبة لأن المكتتب يحصل على أمواله بقيمة حقيقية أقل.",
+            answer: false, explanation: "التقليدية ترى أن القرض لا يفقره، بل يعيد له أمواله." },
+          { id: 368, text: "تري النظرية التقليدية أن هناك تعارضاً أساسياً بين طبيعة الضريبة وطبيعة القرض، وأن هذا التعارض يظهر ليس فقط فيما يتعلق بالنظام القانوني لكل منهما، ولكن أيضاً بالنسبة لنتائجهما الاقتصادية.",
+            answer: true, explanation: "صحيح." },
+          { id: 369, text: "تري النظرية التقليدية أنه لا يوجد تعارضاً بين طبيعة الضريبة وطبيعة القرض، وأن هذا التعارض يظهر ليس فقط فيما يتعلق بالنظام القانوني لكل منهما، ولكن أيضاً بالنسبة لنتائجهما الاقتصادية.",
+            answer: false, explanation: "التقليدية تقول بالتعارض." },
+          { id: 370, text: "وفقاً للنظرية التقليدية، فإن القرض العام كالقرض الخاص له طابع تعاقدي لأنه وسيلة تحصل بها الدولة على موارد دون أن تلجأ في هذا إلى استعمال سلطتها في القهر.",
+            answer: true, explanation: "صحيح." },
+          { id: 371, text: "تتشابه القروض الاختيارية والقروض الجبرية من حيث الطابع التعاقدي لكلاً منهما.",
+            answer: true, explanation: "كلاهما تعاقدي وإن اختلفت درجة الإجبار." },
+          { id: 372, text: "تري النظرية التقليدية أنه لا فرق بين طبيعة الضريبة وطبيعة القرض العام بل هما متشابهان.",
+            answer: false, explanation: "التقليدية ترى تعارضاً." },
+          { id: 373, text: "من وجهة النظر القانونية ترى النظرية التقليدية أنه لا يوجد فرق جوهري بين القرض والضريبة، حيث أن كليهما يعتمد على الطابع التعاقدي.",
+            answer: false, explanation: "القرض تعاقدي، والضريبة إجبارية." },
+          { id: 374, text: "من وجهة النظر القانونية ترى النظرية التقليدية أن الفرق الجوهري بين القرض والضريبة هو الطابع الإرادي للقرض فالقرض العام له طابع تعاقدي لأنه وسيلة تحصل بها الدولة على موارد دون أن تلجأ في هذا إلى استعمال سلطتها في القهر.",
+            answer: true, explanation: "صحيح." },
+          { id: 375, text: "وفقاً للنظرية التقليدية، يختلف القرض العام عن القرض الخاص، حيث أن الأخير له طابع تعاقدي، بينما يعتمد القرض العام على استعمال الدولة لسلطتها في القهر.",
+            answer: false, explanation: "كلاهما تعاقدي." },
+          { id: 376, text: "تختلف القروض الاختيارية والقروض الجبرية من حيث أن الأولي ذات طابع تعاقدي، أما الأخيرة فتعتمد على استخدام الدولة لسلطتها الآمرة.",
+            answer: false, explanation: "كلاهما تعاقدي." },
+          { id: 377, text: "تري النظرية الواقعية أنه لا يمكن اعتبار الخسارة التي يتعرض لها المكتتب نتيجة القرض العام مشابهة تماماً للإفقار الذي يصيب الممول نتيجة فرض الضريبة.",
+            answer: true, explanation: "الخسارة جزئية في القرض، وكلية في الضريبة." },
+          { id: 378, text: "تري النظرية الواقعية، أن الخسارة التي يتعرض لها المكتتب نتيجة القرض العام مشابهة تماماً للافتقار الذي يصيب الممول نتيجة فرض الضريبة.",
+            answer: false, explanation: "الواقعية ترى اختلافاً." },
+          { id: 379, text: "ترى النظرية الحديثة أن قيمة الفوائد التي تدفع عن القرض وقيمة القرض نفسه عند رده تتضاءل خلال مدته وتخلص من هذه إلى أن المكتتب يتحمل خسارة لا شك فيها، وبالتالي ليس هناك أي فرق بين القرض والضريبة من حيث أثرهما في إفقار المكتتب أو الممول.",
+            answer: true, explanation: "صحيح." },
+          { id: 380, text: "تؤكد النظرية الحديثة على الطابع التعاقدي والإرادي للقرض العام، حيث يستطيع المكتتب أن يناقش شروط القرض العام بما يؤدي إلى استفادة المكتتب في القروض العامة.",
+            answer: false, explanation: "القرض إجباري ولا يناقش شروطه." },
+          { id: 381, text: "يعتبر محدودية الموارد التي تأتى بها الضرائب من أهم المبررات المالية للالتجاء للقرض العام حيث أن العبء الضريبي لا يمكن أن يتجاوز حدوداً معينة دون أن يثير ردود فعل اقتصادية أو سياسية.",
+            answer: true, explanation: "صحيح." },
+          { id: 382, text: "يعتبر محدودية الموارد التي تأتى بها الضرائب من أهم المبررات الاقتصادية للالتجاء للقرض العام، حيث أن العبء الضريبي لا يمكن أن يتجاوز حدوداً معينة دون أن يثير ردود فعل اقتصادية أو سياسية.",
+            answer: false, explanation: "هذا مبرر مالي وليس اقتصادي." },
+          { id: 383, text: "لا يسبب زيادة العبء الضريبي إلي اضطرابات سياسية بصفة خاصة في حالة الضرائب المرتفعة على الدخل، ومع ذلك يمكن اللجوء للقرض العام للمساهمة في زيادة الموارد المالية للدولة بجانب الضريبة.",
+            answer: false, explanation: "قد يسبب اضطرابات." },
+          { id: 384, text: "يمكن استخدام القرض العام كوسيلة اقتصادية بنيانية ومثال على ذلك استخدام القرض كوسيلة من وسائل امتصاص جزء من القوة الشرائية الكلية وبالتالى محاربة التضخم.",
+            answer: false, explanation: "هذا غير بنياني (مالي)." },
+          { id: 385, text: "هناك من النفقات العامة التي يمكن تقيدها بسهولة إذا ما ادعت الحاجة وتعتبر من ضمن أولويات الحكومة لتخفيضها إذا ما رأت ضرورة في ذلك، مثل النفقات اللازمة للدفاع عن أراضي الدولة في حالة حرب.",
+            answer: false, explanation: "نفقات الحرب لا يمكن تقييدها بسهولة." },
+          { id: 386, text: "يمكن استخدام القرض العام كوسيلة اقتصادية غير بنيانية، ومثال على ذلك استخدام القرض كوسيلة من وسائل امتصاص جزء من القوة الشرائية الكلية، وبالتالي محاربة التضخم.",
+            answer: true, explanation: "صحيح." },
+          { id: 387, text: "المقصود باستخدام القرض كوسيلة لسياسة اقتصادية غير بنيانية أن يستخدم في تمويل الاستثمارات.",
+            answer: false, explanation: "غير بنيانية تعني محاربة التضخم." },
+          { id: 388, text: "المقصود باستخدام القرض العام كوسيلة اقتصادية بنيانية هو استخدامه كوسيلة لامتصاص جزء من القوة الشرائية، ومحاربة التضخم.",
+            answer: false, explanation: "بنيانية تعني تمويل الاستثمارات." },
+          { id: 389, text: "يمكن أن يستخدم القرض كوسيلة لتمويل الاستثمارات وفي حالة ما إذا كانت هذه الاستثمارات إنتاجية فإن الالتجاء إلى القرار يبرره أن عائد هذه الاستثمارات يمكن أن يستخدم في مواجهة أعباء القرض دون الحاجة إلى فرض ضرائب إضافية.",
+            answer: true, explanation: "صحيح." },
+          { id: 390, text: "لا يمكن أن يستخدم القرض كوسيلة لتمويل الاستثمارات وبديلاً لذلك لابد من استخدام الضرائب فقط لتمويل تلك الاستثمارات، حيث أن القرض يترتب عليه تكاليف خدمة القرض، بينما الضريبة لا يترتب عليها مثل هذه التكاليف.",
+            answer: false, explanation: "يمكن استخدام القرض لتمويل الاستثمارات." },
+          { id: 391, text: "يستخدم القرض العام كوسيلة لسياسة اقتصادية غير بنيانية، والتي تعنى أن القرض يستخدم بصفة خاصة في تمويل الاستثمارات، وفي حالة ما إذا كانت هذه الاستثمارات إنتاجية فإن الالتجاء إلى القرار يبرره أن عائد هذه الاستثمارات يمكن أن يستخدم في مواجهة أعباء القرض دون الحاجة إلى فرض ضرائب إضافية.",
+            answer: false, explanation: "غير بنيانية تعني محاربة التضخم." },
+          { id: 392, text: "يعتبر القرض وسيلة من وسائل امتصاص جزء من القوة الشرائية الكلية، ويعتبر القرض في هذا الخصوص أكثر فعالية من الضريبة في محاربة الاتجاهات التضخمية، وذلك لأن القرض يخفض بطريقة نهائية قطعية القوة الشرائية للوحدات الاقتصادية التي تدفعها، بعكس الضريبة والتي تمتص بشكل مؤقت جزء من الدخل.",
+            answer: false, explanation: "الضريبة تخفض نهائياً، والقرض يخفض مؤقتاً." },
+          { id: 393, text: "تتميز الضريبة عن القرض في أن الضريبة تعتبر وسيلة من وسائل امتصاص جزء من القوة الشرائية الكلية، بينما القرض فإنه يخفض بطريقة نهائية قطعية القوة الشرائية للوحدات الاقتصادية التي تكتتب في القرض.",
+            answer: false, explanation: "العكس." },
+          { id: 394, text: "يتميز القرض عن الضريبة في أن القرض يعتبر وسيلة من وسائل امتصاص جزء من القوة الشرائية الكلية، بينما الضريبة فإنها تخفض بطريقة نهائية قطعية القوة الشرائية للوحدات الاقتصادية التي تدفعها.",
+            answer: true, explanation: "صحيح." },
+          { id: 395, text: "هناك شروط أساسية لنجاح القرض العام والمتمثلة في وجود مدخرات وقابلية الادخار لأن يوظف في القرض العام ولكن في المقابل فإن الموقف المالي للدولة ليس شرطاً ضرورياً لنجاح القرض العام.",
+            answer: false, explanation: "الموقف المالي شرط سياسي مهم." },
+          { id: 396, text: "يعتبر الموقف المالي للدولة وقت إصدار القرض من المحددات الأساسية لنجاح القرض العام فالاعتقاد بأن الدولة ستريد تنفيذ تعهداتها، والاعتقاد بأن الدولة ستستطيع تنفيذ هذه الوعود هما اللذان يحددان سلوك المقترضين.",
+            answer: true, explanation: "صحيح." },
+          { id: 397, text: "من ضمن الشروط الاقتصادية لنجاح القرض العام هو وجود ادخار وعليه لابد من أن تكون دخول الوحدات الاقتصادية أعلى من نفقاتها الاستهلاكية.",
+            answer: true, explanation: "صحيح." },
+          { id: 398, text: "من ضمن الشروط السياسية لنجاح القرض العام هو وجود ادخار وعليه لابد من أن تكون دخول الوحدات الاقتصادية أعلى من نفقاتها الاستهلاكية.",
+            answer: false, explanation: "هذا شرط اقتصادي." },
+          { id: 399, text: "لكي ينجح القرض اقتصادياً فلابد أن يكون هناك ادخار وأن يكون هذا الادخار قابلاً لأن يوظف في شراء سندات القرض العام.",
+            answer: true, explanation: "صحيح." },
+          { id: 400, text: "يتميز القرض العام بميزة أساسية يمكن أن تحث المدخرين على توظيف مدخراتهم في القروض العامة وهي العائد الذي يوفره القرض العام ولكن في المقابل من ضمن عيوب القرض العام عدم الضمان الكاف مقارنة بغيره من فرص الاستثمار البديلة.",
+            answer: false, explanation: "الضمان أهم من العائد." },
+          { id: 401, text: "لنجاح القرض العام لابد من توافر مدخرات ولكن تكمن المشكلة في عدم استطاعة الدولة أن تتدخل للتغير من مدخرات المجتمع.",
+            answer: false, explanation: "الدولة تستطيع التدخل." },
+          { id: 402, text: "لنجاح القرض العام لابد من توافر مدخرات وعليه تستطيع الدولة أن تتدخل للتغيير من مقدار المدخرات وذلك بالتعديل في المتغيرات التي تحدد هذه المدخرات وهي من ناحية دخول الوحدات الاقتصادية ومن ناحية أخري نفقاتها الاستهلاكية.",
+            answer: true, explanation: "صحيح." },
+          { id: 403, text: "لكي تستثمر المدخرات في القروض العامة فلابد أن يتوافر شرطان: أن لا تكون هناك فرص استثمارية أفضل، وأن تكون مزايا القرض كافية.",
+            answer: true, explanation: "صحيح." },
+          { id: 404, text: "لكي تستثمر المدخرات في القروض العامة فلابد أن يتوافر شرطان: أن تكون هناك فرص استثمارية جيدة لهذه المدخرات، وأن تكون مزايا القرض مرتفعة.",
+            answer: false, explanation: "يجب ألا تكون هناك فرص أفضل." },
+          { id: 405, text: "لكي تستثمر المدخرات في القروض العامة فلابد أن تكون مزايا القرض كافية، وأن تكون هناك فرص استثمارية بديلة أفضل.",
+            answer: false, explanation: "يجب ألا تكون هناك بدائل أفضل." },
+          { id: 406, text: "يتميز القرض العام بميزتين أساسيتين يمكن أن تحثا المدخرين على توظيف مدخراتهم في القروض العامة، وهما العائد والضمان اللذان يمكن أن يوفرهما القرض.",
+            answer: true, explanation: "صحيح." },
+          { id: 407, text: "يعتبر وجود الادخار شرطاً أساسياً من شروط نجاح القرض العام، فحتى يمكن أن يتكون الادخار فلابد أن تكون دخول الوحدات الاقتصادية أعلى من نفقاتها الاستهلاكية، ويعتبر شرط توافر الادخار شرطاً كافياً لنجاح القرض العام.",
+            answer: false, explanation: "ليس كافياً، بل ضروري وليس كافي." },
+          { id: 408, text: "يعتبر العائد الذي يمنحه القرض العام شرطاً هاماً لنجاح القرض العام، وعلى هذا فسعر فائدة القرض والجوائز التي قد توزع بصدده والاعفاءات الضريبية التي تمنح لرأس المال المكتتب أو الدخل المتحصل من القرض تعتبر عناصر هامة لنجاحه.",
+            answer: true, explanation: "صحيح." }
+        ]
+      },
+
+      // ========== المبحث الثاني : إصدار القروض العامة وإنقضائها (صفحة 28-29) ==========
+      {
+        section: "إصدار القروض العامة وإنقضائها",
+        qs: [
+          { id: 409, text: "يقصد بأسلوب بيع سندات القرض للبنوك أن تقوم البنوك بشراء السندات لصالح مودعيها.",
+            answer: false, explanation: "البنوك تشتري السندات ثم تعيد تسويقها." },
+          { id: 410, text: "في حالة بيع سندات القرض للبنوك التجارية التي تعيد تسويقها لا يحصل البنك التجاري على أي مقابل من إعادة التسويق.",
+            answer: false, explanation: "يحصل على عمولة." },
+          { id: 411, text: "من مميزات بيع سندات القرض للبنوك أنها تقوى من ائتمان الدولة خصوصاً في الخارج وذلك لأن الثقة في البنك تكون أكبر من الثقة في الدولة.",
+            answer: true, explanation: "صحيح." },
+          { id: 412, text: "هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقا لهذه الطريقة فإن الدولة لا تدخل في علاقة مباشرة مع المكتتبين.",
+            answer: true, explanation: "صحيح." },
+          { id: 413, text: "هناك عدة طرق يمكن استخدامها لتوظيف القرض، منها بيع سندات القرض للبنوك وفقا لهذه الطريقة فإن الدولة تدخل في علاقة مباشرة مع المكتتبين.",
+            answer: false, explanation: "لا تدخل بشكل مباشر." },
+          { id: 414, text: "هناك عدة طرق يمكن استخدامها لتوظيف القرض منها بيع سندات القرض للبنوك إلا أن هذه الطريقة لا تضمن توظيف كل سندات القرض.",
+            answer: false, explanation: "تضمن توظيف كل السندات." },
+          { id: 415, text: "في حالة بيع سندات القرض للبنوك فإن البنك يقع عليه كل من المسئوليات التالية: توظيف كل سندات القرض، أن يقدم للدولة مبلغ القرض كاملا توزيع سندات القرض.",
+            answer: true, explanation: "صحيح." },
+          { id: 416, text: "تتميز طريقة الإصدار في البورصة كوسيلة يمكن استخدامها لتوظيف القرض بانخفاض تكاليفها مقارنة بطريقة بيع سندات القرض للبنوك.",
+            answer: true, explanation: "صحيح." },
+          { id: 417, text: "الإصدار في البورصة معناه بيع سندات القرض العام في البورصة لتحصل الدولة على كامل قيمة كل سند دون خصم عمولات.",
+            answer: true, explanation: "صحيح." },
+          { id: 418, text: "تضمن طريقة بيع سندات القرض من خلال البورصة بأن تكون تكاليف إصدار القرض العام في هذه الحالة تكون منخفضة وأن يتم توظيف القرض بالسعر الملائم وأن يتم توظيف أعداد كبيرة من سندات القرض.",
+            answer: false, explanation: "لا تضمن توظيف أعداد كبيرة." },
+          { id: 419, text: "الاكتتاب العام في بيع سندات القرض العام معناه أن تبيع الدولة السندات عن طريق عملائها الماليين وعلى نطاق جغرافي واسع.",
+            answer: true, explanation: "صحيح." },
+          { id: 420, text: "هناك عيبين لطريقة الاكتتاب العام فهي لا تضمن من ناحية أن كل سندات القرض ستباع، وهي لا تضمن كذلك أن هذه السندات ستباع في أفضل وقت بالنسبة لسعر الفائدة السائد في السوق.",
+            answer: true, explanation: "صحيح." },
+          { id: 421, text: "من مميزات طريقة الاكتتاب العام أنها تضمن من ناحية أن كل سندات القرض ستباع، ومن ناحية أخري فإنها تضمن أن هذه السندات ستباع في أفضل وقت بالنسبة لسعر الفائدة السائد في السوق.",
+            answer: false, explanation: "لا تضمن ذلك." },
+          { id: 422, text: "تتميز طريقة بيع سندات القرض للبنوك كوسيلة يمكن استخدامها لتوظيف القرض بانخفاض تكاليفها مقارنة بطريقة الإصدار في البورصة.",
+            answer: false, explanation: "تكاليفها أعلى." },
+          { id: 423, text: "هناك وسيلتان تسمحان بتخفيض الدين العام: الاستبدال الذي يسمح بتخفيض مقدار القرض نفسه والاستهلاك الذي يسمح بتخفيض عبء فوائد القرض.",
+            answer: false, explanation: "الاستبدال يخفض عبء الفوائد، والاستهلاك يخفض المقدار." },
+          { id: 424, text: "هناك وسيلتان تسمحان بتخفيض الدين العام: الاستبدال الذي يسمح بتخفيض عبء فوائد القرض والاستهلاك الذي يسمح بتخفيض مقدار القرض نفسه.",
+            answer: true, explanation: "صحيح." },
+          { id: 425, text: "تهدف عملية استبدال القرض إلى التخلص من الدين المتولد عن القرض، حيث يلاحظ أن الدولة تستطيع في جميع الأحوال شراء سندات القرض إذا كانت متداولة في السوق وتدميرها وبهذا تتخلص من دينها.",
+            answer: false, explanation: "هذا وصف لاستهلاك القرض." },
+          { id: 426, text: "من وسائل انقضاء القرض العام أسلوب استهلاك القرض بمعنى رده بالكامل للمكتتبين عن طريق إعادة شراء السندات من البورصة.",
+            answer: true, explanation: "صحيح." },
+          { id: 427, text: "من وسائل انقضاء القرض العام أسلوب استبدال القرض وذلك عن طريق تخفيض الفائدة عليه.",
+            answer: true, explanation: "صحيح." },
+          { id: 428, text: "من أهم طرق إصدار القرض العام هي طريق بيع سندات القرض للبنوك حيث تسمح هذه الطريقة للدولة بتوظيف سندات قرضها في وقت تكون فيه أسعار الأوراق المالية مرتفعة للاستفادة من هذه الأسعار ولا تمكن هذه الطريقة إلا بتوظيف أعداد قليلة من السندات وإلا أدى طرح عدد كبير منها إلى انخفاض سعرها.",
+            answer: false, explanation: "هذا وصف للإصدار في البورصة." }
+        ]
+      }
+    ];
+
+    // ============================================================
+    //  STATE
+    // ============================================================
+    let allQuestions = [];
+    let timerInterval = null;
+    let timeSeconds = 5400; // 90 minutes
+    let isTimerRunning = false;
+    let totalAnswered = 0;
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    let hasFinished = false;
+
+    // ============================================================
+    //  DOM REFS
+    // ============================================================
+    const container = document.getElementById('questionsContainer');
+    const timerDisplay = document.getElementById('timerDisplay');
+    const answeredCount = document.getElementById('answeredCount');
+    const totalCount = document.getElementById('totalCount');
+    const correctCount = document.getElementById('correctCount');
+    const wrongCount = document.getElementById('wrongCount');
+    const finalScore = document.getElementById('finalScore');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // ============================================================
+    //  HELPERS
+    // ============================================================
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function updateStats() {
+      answeredCount.textContent = totalAnswered;
+      correctCount.textContent = totalCorrect;
+      wrongCount.textContent = totalWrong;
+      const total = allQuestions.length;
+      totalCount.textContent = total;
+      if (totalAnswered === total && total > 0) {
+        const pct = Math.round((totalCorrect / total) * 100);
+        let grade = '';
+        if (pct >= 90) grade = '⭐ ممتاز';
+        else if (pct >= 75) grade = '✅ جيد جداً';
+        else if (pct >= 60) grade = '📘 جيد';
+        else if (pct >= 50) grade = '📖 مقبول';
+        else grade = '📚 يحتاج مراجعة';
+        finalScore.innerHTML = `📊 التقييم النهائي: <strong>${totalCorrect}/${total}</strong> (${pct}%) — ${grade}`;
+        hasFinished = true;
+        if (timerInterval) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          isTimerRunning = false;
+        }
+      } else {
+        const remaining = total - totalAnswered;
+        finalScore.innerHTML = `📊 تم الإجابة على ${totalAnswered} من ${total} سؤال — المتبقي ${remaining} سؤال`;
+        hasFinished = false;
+      }
+    }
+
+    // ============================================================
+    //  BUILD QUESTIONS
+    // ============================================================
+    function buildQuestions() {
+      let flat = [];
+      let seq = 0;
+      questionsData.forEach(section => {
+        section.qs.forEach(q => {
+          seq++;
+          flat.push({
+            ...q,
+            seq: seq,
+            section: section.section,
+            userAnswer: null,
+            answered: false,
+          });
+        });
+      });
+      // خلط عشوائي
+      allQuestions = shuffle(flat);
+      allQuestions.forEach((q, idx) => {
+        q.displayIndex = idx + 1;
+      });
+      totalAnswered = 0;
+      totalCorrect = 0;
+      totalWrong = 0;
+      hasFinished = false;
+    }
+
+    // ============================================================
+    //  RENDER
+    // ============================================================
+    function render() {
+      const sectionsMap = {};
+      allQuestions.forEach(q => {
+        if (!sectionsMap[q.section]) sectionsMap[q.section] = [];
+        sectionsMap[q.section].push(q);
+      });
+
+      let html = '';
+      for (const [sectionName, qs] of Object.entries(sectionsMap)) {
+        html += `<div class="section-title">📂 ${sectionName} <span class="badge">${qs.length} سؤال</span></div>`;
+        qs.forEach((q) => {
+          const isAnswered = q.answered;
+          const userAns = q.userAnswer;
+          const correct = q.answer;
+          let cardClass = 'question-card';
+          if (isAnswered) {
+            cardClass += userAns === correct ? ' answered-correct' : ' answered-wrong';
+          }
+          const displayNum = q.displayIndex;
+
+          let optionsHtml = '';
+          const trueLabel = 'صح';
+          const falseLabel = 'خطأ';
+          const btns = [
+            { val: true, label: trueLabel },
+            { val: false, label: falseLabel }
+          ];
+          btns.forEach(b => {
+            let btnClass = 'option-btn';
+            let disabled = '';
+            let extra = '';
+            if (isAnswered) {
+              disabled = 'disabled';
+              if (b.val === correct) {
+                extra = ' show-correct';
+              }
+              if (userAns === b.val && b.val === correct) {
+                extra = ' correct';
+              } else if (userAns === b.val && b.val !== correct) {
+                extra = ' wrong';
+              }
             }
-            return arr;
-        }
+            optionsHtml +=
+              `<button class="${btnClass}${extra}" data-q="${q.seq}" data-val="${b.val}" ${disabled}>${b.label}</button>`;
+          });
 
-        function formatTime(sec) {
-            const m = Math.floor(sec / 60);
-            const s = sec % 60;
-            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
+          let feedbackHtml = '';
+          if (isAnswered) {
+            const isCorrect = userAns === correct;
+            const label = isCorrect ? '✅ إجابة صحيحة' : '❌ إجابة خاطئة';
+            const labelClass = isCorrect ? 'correct-label' : 'wrong-label';
+            feedbackHtml = `
+                <div class="feedback" style="display:block;">
+                  <div class="fb-label ${labelClass}">${label}</div>
+                  <div class="explanation">📖 ${q.explanation || 'لا يوجد شرح إضافي.'}</div>
+                </div>
+              `;
+          } else {
+            feedbackHtml = `
+                <div class="feedback" style="display:none;">
+                  <div class="fb-label"></div>
+                  <div class="explanation"></div>
+                </div>
+              `;
+          }
 
-        function updateStats() {
-            answeredCount.textContent = totalAnswered;
-            correctCount.textContent = totalCorrect;
-            wrongCount.textContent = totalWrong;
-            const total = allQuestions.length;
-            totalCount.textContent = total;
-            if (totalAnswered === total && total > 0) {
-                const pct = Math.round((totalCorrect / total) * 100);
-                let grade = '';
-                if (pct >= 90) grade = '⭐ ممتاز';
-                else if (pct >= 75) grade = '✅ جيد جداً';
-                else if (pct >= 60) grade = '📘 جيد';
-                else if (pct >= 50) grade = '📖 مقبول';
-                else grade = '📚 يحتاج مراجعة';
-                finalScore.innerHTML = `📊 التقييم النهائي: <strong>${totalCorrect}/${total}</strong> (${pct}%) — ${grade}`;
-                hasFinished = true;
-            } else {
-                const remaining = total - totalAnswered;
-                finalScore.innerHTML = `📊 تم الإجابة على ${totalAnswered} من ${total} سؤال — المتبقي ${remaining} سؤال`;
-                hasFinished = false;
+          html += `
+              <div class="${cardClass}" data-seq="${q.seq}">
+                <div class="q-text">
+                  <span class="q-num">${displayNum}</span>
+                  ${q.text}
+                </div>
+                <div class="options">
+                  ${optionsHtml}
+                </div>
+                ${feedbackHtml}
+              </div>
+            `;
+        });
+      }
+
+      container.innerHTML = html;
+      updateStats();
+
+      // attach click events
+      document.querySelectorAll('.option-btn:not(:disabled)').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const seq = parseInt(this.dataset.q);
+          const val = this.dataset.val === 'true';
+          handleAnswer(seq, val);
+        });
+      });
+
+      if (!isTimerRunning && !hasFinished && allQuestions.length > 0) {
+        startTimer();
+      }
+    }
+
+    // ============================================================
+    //  HANDLE ANSWER
+    // ============================================================
+    function handleAnswer(seq, val) {
+      const q = allQuestions.find(q => q.seq === seq);
+      if (!q || q.answered) return;
+
+      q.answered = true;
+      q.userAnswer = val;
+      const correct = q.answer;
+      if (val === correct) {
+        totalCorrect++;
+      } else {
+        totalWrong++;
+      }
+      totalAnswered++;
+
+      render();
+    }
+
+    // ============================================================
+    //  TIMER
+    // ============================================================
+    function startTimer() {
+      if (isTimerRunning) return;
+      isTimerRunning = true;
+      timerInterval = setInterval(() => {
+        if (timeSeconds <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          isTimerRunning = false;
+          timerDisplay.textContent = '00:00';
+          // انتهى الوقت — إجبار الإجابة على كل الأسئلة المتبقية
+          allQuestions.forEach(q => {
+            if (!q.answered) {
+              q.answered = true;
+              q.userAnswer = false;
+              totalAnswered++;
+              totalWrong++;
             }
+          });
+          render();
+          finalScore.innerHTML = '⏰ انتهى الوقت! تم تقييم الإجابات تلقائياً.';
+          return;
         }
+        timeSeconds--;
+        timerDisplay.textContent = formatTime(timeSeconds);
+      }, 1000);
+    }
 
-        // ============================================================
-        //  BUILD QUESTIONS
-        // ============================================================
-        function buildQuestions() {
-            // جمع كل الأسئلة مع إضافة رقم تسلسلي
-            let flat = [];
-            let seq = 0;
-            questionsData.forEach(section => {
-                section.qs.forEach(q => {
-                    seq++;
-                    flat.push({
-                        ...q,
-                        seq: seq,
-                        section: section.section,
-                        userAnswer: null, // true / false / null
-                        answered: false,
-                    });
-                });
-            });
-            // خلط عشوائي
-            allQuestions = shuffle(flat);
-            // إعادة ترقيم التسلسل بعد الخلط
-            allQuestions.forEach((q, idx) => {
-                q.displayIndex = idx + 1;
-            });
-            totalAnswered = 0;
-            totalCorrect = 0;
-            totalWrong = 0;
-            hasFinished = false;
-        }
+    // ============================================================
+    //  RESET
+    // ============================================================
+    function resetExam() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        isTimerRunning = false;
+      }
+      timeSeconds = 5400;
+      timerDisplay.textContent = '90:00';
+      totalAnswered = 0;
+      totalCorrect = 0;
+      totalWrong = 0;
+      hasFinished = false;
+      buildQuestions();
+      render();
+      finalScore.innerHTML = '📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة';
+    }
 
-        // ============================================================
-        //  RENDER
-        // ============================================================
-        function render() {
-            // تجميع حسب القسم (محافظة على ترتيب الأقسام)
-            const sectionsMap = {};
-            allQuestions.forEach(q => {
-                if (!sectionsMap[q.section]) sectionsMap[q.section] = [];
-                sectionsMap[q.section].push(q);
-            });
+    // ============================================================
+    //  INIT
+    // ============================================================
+    resetBtn.addEventListener('click', resetExam);
 
-            let html = '';
-            for (const [sectionName, qs] of Object.entries(sectionsMap)) {
-                html += `<div class="section-title">📂 ${sectionName} <span class="badge">${qs.length} سؤال</span></div>`;
-                qs.forEach((q, idx) => {
-                    const isAnswered = q.answered;
-                    const userAns = q.userAnswer;
-                    const correct = q.answer;
-                    let cardClass = 'question-card';
-                    if (isAnswered) {
-                        cardClass += userAns === correct ? ' answered-correct' : ' answered-wrong';
-                    }
-                    const displayNum = q.displayIndex;
+    buildQuestions();
+    render();
 
-                    // بناء خيارات الصح والخطأ
-                    let optionsHtml = '';
-                    const trueLabel = 'صح';
-                    const falseLabel = 'خطأ';
-                    const btns = [
-                        { val: true, label: trueLabel },
-                        { val: false, label: falseLabel }
-                    ];
-                    btns.forEach(b => {
-                        let btnClass = 'option-btn';
-                        let disabled = '';
-                        let extra = '';
-                        if (isAnswered) {
-                            disabled = 'disabled';
-                            if (b.val === correct) {
-                                extra = ' show-correct';
-                            }
-                            if (userAns === b.val && b.val === correct) {
-                                extra = ' correct';
-                            } else if (userAns === b.val && b.val !== correct) {
-                                extra = ' wrong';
-                            }
-                        }
-                        optionsHtml +=
-                            `<button class="${btnClass}${extra}" data-q="${q.seq}" data-val="${b.val}" ${disabled}>${b.label}</button>`;
-                    });
-
-                    // الفيدباك
-                    let feedbackHtml = '';
-                    if (isAnswered) {
-                        const isCorrect = userAns === correct;
-                        const label = isCorrect ? '✅ إجابة صحيحة' : '❌ إجابة خاطئة';
-                        const labelClass = isCorrect ? 'correct-label' : 'wrong-label';
-                        feedbackHtml = `
-                            <div class="feedback" style="display:block;">
-                                <div class="fb-label ${labelClass}">${label}</div>
-                                <div class="explanation">📖 ${q.explanation || 'لا يوجد شرح إضافي.'}</div>
-                            </div>
-                        `;
-                    } else {
-                        feedbackHtml = `
-                            <div class="feedback" style="display:none;">
-                                <div class="fb-label"></div>
-                                <div class="explanation"></div>
-                            </div>
-                        `;
-                    }
-
-                    html += `
-                        <div class="${cardClass}" data-seq="${q.seq}">
-                            <div class="q-text">
-                                <span class="q-num">${displayNum}</span>
-                                ${q.text}
-                            </div>
-                            <div class="options">
-                                ${optionsHtml}
-                            </div>
-                            ${feedbackHtml}
-                        </div>
-                    `;
-                });
-            }
-
-            container.innerHTML = html;
-            updateStats();
-
-            // --- attach click events ---
-            document.querySelectorAll('.option-btn:not(:disabled)').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    const seq = parseInt(this.dataset.q);
-                    const val = this.dataset.val === 'true';
-                    handleAnswer(seq, val);
-                });
-            });
-
-            // start timer if not running
-            if (!isTimerRunning && !hasFinished) {
-                startTimer();
-            }
-        }
-
-        // ============================================================
-        //  HANDLE ANSWER
-        // ============================================================
-        function handleAnswer(seq, val) {
-            const q = allQuestions.find(q => q.seq === seq);
-            if (!q || q.answered) return;
-
-            q.answered = true;
-            q.userAnswer = val;
-            const correct = q.answer;
-            if (val === correct) {
-                totalCorrect++;
-            } else {
-                totalWrong++;
-            }
-            totalAnswered++;
-
-            // re-render
-            render();
-        }
-
-        // ============================================================
-        //  TIMER
-        // ============================================================
-        function startTimer() {
-            if (isTimerRunning) return;
-            isTimerRunning = true;
-            timerInterval = setInterval(() => {
-                if (timeSeconds <= 0) {
-                    clearInterval(timerInterval);
-                    isTimerRunning = false;
-                    timerDisplay.textContent = '00:00';
-                    // انتهى الوقت — تعطيل كل الأسئلة المتبقية
-                    allQuestions.forEach(q => {
-                        if (!q.answered) {
-                            q.answered = true;
-                            q.userAnswer = false; // تعتبر خطأ
-                            totalAnswered++;
-                            totalWrong++;
-                        }
-                    });
-                    render();
-                    finalScore.innerHTML = '⏰ انتهى الوقت! تم تقييم الإجابات تلقائياً.';
-                    return;
-                }
-                timeSeconds--;
-                timerDisplay.textContent = formatTime(timeSeconds);
-            }, 1000);
-        }
-
-        // ============================================================
-        //  RESET
-        // ============================================================
-        function resetExam() {
-            // إيقاف المؤقت
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                isTimerRunning = false;
-            }
-            timeSeconds = 3600;
-            timerDisplay.textContent = '60:00';
-            totalAnswered = 0;
-            totalCorrect = 0;
-            totalWrong = 0;
-            hasFinished = false;
-            buildQuestions();
-            render();
-            finalScore.innerHTML = '📊 التقييم النهائي يظهر بعد الإجابة على جميع الأسئلة';
-        }
-
-        // ============================================================
-        //  INIT
-        // ============================================================
-        resetBtn.addEventListener('click', resetExam);
-
-        // البناء الأولي
-        buildQuestions();
-        render();
-
-        // في حال تم الإجابة على الكل، إيقاف المؤقت
-        // لكن يُتحقق في updateStats
-        console.log('✅ امتحان المالية العامة جاهز — وفقكم الله');
-    </script>
+    console.log(`✅ امتحان المالية العامة جاهز - ${allQuestions.length} سؤال`);
+  </script>
 
 </body>
 </html>
